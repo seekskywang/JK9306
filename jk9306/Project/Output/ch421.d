@@ -1,0 +1,10 @@
+.\output\ch421.o: ..\User\CH421\ch421.c
+.\output\ch421.o: ..\User\CH421\ch421.h
+.\output\ch421.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\ch421.o: ..\User\Globalvalue/globalvalue.h
+.\output\ch421.o: ..\Libraries\Drivers\include\lpc177x_8x_gpio.h
+.\output\ch421.o: ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h
+.\output\ch421.o: ..\Libraries\Core\CM3\CoreSupport\core_cm3.h
+.\output\ch421.o: ..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h
+.\output\ch421.o: ..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h
+.\output\ch421.o: ..\Libraries\Drivers\include\lpc_types.h

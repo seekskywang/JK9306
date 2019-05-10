@@ -1,0 +1,17 @@
+.\objects\guiconf.o: ..\emWin\Config\GUIConf.c
+.\objects\guiconf.o: ..\User\..\emWin\Header\GUI.h
+.\objects\guiconf.o: ..\User\..\emWin\Header\GUI_ConfDefaults.h
+.\objects\guiconf.o: ..\User\..\emWin\Config\GUIConf.h
+.\objects\guiconf.o: ..\User\..\emWin\Header\GUI_Type.h
+.\objects\guiconf.o: ..\User\..\emWin\Header\LCD.h
+.\objects\guiconf.o: ..\User\..\emWin\Header\Global.h
+.\objects\guiconf.o: ..\User\..\emWin\Header\GUI_Version.h
+.\objects\guiconf.o: ..\User\LCD/lpc177x_8x_lcd.h
+.\objects\guiconf.o: ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h
+.\objects\guiconf.o: ..\Libraries\Core\CM3\CoreSupport\core_cm3.h
+.\objects\guiconf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\guiconf.o: ..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h
+.\objects\guiconf.o: ..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h
+.\objects\guiconf.o: ..\Libraries\Drivers\include\lpc_types.h
+.\objects\guiconf.o: ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\system_LPC177x_8x.h
+.\objects\guiconf.o: ..\User\..\User\EX_SDRAM\EX_SDRAM.h

@@ -1,0 +1,105 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.22.0.0
+Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: lj Users, Microsoft, LIC=FQQDY-IFX0I-MQ70F-6IQTN-K8DHN-E1FAD
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.22
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 4 (build 422)
+Assembler:       Armasm.exe V5.06 update 4 (build 422)
+Linker/Locator:  ArmLink.exe V5.06 update 4 (build 422)
+Library Manager: ArmAr.exe V5.06 update 4 (build 422)
+Hex Converter:   FromElf.exe V5.06 update 4 (build 422)
+CPU DLL:         SARMCM3.DLL V5.22
+Dialog DLL:      DARMP1.DLL V1.27.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.23.0
+Dialog DLL:      TARMP1.DLL V1.26.0.0
+ 
+<h2>Project:</h2>
+F:\dianyuan1119\JK_9805\Project\project.uvprojx
+Project File Date:  11/19/2018
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 4 (build 422)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'Open1788'
+compiling timer.c...
+compiling main.c...
+..\User\main.c(227): warning:  #177-D: variable "test_r"  was declared but never referenced
+  uint32_t test_r;
+..\User\main.c: 1 warning, 0 errors
+compiling AsciiLib.c...
+compiling lpc177x_8x_lcd.c...
+compiling logo.c...
+compiling TouchPanel.c...
+compiling key.c...
+compiling use_disp.c...
+compiling GlobalValue.c...
+compiling test.c...
+assembling startup_LPC177x_8x.s...
+compiling lpc177x_8x_rtc.c...
+compiling EX_SDRAM.c...
+compiling core_cm3.c...
+compiling system_LPC177x_8x.c...
+compiling lpc177x_8x_gpio.c...
+compiling lpc177x_8x_systick.c...
+compiling lpc177x_8x_clkpwr.c...
+compiling lpc177x_8x_ssp.c...
+compiling lpc177x_8x_uart.c...
+compiling debug_frmwrk.c...
+..\Libraries\Drivers\source\debug_frmwrk.c(654): warning:  #550-D: variable "vArgs"  was set but never used
+              va_list     vArgs;
+..\Libraries\Drivers\source\debug_frmwrk.c: 1 warning, 0 errors
+compiling lpc177x_8x_pinsel.c...
+compiling GUI_X.c...
+compiling lpc177x_8x_eeprom.c...
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(109): warning:  #1441-D: nonstandard cast on lvalue
+  			
+PC_EEPROM -> WDATA = *(((uint8_t *)data)++);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(119): warning:  #1441-D: nonstandard cast on lvalue
+  			
+PC_EEPROM -> WDATA = *(((uint16_t *)data)++);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(129): warning:  #1441-D: nonstandard cast on lvalue
+  			
+PC_EEPROM -> WDATA = *(((uint32_t *)data)++);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(198): warning:  #1441-D: nonstandard cast on lvalue
+  			 *(((uint8_t *)data)++) = (uint8_t)(LPC_EEPROM -> RDATA);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(208): warning:  #1441-D: nonstandard cast on lvalue
+  			 *(((uint16_t *)data)++) = (uint16_t)(LPC_EEPROM -> RDATA);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(217): warning:  #1441-D: nonstandard cast on lvalue
+  			 *(((uint32_t *)data)++) = (uint32_t)(LPC_EEPROM ->RDATA);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c: 6 warnings, 0 errors
+compiling SIMConf.c...
+compiling GUIConf.c...
+compiling LCDConf.c...
+linking...
+.\Output\project.axf: Warning: L6170W: Mapping symbol #20 '$t' in .bss(GUI_Core.o:16) identifies code, but is in a section not marked as executable.
+.\Output\project.axf: Warning: L6170W: Mapping symbol #7 '$t' in .bss(GUI__ManageCache.o:7) identifies code, but is in a section not marked as executable.
+.\Output\project.axf: Warning: L6170W: Mapping symbol #18 '$t' in .bss(GUI_Curs1.o:8) identifies code, but is in a section not marked as executable.
+.\Output\project.axf: Warning: L6170W: Mapping symbol #89 '$t' in .bss(GUI_SetAlpha.o:7) identifies code, but is in a section not marked as executable.
+.\Output\project.axf: Warning: L6170W: Mapping symbol #31 '$t' in .bss(GUI_Timer.o:7) identifies code, but is in a section not marked as executable.
+.\Output\project.axf: Warning: L6170W: Mapping symbol #19 '$t' in .bss(GUI__Alpha.o:7) identifies code, but is in a section not marked as executable.
+.\Output\project.axf: Error: L6405E: No .ANY selector matches GUI_SetAlpha.o(.bss).
+.\Output\project.axf: Error: L6405E: No .ANY selector matches GUI__ManageCache.o(.bss).
+.\Output\project.axf: Error: L6405E: No .ANY selector matches GUI__Alpha.o(.bss).
+.\Output\project.axf: Error: L6405E: No .ANY selector matches GUI_Timer.o(.bss).
+.\Output\project.axf: Error: L6405E: No .ANY selector matches GUI_Core.o(.bss).
+Not enough information to list image symbols.
+Not enough information to list the image map.
+Finished: 2 information, 6 warning and 5 error messages.
+".\Output\project.axf" - 5 Error(s), 14 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  F:\dianyuan1119\JK_9805\Project\RTE\_Open1788
+  C:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.4.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+Build Time Elapsed:  00:00:06
+</pre>
+</body>
+</html>

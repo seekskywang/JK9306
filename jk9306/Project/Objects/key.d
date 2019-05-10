@@ -1,0 +1,14 @@
+.\objects\key.o: ..\User\Key\key.c
+.\objects\key.o: ..\User\Key/key.h
+.\objects\key.o: ..\Libraries\Drivers\include\lpc177x_8x_gpio.h
+.\objects\key.o: ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h
+.\objects\key.o: ..\Libraries\Core\CM3\CoreSupport\core_cm3.h
+.\objects\key.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\key.o: ..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h
+.\objects\key.o: ..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h
+.\objects\key.o: ..\Libraries\Drivers\include\lpc_types.h
+.\objects\key.o: ..\User\LCD/lpc177x_8x_lcd.h
+.\objects\key.o: ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\system_LPC177x_8x.h
+.\objects\key.o: ..\User\EX_SDRAM/EX_SDRAM.H
+.\objects\key.o: ..\User\UseDisp\use_disp.h
+.\objects\key.o: ..\User\Globalvalue/globalvalue.h

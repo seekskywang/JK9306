@@ -1,0 +1,17 @@
+.\objects\set_manu.o: ..\User\set_manu.c
+.\objects\set_manu.o: ..\User\set_manu.h
+.\objects\set_manu.o: ..\Libraries\Drivers\include\lpc177x_8x_gpio.h
+.\objects\set_manu.o: ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h
+.\objects\set_manu.o: ..\Libraries\Core\CM3\CoreSupport\core_cm3.h
+.\objects\set_manu.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\set_manu.o: ..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h
+.\objects\set_manu.o: ..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h
+.\objects\set_manu.o: ..\Libraries\Drivers\include\lpc_types.h
+.\objects\set_manu.o: ..\User\LCD/lpc177x_8x_lcd.h
+.\objects\set_manu.o: ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\system_LPC177x_8x.h
+.\objects\set_manu.o: ..\User\UseDisp\use_disp.h
+.\objects\set_manu.o: ..\User\Globalvalue/globalvalue.h
+.\objects\set_manu.o: ..\User\EX_SDRAM/EX_SDRAM.H
+.\objects\set_manu.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\set_manu.o: ..\User\Key\key.h
+.\objects\set_manu.o: ..\User\Test/test.h

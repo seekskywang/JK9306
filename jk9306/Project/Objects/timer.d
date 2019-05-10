@@ -1,0 +1,10 @@
+.\objects\timer.o: ..\User\timer.c
+.\objects\timer.o: ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h
+.\objects\timer.o: ..\Libraries\Core\CM3\CoreSupport\core_cm3.h
+.\objects\timer.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\timer.o: ..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h
+.\objects\timer.o: ..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h
+.\objects\timer.o: ..\Libraries\Drivers\include\lpc_types.h
+.\objects\timer.o: ..\User\timer.h
+.\objects\timer.o: ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\system_LPC177x_8x.h
+.\objects\timer.o: ..\Modubus\modbus_slave.h

@@ -1,0 +1,14 @@
+.\objects\lpc177x_8x_lcd.o: ..\User\LCD\lpc177x_8x_lcd.c
+.\objects\lpc177x_8x_lcd.o: ..\User\LCD\lpc177x_8x_lcd.h
+.\objects\lpc177x_8x_lcd.o: ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h
+.\objects\lpc177x_8x_lcd.o: ..\Libraries\Core\CM3\CoreSupport\core_cm3.h
+.\objects\lpc177x_8x_lcd.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\lpc177x_8x_lcd.o: ..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h
+.\objects\lpc177x_8x_lcd.o: ..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h
+.\objects\lpc177x_8x_lcd.o: ..\Libraries\Drivers\include\lpc_types.h
+.\objects\lpc177x_8x_lcd.o: ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\system_LPC177x_8x.h
+.\objects\lpc177x_8x_lcd.o: ..\User\EX_SDRAM\EX_SDRAM.H
+.\objects\lpc177x_8x_lcd.o: ..\User\LCD\AsciiLib.h
+.\objects\lpc177x_8x_lcd.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\lpc177x_8x_lcd.o: ..\User\Globalvalue\globalvalue.h
+.\objects\lpc177x_8x_lcd.o: ..\User\hzk.h

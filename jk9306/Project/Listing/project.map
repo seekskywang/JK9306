@@ -1,0 +1,2519 @@
+Component: ARM Compiler 5.06 update 4 (build 422) Tool: armlink [4d35d2]
+
+==============================================================================
+
+Section Cross References
+
+    main.o(i.Delay) refers to main.o(.data) for SysTickCnt
+    main.o(i.HAL_USBInit) refers to main.o(i.Chip_Clock_EnablePLL) for Chip_Clock_EnablePLL
+    main.o(i.SysTick_Handler) refers to main.o(.data) for SysTickCnt
+    main.o(i.main) refers to lpc177x_8x_clkpwr.o(i.CLKPWR_GetCLK) for CLKPWR_GetCLK
+    main.o(i.main) refers to key.o(i.HW_keyInt) for HW_keyInt
+    main.o(i.main) refers to debug_frmwrk.o(i.debug_frmwrk_init) for debug_frmwrk_init
+    main.o(i.main) refers to debug_frmwrk.o(i.debug_uart3_init) for debug_uart3_init
+    main.o(i.main) refers to ex_sdram.o(i.SDRAM_Init) for SDRAM_Init
+    main.o(i.main) refers to key.o(i.BUZZER) for BUZZER
+    main.o(i.main) refers to GUI_Core.o(.text) for GUI_Init
+    main.o(i.main) refers to GUI_SetColor.o(.text) for GUI_SetBkColor
+    main.o(i.main) refers to GUI_DispStringAt.o(.text) for GUI_DispStringAt
+    main.o(i.main) refers to lpc177x_8x_lcd.o(i.GLCD_Ctrl) for GLCD_Ctrl
+    main.o(i.main) refers to lpc177x_8x_lcd.o(i.GLCD_Init) for GLCD_Init
+    main.o(i.main) refers to key.o(i.HW_Sendvalueto164) for HW_Sendvalueto164
+    main.o(i.main) refers to lpc177x_8x_lcd.o(i.LCD_DrawRect) for LCD_DrawRect
+    main.o(i.main) refers to main.o(i.Delay) for Delay
+    main.o(i.main) refers to test.o(i.Power_Process) for Power_Process
+    main.o(i.main) refers to lpc177x_8x_lcd.o(i.WriteString_Big) for WriteString_Big
+    main.o(i.main) refers to use_disp.o(i.Disp_Box) for Disp_Box
+    main.o(i.main) refers to lpc177x_8x_gpio.o(i.GPIO_ReadValue) for GPIO_ReadValue
+    main.o(i.main) refers to test.o(i.read5463) for read5463
+    main.o(i.main) refers to test.o(i.Disp_R) for Disp_R
+    main.o(i.main) refers to debug_frmwrk.o(i.UARTPuts) for UARTPuts
+    main.o(i.main) refers to debug_frmwrk.o(i.do232) for do232
+    main.o(i.main) refers to key.o(i.HW_KeyScsn) for HW_KeyScsn
+    main.o(i.main) refers to test.o(i.Resist_Test) for Resist_Test
+    main.o(i.main) refers to key.o(i.Delay_Key) for Delay_Key
+    main.o(i.main) refers to logo.o(.data) for LogoPic
+    main.o(i.main) refers to lpc177x_8x_lcd.o(.data) for Colour
+    main.o(i.main) refers to key.o(.bss) for Button_Page
+    main.o(i.main) refers to main.o(.data) for ch_rang
+    main.o(i.main) refers to globalvalue.o(.bss) for SaveData
+    main.o(i.main) refers to debug_frmwrk.o(.bss) for ComBuf3
+    timer.o(i.TIMER0_IRQHandler) refers to timer.o(.data) for timer0_counter
+    timer.o(i.TIMER1_IRQHandler) refers to timer.o(.data) for timer1_counter
+    timer.o(i.TIMER2_IRQHandler) refers to timer.o(.data) for timer2_counter
+    timer.o(i.TIMER3_IRQHandler) refers to timer.o(.data) for timer3_counter
+    timer.o(i.delayMs) refers to system_lpc177x_8x.o(.data) for PeripheralClock
+    timer.o(i.init_timer) refers to timer.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    timer.o(i.init_timer) refers to timer.o(.data) for timer0_counter
+    lpc177x_8x_lcd.o(i.GLCD_Init) refers to lpc177x_8x_lcd.o(i.GLCD_SetPallet) for GLCD_SetPallet
+    lpc177x_8x_lcd.o(i.GLCD_Init) refers to system_lpc177x_8x.o(.data) for PeripheralClock
+    lpc177x_8x_lcd.o(i.GUI_Text) refers to lpc177x_8x_lcd.o(i.PutChar) for PutChar
+    lpc177x_8x_lcd.o(i.Hex_Format) refers to globalvalue.o(.bss) for DispBuf
+    lpc177x_8x_lcd.o(i.LCD_DrawLine) refers to lpc177x_8x_lcd.o(i.LCD_SetPoint) for LCD_SetPoint
+    lpc177x_8x_lcd.o(i.LCD_DrawLineShade) refers to lpc177x_8x_lcd.o(i.RGBCOLOR) for RGBCOLOR
+    lpc177x_8x_lcd.o(i.LCD_DrawLineShade) refers to lpc177x_8x_lcd.o(i.LCD_SetPoint) for LCD_SetPoint
+    lpc177x_8x_lcd.o(i.LCD_DrawRectShade) refers to lpc177x_8x_lcd.o(i.RGBCOLOR) for RGBCOLOR
+    lpc177x_8x_lcd.o(i.LCD_ShowFontCN) refers to lpc177x_8x_lcd.o(i.LCD_SetPoint) for LCD_SetPoint
+    lpc177x_8x_lcd.o(i.LCD_ShowFontCN) refers to lpc177x_8x_lcd.o(.constdata) for GB_21
+    lpc177x_8x_lcd.o(i.LCD_ShowFontCN) refers to lpc177x_8x_lcd.o(.data) for Colour
+    lpc177x_8x_lcd.o(i.LCD_ShowFontCN21) refers to lpc177x_8x_lcd.o(i.RGBCOLOR) for RGBCOLOR
+    lpc177x_8x_lcd.o(i.LCD_ShowFontCN21) refers to lpc177x_8x_lcd.o(i.LCD_SetPoint) for LCD_SetPoint
+    lpc177x_8x_lcd.o(i.LCD_ShowFontCN21) refers to lpc177x_8x_lcd.o(.constdata) for GB_21x20
+    lpc177x_8x_lcd.o(i.LCD_ShowFontCN21) refers to lpc177x_8x_lcd.o(.data) for Colour
+    lpc177x_8x_lcd.o(i.LCD_ShowFontCN_16) refers to lpc177x_8x_lcd.o(i.LCD_SetPoint) for LCD_SetPoint
+    lpc177x_8x_lcd.o(i.LCD_ShowFontCN_16) refers to lpc177x_8x_lcd.o(.constdata) for GB_16
+    lpc177x_8x_lcd.o(i.LCD_ShowFontCN_16) refers to lpc177x_8x_lcd.o(.data) for Colour
+    lpc177x_8x_lcd.o(i.LCD_ShowFontCN_16_Shade) refers to lpc177x_8x_lcd.o(i.RGBCOLOR) for RGBCOLOR
+    lpc177x_8x_lcd.o(i.LCD_ShowFontCN_16_Shade) refers to lpc177x_8x_lcd.o(i.LCD_SetPoint) for LCD_SetPoint
+    lpc177x_8x_lcd.o(i.LCD_ShowFontCN_16_Shade) refers to lpc177x_8x_lcd.o(.constdata) for GB_16
+    lpc177x_8x_lcd.o(i.LCD_ShowFontCN_16_Shade) refers to lpc177x_8x_lcd.o(.data) for Colour
+    lpc177x_8x_lcd.o(i.LCD_ShowFontCN_40_55) refers to lpc177x_8x_lcd.o(i.LCD_SetPoint) for LCD_SetPoint
+    lpc177x_8x_lcd.o(i.LCD_ShowFontCN_40_55) refers to lpc177x_8x_lcd.o(.data) for Colour
+    lpc177x_8x_lcd.o(i.PutChar) refers to asciilib.o(i.GetASCIICode) for GetASCIICode
+    lpc177x_8x_lcd.o(i.PutChar) refers to lpc177x_8x_lcd.o(i.LCD_SetPoint) for LCD_SetPoint
+    lpc177x_8x_lcd.o(i.PutCharShade) refers to asciilib.o(i.GetASCIICode) for GetASCIICode
+    lpc177x_8x_lcd.o(i.PutCharShade) refers to lpc177x_8x_lcd.o(i.RGBCOLOR) for RGBCOLOR
+    lpc177x_8x_lcd.o(i.PutCharShade) refers to lpc177x_8x_lcd.o(i.LCD_SetPoint) for LCD_SetPoint
+    lpc177x_8x_lcd.o(i.PutChar_12) refers to asciilib.o(i.GetASCIICode_12) for GetASCIICode_12
+    lpc177x_8x_lcd.o(i.PutChar_12) refers to lpc177x_8x_lcd.o(i.LCD_SetPoint) for LCD_SetPoint
+    lpc177x_8x_lcd.o(i.WriteOneHzChar) refers to lpc177x_8x_lcd.o(i.LCD_ShowFontCN) for LCD_ShowFontCN
+    lpc177x_8x_lcd.o(i.WriteOneHzChar21) refers to lpc177x_8x_lcd.o(i.LCD_ShowFontCN21) for LCD_ShowFontCN21
+    lpc177x_8x_lcd.o(i.WriteOneHzChar_16) refers to lpc177x_8x_lcd.o(i.LCD_ShowFontCN_16) for LCD_ShowFontCN_16
+    lpc177x_8x_lcd.o(i.WriteOneHzChar_16_Shade) refers to lpc177x_8x_lcd.o(i.LCD_ShowFontCN_16_Shade) for LCD_ShowFontCN_16_Shade
+    lpc177x_8x_lcd.o(i.WriteString) refers to lpc177x_8x_lcd.o(i.findHzIndex) for findHzIndex
+    lpc177x_8x_lcd.o(i.WriteString) refers to lpc177x_8x_lcd.o(i.WriteOneHzChar) for WriteOneHzChar
+    lpc177x_8x_lcd.o(i.WriteString) refers to lpc177x_8x_lcd.o(i.PutChar) for PutChar
+    lpc177x_8x_lcd.o(i.WriteString) refers to lpc177x_8x_lcd.o(.data) for Colour
+    lpc177x_8x_lcd.o(i.WriteString21) refers to lpc177x_8x_lcd.o(i.findHzIndex21) for findHzIndex21
+    lpc177x_8x_lcd.o(i.WriteString21) refers to lpc177x_8x_lcd.o(i.WriteOneHzChar21) for WriteOneHzChar21
+    lpc177x_8x_lcd.o(i.WriteString21) refers to lpc177x_8x_lcd.o(i.PutCharShade) for PutCharShade
+    lpc177x_8x_lcd.o(i.WriteString21) refers to lpc177x_8x_lcd.o(.data) for Colour
+    lpc177x_8x_lcd.o(i.WriteString_12) refers to lpc177x_8x_lcd.o(i.findHzIndex_16) for findHzIndex_16
+    lpc177x_8x_lcd.o(i.WriteString_12) refers to lpc177x_8x_lcd.o(i.WriteOneHzChar_16) for WriteOneHzChar_16
+    lpc177x_8x_lcd.o(i.WriteString_12) refers to lpc177x_8x_lcd.o(i.PutChar_12) for PutChar_12
+    lpc177x_8x_lcd.o(i.WriteString_12) refers to lpc177x_8x_lcd.o(.data) for Colour
+    lpc177x_8x_lcd.o(i.WriteString_16) refers to lpc177x_8x_lcd.o(i.findHzIndex_16) for findHzIndex_16
+    lpc177x_8x_lcd.o(i.WriteString_16) refers to lpc177x_8x_lcd.o(i.WriteOneHzChar_16) for WriteOneHzChar_16
+    lpc177x_8x_lcd.o(i.WriteString_16) refers to lpc177x_8x_lcd.o(i.PutChar) for PutChar
+    lpc177x_8x_lcd.o(i.WriteString_16) refers to lpc177x_8x_lcd.o(.data) for Colour
+    lpc177x_8x_lcd.o(i.WriteString_16_Shade) refers to lpc177x_8x_lcd.o(i.findHzIndex_16) for findHzIndex_16
+    lpc177x_8x_lcd.o(i.WriteString_16_Shade) refers to lpc177x_8x_lcd.o(i.WriteOneHzChar_16_Shade) for WriteOneHzChar_16_Shade
+    lpc177x_8x_lcd.o(i.WriteString_16_Shade) refers to lpc177x_8x_lcd.o(i.PutCharShade) for PutCharShade
+    lpc177x_8x_lcd.o(i.WriteString_16_Shade) refers to lpc177x_8x_lcd.o(.data) for Colour
+    lpc177x_8x_lcd.o(i.WriteString_Big) refers to lpc177x_8x_lcd.o(i.LCD_ShowFontCN_40_55) for LCD_ShowFontCN_40_55
+    lpc177x_8x_lcd.o(i.WriteString_Big) refers to asciilib.o(.constdata) for _num
+    lpc177x_8x_lcd.o(i.findHzIndex) refers to lpc177x_8x_lcd.o(.constdata) for GB_21
+    lpc177x_8x_lcd.o(i.findHzIndex21) refers to lpc177x_8x_lcd.o(.constdata) for GB_21x20
+    lpc177x_8x_lcd.o(i.findHzIndex_16) refers to lpc177x_8x_lcd.o(.constdata) for GB_16
+    lpc177x_8x_lcd.o(i.lcd_display_coord) refers to lpc177x_8x_lcd.o(i.LCD_SetPoint) for LCD_SetPoint
+    logo.o(.data) refers to logo.o(.constdata) for LogoStream
+    asciilib.o(i.GetASCIICode) refers to memmovea.o(.text) for __aeabi_memcpy
+    asciilib.o(i.GetASCIICode) refers to asciilib.o(.constdata) for AsciiLib
+    asciilib.o(i.GetASCIICode_12) refers to asciilib.o(.constdata) for nAsciiDot
+    touchpanel.o(i.Read_XTP2046) refers to memseta.o(.text) for __aeabi_memclr4
+    touchpanel.o(i.Read_XTP2046) refers to touchpanel.o(i.TP_GetAdXY) for TP_GetAdXY
+    touchpanel.o(i.Read_XTP2046) refers to lpc177x_8x_gpio.o(i.GPIO_ReadValue) for GPIO_ReadValue
+    touchpanel.o(i.Read_XTP2046) refers to touchpanel.o(.data) for screen
+    touchpanel.o(i.SPI_WriteByte) refers to lpc177x_8x_ssp.o(i.SSP_ReadWrite) for SSP_ReadWrite
+    touchpanel.o(i.SPI_WriteByte) refers to touchpanel.o(.bss) for dataCfg
+    touchpanel.o(i.SSPI1_Init) refers to lpc177x_8x_pinsel.o(i.PINSEL_ConfigPin) for PINSEL_ConfigPin
+    touchpanel.o(i.SSPI1_Init) refers to lpc177x_8x_ssp.o(i.SSP_ConfigStructInit) for SSP_ConfigStructInit
+    touchpanel.o(i.SSPI1_Init) refers to lpc177x_8x_ssp.o(i.SSP_Init) for SSP_Init
+    touchpanel.o(i.SSPI1_Init) refers to lpc177x_8x_ssp.o(i.SSP_Cmd) for SSP_Cmd
+    touchpanel.o(i.TP_DrawPoint) refers to lpc177x_8x_lcd.o(i.LCD_SetPoint) for LCD_SetPoint
+    touchpanel.o(i.TP_GetAdXY) refers to lpc177x_8x_gpio.o(i.GPIO_SetDir) for GPIO_SetDir
+    touchpanel.o(i.TP_GetAdXY) refers to lpc177x_8x_gpio.o(i.GPIO_ClearValue) for GPIO_ClearValue
+    touchpanel.o(i.TP_GetAdXY) refers to touchpanel.o(i.SPI_WriteByte) for SPI_WriteByte
+    touchpanel.o(i.TP_GetAdXY) refers to lpc177x_8x_gpio.o(i.GPIO_SetValue) for GPIO_SetValue
+    touchpanel.o(i.TP_GetAdXY) refers to touchpanel.o(.data) for screen
+    touchpanel.o(i.TouchPanel_Calibrate) refers to lpc177x_8x_lcd.o(i.lcd_Clear) for lcd_Clear
+    touchpanel.o(i.TouchPanel_Calibrate) refers to lpc177x_8x_lcd.o(i.GUI_Text) for GUI_Text
+    touchpanel.o(i.TouchPanel_Calibrate) refers to touchpanel.o(i.delay_ms) for delay_ms
+    touchpanel.o(i.TouchPanel_Calibrate) refers to lpc177x_8x_lcd.o(i.lcd_display_coord) for lcd_display_coord
+    touchpanel.o(i.TouchPanel_Calibrate) refers to touchpanel.o(i.Read_XTP2046) for Read_XTP2046
+    touchpanel.o(i.TouchPanel_Calibrate) refers to touchpanel.o(i.setCalibrationMatrix) for setCalibrationMatrix
+    touchpanel.o(i.TouchPanel_Calibrate) refers to touchpanel.o(.data) for DisplaySample
+    touchpanel.o(i.TouchPanel_Calibrate) refers to touchpanel.o(.bss) for ScreenSample
+    touchpanel.o(i.getDisplayPoint) refers to cdcmple.o(.text) for __aeabi_cdcmpeq
+    touchpanel.o(i.getDisplayPoint) refers to dfltui.o(.text) for __aeabi_ui2d
+    touchpanel.o(i.getDisplayPoint) refers to dmul.o(.text) for __aeabi_dmul
+    touchpanel.o(i.getDisplayPoint) refers to dadd.o(.text) for __aeabi_dadd
+    touchpanel.o(i.getDisplayPoint) refers to ddiv.o(.text) for __aeabi_ddiv
+    touchpanel.o(i.getDisplayPoint) refers to dfixui.o(.text) for __aeabi_d2uiz
+    touchpanel.o(i.setCalibrationMatrix) refers to dflti.o(.text) for __aeabi_i2d
+    touchpanel.o(i.setCalibrationMatrix) refers to cdcmple.o(.text) for __aeabi_cdcmpeq
+    touchpanel.o(i.touch_init) refers to lpc177x_8x_pinsel.o(i.PINSEL_ConfigPin) for PINSEL_ConfigPin
+    touchpanel.o(i.touch_init) refers to lpc177x_8x_gpio.o(i.GPIO_SetDir) for GPIO_SetDir
+    touchpanel.o(i.touch_init) refers to lpc177x_8x_gpio.o(i.GPIO_SetValue) for GPIO_SetValue
+    touchpanel.o(i.touch_init) refers to touchpanel.o(i.SSPI1_Init) for SSPI1_Init
+    use_disp.o(i.Disp_Box) refers to use_disp.o(i.Print_Box) for Print_Box
+    use_disp.o(i.Disp_Box) refers to lpc177x_8x_lcd.o(i.LCD_SetPoint) for LCD_SetPoint
+    use_disp.o(i.Disp_Button_Sys) refers to lpc177x_8x_lcd.o(i.WriteString21) for WriteString21
+    use_disp.o(i.Disp_Button_Sys) refers to lpc177x_8x_lcd.o(.data) for Colour
+    use_disp.o(i.Disp_Button_Sys) refers to use_disp.o(.constdata) for Comp_Set
+    use_disp.o(i.Disp_Comp_Row) refers to lpc177x_8x_lcd.o(i.WriteString21) for WriteString21
+    use_disp.o(i.Disp_Comp_Row) refers to lpc177x_8x_lcd.o(.data) for Colour
+    use_disp.o(i.Disp_Comp_Row) refers to use_disp.o(.constdata) for Comp_Set_Right
+    use_disp.o(i.Disp_Key_Box) refers to use_disp.o(i.Disp_Box) for Disp_Box
+    use_disp.o(i.Disp_Key_Box) refers to lpc177x_8x_lcd.o(.data) for Colour
+    use_disp.o(i.Disp_Num_Key) refers to lpc177x_8x_lcd.o(i.WriteString21) for WriteString21
+    use_disp.o(i.Disp_Num_Key) refers to lpc177x_8x_lcd.o(.data) for Colour
+    use_disp.o(i.Disp_Num_Key) refers to use_disp.o(.constdata) for Key_Num_UpOrLow
+    use_disp.o(i.Disp_Num_Keyboard_Box) refers to use_disp.o(i.Disp_Box) for Disp_Box
+    use_disp.o(i.Disp_Num_Keyboard_Box) refers to lpc177x_8x_lcd.o(.data) for Colour
+    use_disp.o(i.Disp_Num_Keyboard_Box) refers to key.o(.bss) for Button_Page
+    use_disp.o(i.Disp_Test) refers to use_disp.o(i.Polygon_Box) for Polygon_Box
+    use_disp.o(i.Disp_Test) refers to use_disp.o(i.KEY_COLORBLOCK) for KEY_COLORBLOCK
+    use_disp.o(i.Disp_Test) refers to lpc177x_8x_lcd.o(i.WriteString21) for WriteString21
+    use_disp.o(i.Disp_Test) refers to lpc177x_8x_lcd.o(.data) for Colour
+    use_disp.o(i.Disp_Test) refers to globalvalue.o(.bss) for SaveData
+    use_disp.o(i.Disp_Test) refers to use_disp.o(.constdata) for Disp_Com_Menu
+    use_disp.o(i.Disp_Test_Row) refers to lpc177x_8x_lcd.o(i.WriteString21) for WriteString21
+    use_disp.o(i.Disp_Test_Row) refers to lpc177x_8x_lcd.o(.data) for Colour
+    use_disp.o(i.Disp_Test_Row) refers to globalvalue.o(.bss) for SaveData
+    use_disp.o(i.Disp_Test_Row) refers to use_disp.o(.constdata) for T_Right
+    use_disp.o(i.Disp_Test_Set) refers to lpc177x_8x_lcd.o(i.WriteString_16_Shade) for WriteString_16_Shade
+    use_disp.o(i.Disp_Test_Set) refers to lpc177x_8x_lcd.o(i.Hex_Format) for Hex_Format
+    use_disp.o(i.Disp_Test_Set) refers to use_disp.o(i.Disp_Box) for Disp_Box
+    use_disp.o(i.Disp_Test_Set) refers to use_disp.o(i.KEY_COLORBLOCK) for KEY_COLORBLOCK
+    use_disp.o(i.Disp_Test_Set) refers to lpc177x_8x_lcd.o(.data) for Colour
+    use_disp.o(i.Disp_Test_Set) refers to globalvalue.o(.bss) for SaveData
+    use_disp.o(i.Disp_Test_Set) refers to use_disp.o(.constdata) for Comp_Parameter
+    use_disp.o(i.Disp_Test_Set) refers to globalvalue.o(.data) for Disp_Set_Resist
+    use_disp.o(i.Disp_Test_Set) refers to use_disp.o(i.Disp_Test_Row) for Disp_Test_Row
+    use_disp.o(i.Disp_Test_Set) refers to use_disp.o(i.Disp_Comp_Row) for Disp_Comp_Row
+    use_disp.o(i.Disp_Test_Set) refers to lpc177x_8x_lcd.o(i.WriteString21) for WriteString21
+    use_disp.o(i.Disp_UpOrLow_Limit_Word) refers to lpc177x_8x_lcd.o(i.WriteString21) for WriteString21
+    use_disp.o(i.Disp_UpOrLow_Limit_Word) refers to lpc177x_8x_lcd.o(.data) for Colour
+    use_disp.o(i.Disp_UpOrLow_Limit_Word) refers to globalvalue.o(.bss) for SaveData
+    use_disp.o(i.Disp_UpOrLow_Limit_Word) refers to key.o(.bss) for Button_Page
+    use_disp.o(i.Disp_UpOrLow_Limit_Word) refers to use_disp.o(.constdata) for Keyboard
+    use_disp.o(i.Disp_UpOrLow_Limit_Word) refers to globalvalue.o(.data) for SystemStatus
+    use_disp.o(i.Draw_LIN5) refers to lpc177x_8x_lcd.o(i.LCD_DrawLine) for LCD_DrawLine
+    use_disp.o(i.Input_Bar) refers to lpc177x_8x_lcd.o(i.LCD_DrawRectShade) for LCD_DrawRectShade
+    use_disp.o(i.Input_Bar) refers to lpc177x_8x_lcd.o(i.LCD_DrawLine) for LCD_DrawLine
+    use_disp.o(i.KEY_COLORBLOCK) refers to lpc177x_8x_lcd.o(i.LCD_DrawRectShade) for LCD_DrawRectShade
+    use_disp.o(i.KEY_COLORBLOCK) refers to lpc177x_8x_lcd.o(i.LCD_DrawLineShade) for LCD_DrawLineShade
+    use_disp.o(i.Num_Key_Dark_Block) refers to lpc177x_8x_lcd.o(i.LCD_DrawRectShade) for LCD_DrawRectShade
+    use_disp.o(i.Num_Key_Dark_Block) refers to lpc177x_8x_lcd.o(i.LCD_DrawLineShade) for LCD_DrawLineShade
+    use_disp.o(i.Num_Key_Thin_Block) refers to lpc177x_8x_lcd.o(i.LCD_DrawRectShade) for LCD_DrawRectShade
+    use_disp.o(i.Num_Key_Thin_Block) refers to lpc177x_8x_lcd.o(i.LCD_DrawLineShade) for LCD_DrawLineShade
+    use_disp.o(i.Num_Keyboard) refers to lpc177x_8x_lcd.o(i.LCD_DrawRect) for LCD_DrawRect
+    use_disp.o(i.Num_Keyboard) refers to use_disp.o(i.Num_Key_Dark_Block) for Num_Key_Dark_Block
+    use_disp.o(i.Num_Keyboard) refers to use_disp.o(i.Num_Key_Thin_Block) for Num_Key_Thin_Block
+    use_disp.o(i.Num_Keyboard) refers to use_disp.o(i.Input_Bar) for Input_Bar
+    use_disp.o(i.Num_Keyboard) refers to use_disp.o(i.Disp_Num_Key) for Disp_Num_Key
+    use_disp.o(i.Num_Keyboard) refers to use_disp.o(i.Disp_UpOrLow_Limit_Word) for Disp_UpOrLow_Limit_Word
+    use_disp.o(i.Polygon_Box) refers to lpc177x_8x_lcd.o(i.LCD_DrawRectShade) for LCD_DrawRectShade
+    use_disp.o(i.Polygon_Box) refers to lpc177x_8x_lcd.o(i.LCD_DrawLineShade) for LCD_DrawLineShade
+    use_disp.o(i.Print_Box) refers to lpc177x_8x_lcd.o(i.LCD_DrawLine) for LCD_DrawLine
+    use_disp.o(i.R_ADJ_Pro1) refers to lpc177x_8x_lcd.o(i.WriteString_16_Shade) for WriteString_16_Shade
+    use_disp.o(i.R_ADJ_Pro1) refers to use_disp.o(i.Draw_LIN5) for Draw_LIN5
+    use_disp.o(i.R_ADJ_Pro1) refers to use_disp.o(i.Disp_Box) for Disp_Box
+    use_disp.o(i.R_ADJ_Pro1) refers to key.o(.bss) for Button_Page
+    use_disp.o(i.R_ADJ_Pro1) refers to use_disp.o(.constdata) for Mi_Key
+    use_disp.o(i.R_ADJ_Pro1) refers to globalvalue.o(.bss) for DispBuf
+    use_disp.o(i.R_ADJ_Pro1) refers to lpc177x_8x_lcd.o(.data) for Colour
+    use_disp.o(i.ReadSavedata) refers to lpc177x_8x_eeprom.o(i.EEPROM_Read) for EEPROM_Read
+    use_disp.o(i.ReadSavedata) refers to memmovea.o(.text) for __aeabi_memcpy4
+    use_disp.o(i.ReadSavedata) refers to globalvalue.o(.bss) for Saveeeprom
+    use_disp.o(i.Savetoeeprom) refers to memmovea.o(.text) for __aeabi_memcpy4
+    use_disp.o(i.Savetoeeprom) refers to lpc177x_8x_eeprom.o(i.EEPROM_Write) for EEPROM_Write
+    use_disp.o(i.Savetoeeprom) refers to globalvalue.o(.bss) for SaveData
+    use_disp.o(i.SysSet_Polygon_Box) refers to lpc177x_8x_lcd.o(i.LCD_DrawRectShade) for LCD_DrawRectShade
+    use_disp.o(i.SysSet_Polygon_Box) refers to lpc177x_8x_lcd.o(i.LCD_DrawLineShade) for LCD_DrawLineShade
+    key.o(i.BUZZER) refers to lpc177x_8x_gpio.o(i.GPIO_SetDir) for GPIO_SetDir
+    key.o(i.BUZZER) refers to lpc177x_8x_gpio.o(i.GPIO_SetValue) for GPIO_SetValue
+    key.o(i.BUZZER) refers to main.o(i.Delay) for Delay
+    key.o(i.BUZZER) refers to lpc177x_8x_gpio.o(i.GPIO_ClearValue) for GPIO_ClearValue
+    key.o(i.Delay_Key) refers to key.o(i.HW_KeyScsn) for HW_KeyScsn
+    key.o(i.GPIO_Key_Configuration) refers to lpc177x_8x_gpio.o(i.GPIO_SetDir) for GPIO_SetDir
+    key.o(i.HW_KeyScsn) refers to key.o(i.HW_Sendvalueto164) for HW_Sendvalueto164
+    key.o(i.HW_KeyScsn) refers to key.o(i.dyk) for dyk
+    key.o(i.HW_KeyScsn) refers to lpc177x_8x_gpio.o(i.GPIO_ReadValue) for GPIO_ReadValue
+    key.o(i.HW_KeyScsn) refers to lpc177x_8x_gpio.o(i.GPIO_ClearValue) for GPIO_ClearValue
+    key.o(i.HW_KeyScsn) refers to lpc177x_8x_gpio.o(i.GPIO_SetValue) for GPIO_SetValue
+    key.o(i.HW_KeyScsn) refers to key.o(.constdata) for Scan_Value
+    key.o(i.HW_Sendvalueto164) refers to lpc177x_8x_gpio.o(i.GPIO_ClearValue) for GPIO_ClearValue
+    key.o(i.HW_Sendvalueto164) refers to lpc177x_8x_gpio.o(i.GPIO_SetValue) for GPIO_SetValue
+    key.o(i.HW_Sendvalueto164) refers to key.o(i.k_164Delaay) for k_164Delaay
+    key.o(i.HW_keyInt) refers to key.o(i.GPIO_Key_Configuration) for GPIO_Key_Configuration
+    key.o(i.HW_keyInt) refers to key.o(i.HW_Sendvalueto164) for HW_Sendvalueto164
+    key.o(i.Key_Dw_Pro) refers to use_disp.o(i.Disp_Box) for Disp_Box
+    key.o(i.Key_Dw_Pro) refers to use_disp.o(i.Disp_Num_Keyboard_Box) for Disp_Num_Keyboard_Box
+    key.o(i.Key_Dw_Pro) refers to key.o(.bss) for Button_Page
+    key.o(i.Key_Dw_Pro) refers to globalvalue.o(.bss) for SaveData
+    key.o(i.Key_Left_Pro) refers to use_disp.o(i.Disp_Num_Keyboard_Box) for Disp_Num_Keyboard_Box
+    key.o(i.Key_Left_Pro) refers to use_disp.o(i.Disp_Box) for Disp_Box
+    key.o(i.Key_Left_Pro) refers to key.o(.bss) for Button_Page
+    key.o(i.Key_Left_Pro) refers to globalvalue.o(.bss) for SaveData
+    key.o(i.Key_Pro) refers to lpc177x_8x_lcd.o(i.lcd_Clear) for lcd_Clear
+    key.o(i.Key_Pro) refers to use_disp.o(i.Disp_Box) for Disp_Box
+    key.o(i.Key_Pro) refers to key.o(i.Key_Right_Pro) for Key_Right_Pro
+    key.o(i.Key_Pro) refers to key.o(i.Key_Left_Pro) for Key_Left_Pro
+    key.o(i.Key_Pro) refers to key.o(i.Key_Up_Pro) for Key_Up_Pro
+    key.o(i.Key_Pro) refers to key.o(i.Key_Dw_Pro) for Key_Dw_Pro
+    key.o(i.Key_Pro) refers to key.o(i.key_setup_pro) for key_setup_pro
+    key.o(i.Key_Pro) refers to key.o(i.key_enter_pro) for key_enter_pro
+    key.o(i.Key_Pro) refers to use_disp.o(i.Savetoeeprom) for Savetoeeprom
+    key.o(i.Key_Pro) refers to key.o(.bss) for Button_Page
+    key.o(i.Key_Pro) refers to globalvalue.o(.bss) for SaveData
+    key.o(i.Key_Right_Pro) refers to use_disp.o(i.Disp_Num_Keyboard_Box) for Disp_Num_Keyboard_Box
+    key.o(i.Key_Right_Pro) refers to use_disp.o(i.Disp_Box) for Disp_Box
+    key.o(i.Key_Right_Pro) refers to key.o(.bss) for Button_Page
+    key.o(i.Key_Right_Pro) refers to globalvalue.o(.bss) for SaveData
+    key.o(i.Key_Up_Pro) refers to use_disp.o(i.Disp_Box) for Disp_Box
+    key.o(i.Key_Up_Pro) refers to use_disp.o(i.Disp_Num_Keyboard_Box) for Disp_Num_Keyboard_Box
+    key.o(i.Key_Up_Pro) refers to key.o(.bss) for Button_Page
+    key.o(i.Key_Up_Pro) refers to globalvalue.o(.bss) for SaveData
+    key.o(i.key_enter_pro) refers to lpc177x_8x_lcd.o(i.lcd_Clear) for lcd_Clear
+    key.o(i.key_enter_pro) refers to use_disp.o(i.Disp_Test) for Disp_Test
+    key.o(i.key_enter_pro) refers to use_disp.o(i.Savetoeeprom) for Savetoeeprom
+    key.o(i.key_enter_pro) refers to use_disp.o(i.Input_Bar) for Input_Bar
+    key.o(i.key_enter_pro) refers to key.o(.bss) for Button_Page
+    key.o(i.key_enter_pro) refers to globalvalue.o(.bss) for SaveData
+    key.o(i.key_enter_pro) refers to use_disp.o(i.Num_Keyboard) for Num_Keyboard
+    key.o(i.key_enter_pro) refers to lpc177x_8x_lcd.o(i.WriteString21) for WriteString21
+    key.o(i.key_enter_pro) refers to lpc177x_8x_lcd.o(i.WriteString_16_Shade) for WriteString_16_Shade
+    key.o(i.key_enter_pro) refers to use_disp.o(i.Disp_Num_Keyboard_Box) for Disp_Num_Keyboard_Box
+    key.o(i.key_enter_pro) refers to use_disp.o(.constdata) for Disp_Unit
+    key.o(i.key_setup_pro) refers to use_disp.o(i.Disp_Box) for Disp_Box
+    key.o(i.key_setup_pro) refers to globalvalue.o(.bss) for SaveData
+    key.o(i.key_setup_pro) refers to key.o(.bss) for Button_Page
+    test.o(i.Disp_R) refers to lpc177x_8x_lcd.o(i.WriteString_16) for WriteString_16
+    test.o(i.Disp_R) refers to lpc177x_8x_lcd.o(i.LCD_ShowFontCN_40_55) for LCD_ShowFontCN_40_55
+    test.o(i.Disp_R) refers to lpc177x_8x_lcd.o(i.WriteString_Big) for WriteString_Big
+    test.o(i.Disp_R) refers to test.o(.constdata) for .constdata
+    test.o(i.Disp_R) refers to lpc177x_8x_lcd.o(.data) for Colour
+    test.o(i.Disp_R) refers to test.o(.bss) for adx
+    test.o(i.Disp_R) refers to test.o(.data) for tem
+    test.o(i.Disp_R) refers to asciilib.o(.constdata) for Out_Assic
+    test.o(i.GPIO_5463_Configuration) refers to lpc177x_8x_gpio.o(i.GPIO_SetDir) for GPIO_SetDir
+    test.o(i.Power_Process) refers to lpc177x_8x_eeprom.o(i.EEPROM_Init) for EEPROM_Init
+    test.o(i.Power_Process) refers to use_disp.o(i.ReadSavedata) for ReadSavedata
+    test.o(i.Power_Process) refers to test.o(i.GPIO_5463_Configuration) for GPIO_5463_Configuration
+    test.o(i.Power_Process) refers to test.o(i.init_5463) for init_5463
+    test.o(i.Power_Process) refers to globalvalue.o(.data) for Uart_Send_Flag
+    test.o(i.Resist_Test) refers to use_disp.o(i.Disp_Test) for Disp_Test
+    test.o(i.Resist_Test) refers to use_disp.o(i.Disp_Test_Set) for Disp_Test_Set
+    test.o(i.Resist_Test) refers to key.o(.bss) for Button_Page
+    test.o(i.clr_stat) refers to test.o(i.ww5463) for ww5463
+    test.o(i.clr_stat) refers to test.o(.data) for ad_ram
+    test.o(i.init_5463) refers to lpc177x_8x_gpio.o(i.GPIO_ClearValue) for GPIO_ClearValue
+    test.o(i.init_5463) refers to test.o(i.dly10) for dly10
+    test.o(i.init_5463) refers to lpc177x_8x_gpio.o(i.GPIO_SetValue) for GPIO_SetValue
+    test.o(i.init_5463) refers to test.o(i.synp) for synp
+    test.o(i.init_5463) refers to test.o(i.ww5463) for ww5463
+    test.o(i.init_5463) refers to test.o(i.w5463) for w5463
+    test.o(i.init_5463) refers to test.o(i.clr_stat) for clr_stat
+    test.o(i.init_5463) refers to test.o(.data) for ad_ram
+    test.o(i.read5463) refers to lpc177x_8x_gpio.o(i.GPIO_ClearValue) for GPIO_ClearValue
+    test.o(i.read5463) refers to lpc177x_8x_gpio.o(i.GPIO_SetValue) for GPIO_SetValue
+    test.o(i.rr5463) refers to lpc177x_8x_gpio.o(i.GPIO_ClearValue) for GPIO_ClearValue
+    test.o(i.rr5463) refers to test.o(i.dly10) for dly10
+    test.o(i.rr5463) refers to test.o(i.w5463) for w5463
+    test.o(i.rr5463) refers to lpc177x_8x_gpio.o(i.GPIO_SetValue) for GPIO_SetValue
+    test.o(i.rr5463) refers to lpc177x_8x_gpio.o(i.GPIO_ReadValue) for GPIO_ReadValue
+    test.o(i.rr5463) refers to test.o(.bss) for adx
+    test.o(i.synp) refers to test.o(i.ww5463) for ww5463
+    test.o(i.synp) refers to test.o(.data) for ad_ram
+    test.o(i.w5463) refers to test.o(i.dly10) for dly10
+    test.o(i.w5463) refers to lpc177x_8x_gpio.o(i.GPIO_SetValue) for GPIO_SetValue
+    test.o(i.w5463) refers to lpc177x_8x_gpio.o(i.GPIO_ClearValue) for GPIO_ClearValue
+    test.o(i.ww5463) refers to lpc177x_8x_gpio.o(i.GPIO_ClearValue) for GPIO_ClearValue
+    test.o(i.ww5463) refers to test.o(i.dly10) for dly10
+    test.o(i.ww5463) refers to test.o(i.w5463) for w5463
+    test.o(i.ww5463) refers to test.o(.data) for ad_ram
+    lpc177x_8x_rtc.o(i.RTC_DeInit) refers to lpc177x_8x_clkpwr.o(i.CLKPWR_ConfigPPWR) for CLKPWR_ConfigPPWR
+    lpc177x_8x_rtc.o(i.RTC_Init) refers to lpc177x_8x_clkpwr.o(i.CLKPWR_ConfigPPWR) for CLKPWR_ConfigPPWR
+    ex_sdram.o(i.SDRAM_Init) refers to ex_sdram.o(i.EMC_GPIO_Init) for EMC_GPIO_Init
+    ex_sdram.o(i.SDRAM_Init) refers to timer.o(i.delayMs) for delayMs
+    ex_sdram.o(i.SDRAM_Init) refers to system_lpc177x_8x.o(.data) for SystemCoreClock
+    startup_lpc177x_8x.o(RESET) refers to startup_lpc177x_8x.o(STACK) for __initial_sp
+    startup_lpc177x_8x.o(RESET) refers to startup_lpc177x_8x.o(.text) for Reset_Handler
+    startup_lpc177x_8x.o(RESET) refers to main.o(i.SysTick_Handler) for SysTick_Handler
+    startup_lpc177x_8x.o(RESET) refers to timer.o(i.TIMER0_IRQHandler) for TIMER0_IRQHandler
+    startup_lpc177x_8x.o(RESET) refers to timer.o(i.TIMER1_IRQHandler) for TIMER1_IRQHandler
+    startup_lpc177x_8x.o(RESET) refers to timer.o(i.TIMER2_IRQHandler) for TIMER2_IRQHandler
+    startup_lpc177x_8x.o(RESET) refers to timer.o(i.TIMER3_IRQHandler) for TIMER3_IRQHandler
+    startup_lpc177x_8x.o(RESET) refers to debug_frmwrk.o(i.UART0_IRQHandler) for UART0_IRQHandler
+    startup_lpc177x_8x.o(RESET) refers to debug_frmwrk.o(i.UART3_IRQHandler) for UART3_IRQHandler
+    startup_lpc177x_8x.o(.text) refers to system_lpc177x_8x.o(i.SystemInit) for SystemInit
+    startup_lpc177x_8x.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    system_lpc177x_8x.o(i.SystemCoreClockUpdate) refers to system_lpc177x_8x.o(.data) for SystemCoreClock
+    lpc177x_8x_gpio.o(i.FIO_ByteClearValue) refers to lpc177x_8x_gpio.o(i.FIO_ByteGetPointer) for FIO_ByteGetPointer
+    lpc177x_8x_gpio.o(i.FIO_ByteReadValue) refers to lpc177x_8x_gpio.o(i.FIO_ByteGetPointer) for FIO_ByteGetPointer
+    lpc177x_8x_gpio.o(i.FIO_ByteSetDir) refers to lpc177x_8x_gpio.o(i.FIO_ByteGetPointer) for FIO_ByteGetPointer
+    lpc177x_8x_gpio.o(i.FIO_ByteSetMask) refers to lpc177x_8x_gpio.o(i.FIO_ByteGetPointer) for FIO_ByteGetPointer
+    lpc177x_8x_gpio.o(i.FIO_ByteSetValue) refers to lpc177x_8x_gpio.o(i.FIO_ByteGetPointer) for FIO_ByteGetPointer
+    lpc177x_8x_gpio.o(i.FIO_ClearInt) refers to lpc177x_8x_gpio.o(i.GPIO_ClearInt) for GPIO_ClearInt
+    lpc177x_8x_gpio.o(i.FIO_ClearValue) refers to lpc177x_8x_gpio.o(i.GPIO_ClearValue) for GPIO_ClearValue
+    lpc177x_8x_gpio.o(i.FIO_HalfWordClearValue) refers to lpc177x_8x_gpio.o(i.FIO_HalfWordGetPointer) for FIO_HalfWordGetPointer
+    lpc177x_8x_gpio.o(i.FIO_HalfWordReadValue) refers to lpc177x_8x_gpio.o(i.FIO_HalfWordGetPointer) for FIO_HalfWordGetPointer
+    lpc177x_8x_gpio.o(i.FIO_HalfWordSetDir) refers to lpc177x_8x_gpio.o(i.FIO_HalfWordGetPointer) for FIO_HalfWordGetPointer
+    lpc177x_8x_gpio.o(i.FIO_HalfWordSetMask) refers to lpc177x_8x_gpio.o(i.FIO_HalfWordGetPointer) for FIO_HalfWordGetPointer
+    lpc177x_8x_gpio.o(i.FIO_HalfWordSetValue) refers to lpc177x_8x_gpio.o(i.FIO_HalfWordGetPointer) for FIO_HalfWordGetPointer
+    lpc177x_8x_gpio.o(i.FIO_IntCmd) refers to lpc177x_8x_gpio.o(i.GPIO_IntCmd) for GPIO_IntCmd
+    lpc177x_8x_gpio.o(i.FIO_ReadValue) refers to lpc177x_8x_gpio.o(i.GPIO_ReadValue) for GPIO_ReadValue
+    lpc177x_8x_gpio.o(i.FIO_SetDir) refers to lpc177x_8x_gpio.o(i.GPIO_SetDir) for GPIO_SetDir
+    lpc177x_8x_gpio.o(i.FIO_SetMask) refers to lpc177x_8x_gpio.o(i.GPIO_GetPointer) for GPIO_GetPointer
+    lpc177x_8x_gpio.o(i.FIO_SetValue) refers to lpc177x_8x_gpio.o(i.GPIO_SetValue) for GPIO_SetValue
+    lpc177x_8x_gpio.o(i.GPIO_ClearValue) refers to lpc177x_8x_gpio.o(i.GPIO_GetPointer) for GPIO_GetPointer
+    lpc177x_8x_gpio.o(i.GPIO_OutputValue) refers to lpc177x_8x_gpio.o(i.GPIO_ClearValue) for GPIO_ClearValue
+    lpc177x_8x_gpio.o(i.GPIO_OutputValue) refers to lpc177x_8x_gpio.o(i.GPIO_SetValue) for GPIO_SetValue
+    lpc177x_8x_gpio.o(i.GPIO_ReadValue) refers to lpc177x_8x_gpio.o(i.GPIO_GetPointer) for GPIO_GetPointer
+    lpc177x_8x_gpio.o(i.GPIO_SetDir) refers to lpc177x_8x_gpio.o(i.GPIO_GetPointer) for GPIO_GetPointer
+    lpc177x_8x_gpio.o(i.GPIO_SetValue) refers to lpc177x_8x_gpio.o(i.GPIO_GetPointer) for GPIO_GetPointer
+    lpc177x_8x_systick.o(i.SYSTICK_ExternalInit) refers to ffltui.o(.text) for __aeabi_ui2f
+    lpc177x_8x_systick.o(i.SYSTICK_ExternalInit) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    lpc177x_8x_systick.o(i.SYSTICK_InternalInit) refers to lpc177x_8x_clkpwr.o(i.CLKPWR_GetCLK) for CLKPWR_GetCLK
+    lpc177x_8x_systick.o(i.SYSTICK_InternalInit) refers to ffltui.o(.text) for __aeabi_ui2f
+    lpc177x_8x_systick.o(i.SYSTICK_InternalInit) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    lpc177x_8x_clkpwr.o(i.CLKPWR_GetCLK) refers to system_lpc177x_8x.o(.data) for SystemCoreClock
+    lpc177x_8x_clkpwr.o(i.CLKPWR_SetCLKDiv) refers to system_lpc177x_8x.o(i.SystemCoreClockUpdate) for SystemCoreClockUpdate
+    lpc177x_8x_ssp.o(i.SSP_DeInit) refers to lpc177x_8x_clkpwr.o(i.CLKPWR_ConfigPPWR) for CLKPWR_ConfigPPWR
+    lpc177x_8x_ssp.o(i.SSP_Init) refers to lpc177x_8x_clkpwr.o(i.CLKPWR_ConfigPPWR) for CLKPWR_ConfigPPWR
+    lpc177x_8x_ssp.o(i.SSP_Init) refers to lpc177x_8x_ssp.o(i.setSSPclock) for setSSPclock
+    lpc177x_8x_ssp.o(i.SSP_ReadWrite) refers to lpc177x_8x_ssp.o(i.SSP_ReceiveData) for SSP_ReceiveData
+    lpc177x_8x_ssp.o(i.SSP_ReadWrite) refers to lpc177x_8x_ssp.o(i.SSP_GetDataSize) for SSP_GetDataSize
+    lpc177x_8x_ssp.o(i.SSP_ReadWrite) refers to lpc177x_8x_ssp.o(i.SSP_SendData) for SSP_SendData
+    lpc177x_8x_ssp.o(i.setSSPclock) refers to lpc177x_8x_clkpwr.o(i.CLKPWR_GetCLK) for CLKPWR_GetCLK
+    lpc177x_8x_uart.o(i.UART_DeInit) refers to lpc177x_8x_uart.o(i.UART_TxCmd) for UART_TxCmd
+    lpc177x_8x_uart.o(i.UART_DeInit) refers to lpc177x_8x_clkpwr.o(i.CLKPWR_ConfigPPWR) for CLKPWR_ConfigPPWR
+    lpc177x_8x_uart.o(i.UART_Init) refers to lpc177x_8x_clkpwr.o(i.CLKPWR_ConfigPPWR) for CLKPWR_ConfigPPWR
+    lpc177x_8x_uart.o(i.UART_Init) refers to lpc177x_8x_uart.o(i.uart_set_divisors) for uart_set_divisors
+    lpc177x_8x_uart.o(i.UART_RS485Send) refers to lpc177x_8x_uart.o(i.UART_Send) for UART_Send
+    lpc177x_8x_uart.o(i.UART_RS485SendData) refers to lpc177x_8x_uart.o(i.UART_RS485Send) for UART_RS485Send
+    lpc177x_8x_uart.o(i.UART_RS485SendSlvAddr) refers to lpc177x_8x_uart.o(i.UART_RS485Send) for UART_RS485Send
+    lpc177x_8x_uart.o(i.UART_Receive) refers to lpc177x_8x_uart.o(i.UART_ReceiveByte) for UART_ReceiveByte
+    lpc177x_8x_uart.o(i.UART_Send) refers to lpc177x_8x_uart.o(i.UART_SendByte) for UART_SendByte
+    lpc177x_8x_uart.o(i.uart_set_divisors) refers to lpc177x_8x_clkpwr.o(i.CLKPWR_GetCLK) for CLKPWR_GetCLK
+    lpc177x_8x_uart.o(i.uart_set_divisors) refers to uldiv.o(.text) for __aeabi_uldivmod
+    debug_frmwrk.o(i.UART0_IRQHandler) refers to lpc177x_8x_uart.o(i.UART_GetLineStatus) for UART_GetLineStatus
+    debug_frmwrk.o(i.UART0_IRQHandler) refers to lpc177x_8x_uart.o(i.UART_ReceiveByte) for UART_ReceiveByte
+    debug_frmwrk.o(i.UART0_IRQHandler) refers to debug_frmwrk.o(.bss) for ComBuf
+    debug_frmwrk.o(i.UART3_IRQHandler) refers to lpc177x_8x_uart.o(i.UART_GetLineStatus) for UART_GetLineStatus
+    debug_frmwrk.o(i.UART3_IRQHandler) refers to lpc177x_8x_uart.o(i.UART_ReceiveByte) for UART_ReceiveByte
+    debug_frmwrk.o(i.UART3_IRQHandler) refers to debug_frmwrk.o(.bss) for ComBuf3
+    debug_frmwrk.o(i.UARTGetChar) refers to lpc177x_8x_uart.o(i.UART_Receive) for UART_Receive
+    debug_frmwrk.o(i.UARTGetValue) refers to lpc177x_8x_uart.o(i.UART_Receive) for UART_Receive
+    debug_frmwrk.o(i.UARTGetValue) refers to debug_frmwrk.o(i.UARTPuts) for UARTPuts
+    debug_frmwrk.o(i.UARTGetValue) refers to debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
+    debug_frmwrk.o(i.UARTGetValue) refers to debug_frmwrk.o(.conststring) for .conststring
+    debug_frmwrk.o(i.UARTPutChar) refers to lpc177x_8x_uart.o(i.UART_Send) for UART_Send
+    debug_frmwrk.o(i.UARTPutDec) refers to debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
+    debug_frmwrk.o(i.UARTPutDec16) refers to debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
+    debug_frmwrk.o(i.UARTPutDec32) refers to debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
+    debug_frmwrk.o(i.UARTPutHex) refers to debug_frmwrk.o(i.UARTPuts) for UARTPuts
+    debug_frmwrk.o(i.UARTPutHex) refers to debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
+    debug_frmwrk.o(i.UARTPutHex16) refers to debug_frmwrk.o(i.UARTPuts) for UARTPuts
+    debug_frmwrk.o(i.UARTPutHex16) refers to debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
+    debug_frmwrk.o(i.UARTPutHex16_) refers to debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
+    debug_frmwrk.o(i.UARTPutHex32) refers to debug_frmwrk.o(i.UARTPuts) for UARTPuts
+    debug_frmwrk.o(i.UARTPutHex32) refers to debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
+    debug_frmwrk.o(i.UARTPutHex32_) refers to debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
+    debug_frmwrk.o(i.UARTPutHex_) refers to debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
+    debug_frmwrk.o(i.UARTPuts) refers to debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
+    debug_frmwrk.o(i.UARTPuts_) refers to debug_frmwrk.o(i.UARTPuts) for UARTPuts
+    debug_frmwrk.o(i.Uart0RecTimeOut) refers to debug_frmwrk.o(.bss) for ComBuf
+    debug_frmwrk.o(i._printf) refers to debug_frmwrk.o(.bss) for buffer
+    debug_frmwrk.o(i._printf) refers to debug_frmwrk.o(.data) for _db_msg
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to lpc177x_8x_uart.o(i.UART_ConfigStructInit) for UART_ConfigStructInit
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to lpc177x_8x_uart.o(i.UART_Init) for UART_Init
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to lpc177x_8x_uart.o(i.UART_IntConfig) for UART_IntConfig
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to lpc177x_8x_uart.o(i.UART_TxCmd) for UART_TxCmd
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTPuts) for UARTPuts
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(.data) for _db_msg
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTPuts_) for UARTPuts_
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTPutChar) for UARTPutChar
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTPutHex) for UARTPutHex
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTPutHex16) for UARTPutHex16
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTPutHex32) for UARTPutHex32
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTPutHex_) for UARTPutHex_
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTPutHex16_) for UARTPutHex16_
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTPutHex32_) for UARTPutHex32_
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTPutDec) for UARTPutDec
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTPutDec16) for UARTPutDec16
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTPutDec32) for UARTPutDec32
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTGetChar) for UARTGetChar
+    debug_frmwrk.o(i.debug_frmwrk_init) refers to debug_frmwrk.o(i.UARTGetValue) for UARTGetValue
+    debug_frmwrk.o(i.debug_uart3_init) refers to lpc177x_8x_pinsel.o(i.PINSEL_ConfigPin) for PINSEL_ConfigPin
+    debug_frmwrk.o(i.debug_uart3_init) refers to lpc177x_8x_uart.o(i.UART_ConfigStructInit) for UART_ConfigStructInit
+    debug_frmwrk.o(i.debug_uart3_init) refers to lpc177x_8x_uart.o(i.UART_Init) for UART_Init
+    debug_frmwrk.o(i.debug_uart3_init) refers to lpc177x_8x_uart.o(i.UART_IntConfig) for UART_IntConfig
+    debug_frmwrk.o(i.debug_uart3_init) refers to debug_frmwrk.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    debug_frmwrk.o(i.debug_uart3_init) refers to lpc177x_8x_uart.o(i.UART_TxCmd) for UART_TxCmd
+    debug_frmwrk.o(i.do232) refers to debug_frmwrk.o(i.UARTPuts) for UARTPuts
+    debug_frmwrk.o(i.do232) refers to debug_frmwrk.o(i.to_pcdat) for to_pcdat
+    debug_frmwrk.o(i.do232) refers to debug_frmwrk.o(i.to_pcper) for to_pcper
+    debug_frmwrk.o(i.do232) refers to use_disp.o(i.Savetoeeprom) for Savetoeeprom
+    debug_frmwrk.o(i.do232) refers to debug_frmwrk.o(.bss) for ComBuf3
+    debug_frmwrk.o(i.do232) refers to globalvalue.o(.bss) for SaveData
+    debug_frmwrk.o(i.enter_chn) refers to debug_frmwrk.o(.bss) for ComBuf3
+    debug_frmwrk.o(i.enter_chn) refers to test.o(.data) for r421_rang
+    debug_frmwrk.o(i.enter_chn) refers to globalvalue.o(.bss) for SaveData
+    debug_frmwrk.o(i.to_pcdat) refers to debug_frmwrk.o(i.UARTPuts) for UARTPuts
+    debug_frmwrk.o(i.to_pcdat) refers to debug_frmwrk.o(.constdata) for .constdata
+    debug_frmwrk.o(i.to_pcper) refers to debug_frmwrk.o(i.UARTPuts) for UARTPuts
+    debug_frmwrk.o(i.to_pcper) refers to debug_frmwrk.o(.constdata) for .constdata
+    lpc177x_8x_pinsel.o(i.PINSEL_ConfigPin) refers to lpc177x_8x_pinsel.o(i.PIN_GetPointer) for PIN_GetPointer
+    lpc177x_8x_pinsel.o(i.PINSEL_DacEnable) refers to lpc177x_8x_pinsel.o(i.PIN_GetPointer) for PIN_GetPointer
+    lpc177x_8x_pinsel.o(i.PINSEL_SetAnalogPinMode) refers to lpc177x_8x_pinsel.o(i.PIN_GetPointer) for PIN_GetPointer
+    lpc177x_8x_pinsel.o(i.PINSEL_SetFilter) refers to lpc177x_8x_pinsel.o(i.PIN_GetPointer) for PIN_GetPointer
+    lpc177x_8x_pinsel.o(i.PINSEL_SetHysMode) refers to lpc177x_8x_pinsel.o(i.PIN_GetPointer) for PIN_GetPointer
+    lpc177x_8x_pinsel.o(i.PINSEL_SetI2CMode) refers to lpc177x_8x_pinsel.o(i.PIN_GetPointer) for PIN_GetPointer
+    lpc177x_8x_pinsel.o(i.PINSEL_SetInBufMode) refers to lpc177x_8x_pinsel.o(i.PIN_GetPointer) for PIN_GetPointer
+    lpc177x_8x_pinsel.o(i.PINSEL_SetOpenDrainMode) refers to lpc177x_8x_pinsel.o(i.PIN_GetPointer) for PIN_GetPointer
+    lpc177x_8x_pinsel.o(i.PINSEL_SetPinMode) refers to lpc177x_8x_pinsel.o(i.PIN_GetPointer) for PIN_GetPointer
+    lpc177x_8x_pinsel.o(i.PINSEL_SetSlewMode) refers to lpc177x_8x_pinsel.o(i.PIN_GetPointer) for PIN_GetPointer
+    lpc177x_8x_eeprom.o(i.EEPROM_Init) refers to lpc177x_8x_clkpwr.o(i.CLKPWR_GetCLK) for CLKPWR_GetCLK
+    gui_x.o(i.GUI_X_Delay) refers to gui_x.o(.data) for TimeMS
+    gui_x.o(i.GUI_X_GetTime) refers to gui_x.o(.data) for TimeMS
+    gui_x.o(i.GUI_X_Init) refers to gui_x.o(.data) for TimeMS
+    guiconf.o(i.GUI_X_Config) refers to GUI_Alloc.o(.text) for GUI_ALLOC_AssignMemory
+    guiconf.o(i.GUI_X_Config) refers to GUI_Core.o(.text) for GUI_SetDefaultFont
+    guiconf.o(i.GUI_X_Config) refers to F6x8.o(.rodata) for GUI_Font6x8
+    lcdconf.o(i.LCD_X_Config) refers to GUI_Device.o(.text) for GUI_DEVICE_CreateAndLink
+    lcdconf.o(i.LCD_X_Config) refers to LCD_Set.o(.text) for LCD_SetPosEx
+    lcdconf.o(i.LCD_X_Config) refers to LCD_GetEx.o(.text) for LCD_GetSwapXYEx
+    lcdconf.o(i.LCD_X_Config) refers to GUICC_M565.o(.rodata) for LCD_API_ColorConv_M565
+    lcdconf.o(i.LCD_X_Config) refers to GUIDRV_Lin_16.o(.rodata) for GUIDRV_Lin_16_API
+    lcdconf.o(i.LCD_X_DisplayDriver) refers to lcdconf.o(i._InitController) for _InitController
+    lcdconf.o(i.LCD_X_DisplayDriver) refers to lcdconf.o(i._SetDisplayOrigin) for _SetDisplayOrigin
+    lcdconf.o(i._InitController) refers to LCD_Set.o(.text) for LCD_SetSizeEx
+    lcdconf.o(i._InitController) refers to lpc177x_8x_lcd.o(i.GLCD_Init) for GLCD_Init
+    GUICC_M565.o(.text) refers to GUI__DivTbl_255_31.o(.rodata) for GUI__aConvert_255_31
+    GUICC_M565.o(.text) refers to GUI__DivTbl_255_63.o(.rodata) for GUI__aConvert_255_63
+    GUICC_M565.o(.text) refers to GUI__DivTbl_63_255.o(.rodata) for GUI__aConvert_63_255
+    GUICC_M565.o(.text) refers to GUI__DivTbl_31_255.o(.rodata) for GUI__aConvert_31_255
+    GUICC_M565.o(.rodata) refers to GUICC_M565.o(.text) for _Color2Index_M565(unsigned long)
+    GUICC_M565.o(.rodata) refers to GUICC_M565_Index2Color.o(.text) for LCD_Index2Color_M565
+    GUICC_M565.o(.iar.stackusage) refers to GUICC_M565.o(.text) for .text6
+    GUICC_M565.o(.iar.fraginfo) refers to GUICC_M565.o(.text) for .text6
+    GUI_Alloc.o(.text) refers to GUI_Error.o(.text) for GUI_Error
+    GUI_Alloc.o(.text) refers to memmovea.o(.text) for __aeabi_memmove
+    GUI_Alloc.o(.text) refers to memseta.o(.text) for __aeabi_memclr
+    GUI_Alloc.o(.text) refers to GUI__memset.o(.text) for GUI__memset
+    GUI_Alloc.o(.text) refers to GUI_Core.o(.text) for GUI__RegisterExit
+    GUI_Alloc.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_Alloc.o(.text) refers to GUI_Alloc.o(.bss) for GUI_ALLOC__Context
+    GUI_Alloc.o(.text) refers to GUI_Alloc.o(.data) for _Config
+    GUI_Alloc.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for .text7
+    GUI_Alloc.o(.iar.stackusage) refers to GUI_Error.o(.text) for GUI_Error
+    GUI_Alloc.o(.iar.stackusage) refers to memmovea.o(.text) for __aeabi_memmove
+    GUI_Alloc.o(.iar.stackusage) refers to memseta.o(.text) for __aeabi_memclr
+    GUI_Alloc.o(.iar.stackusage) refers to GUI__memset.o(.text) for GUI__memset
+    GUI_Alloc.o(.iar.stackusage) refers to GUI_Core.o(.text) for GUI__RegisterExit
+    GUI_Alloc.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_Alloc.o(.iar.fraginfo) refers to GUI_Alloc.o(.text) for .text7
+    GUI_Core.o(.data) refers to F6x8.o(.rodata) for GUI_Font6x8
+    GUI_Core.o(.text) refers to GUI__memset.o(.text) for GUI__memset
+    GUI_Core.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_Core.o(.text) refers to LCD.o(.text) for LCD_SetDrawMode
+    GUI_Core.o(.text) refers to WM.o(.text) for WM__InitIVRSearch
+    GUI_Core.o(.text) refers to GUI_Goto.o(.text) for GUI_GotoXY
+    GUI_Core.o(.text) refers to guiconf.o(i.GUI_X_Config) for GUI_X_Config
+    GUI_Core.o(.text) refers to lcdconf.o(i.LCD_X_Config) for LCD_X_Config
+    GUI_Core.o(.text) refers to gui_x.o(i.GUI_X_Init) for GUI_X_Init
+    GUI_Core.o(.text) refers to WM_GetDesktopWindow.o(.text) for WM_GetDesktopWindow
+    GUI_Core.o(.text) refers to GUI_SetOrg.o(.text) for GUI_SetOrg
+    GUI_Core.o(.text) refers to GUI_Core.o(.bss) for ??RegisterExit
+    GUI_Core.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI_Core.o(.text) refers to GUI_Core.o(.data) for GUI_DecChar
+    GUI_Core.o(.text) refers to GUI_UC_EncodeNone.o(.text) for GUI_UC_None
+    GUI_Core.o(.iar.stackusage) refers to GUI_Core.o(.text) for .text15
+    GUI_Core.o(.iar.stackusage) refers to GUI__memset.o(.text) for GUI__memset
+    GUI_Core.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_Core.o(.iar.stackusage) refers to LCD.o(.text) for LCD_FillRect
+    GUI_Core.o(.iar.stackusage) refers to WM.o(.text) for WM__GetNextIVR
+    GUI_Core.o(.iar.stackusage) refers to GUI_Goto.o(.text) for GUI_GotoXY
+    GUI_Core.o(.iar.stackusage) refers to guiconf.o(i.GUI_X_Config) for GUI_X_Config
+    GUI_Core.o(.iar.stackusage) refers to lcdconf.o(i.LCD_X_Config) for LCD_X_Config
+    GUI_Core.o(.iar.stackusage) refers to GUI_SetOrg.o(.text) for GUI_SetOrg
+    GUI_Core.o(.iar.stackusage) refers to gui_x.o(i.GUI_X_Init) for GUI_X_Init
+    GUI_Core.o(.iar.stackusage) refers to WM_GetDesktopWindow.o(.text) for WM_GetDesktopWindow
+    GUI_Core.o(.iar.fraginfo) refers to GUI_Core.o(.text) for .text15
+    GUI_Device.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_FreeFixedBlock
+    GUI_Device.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI_Device.o(.iar.stackusage) refers to GUI_Device.o(.text) for .text6
+    GUI_Device.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_FreeFixedBlock
+    GUI_Device.o(.iar.fraginfo) refers to GUI_Device.o(.text) for .text6
+    GUI_DispStringAt.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_DispStringAt.o(.text) refers to GUI_DispString.o(.text) for GUI_DispString
+    GUI_DispStringAt.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI_DispStringAt.o(.iar.stackusage) refers to GUI_DispStringAt.o(.text) for .text6
+    GUI_DispStringAt.o(.iar.stackusage) refers to GUI_DispString.o(.text) for GUI_DispString
+    GUI_DispStringAt.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_SetColor.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_SetColor.o(.text) refers to LCD.o(.text) for LCD_SetBkColor
+    GUI_SetColor.o(.iar.stackusage) refers to GUI_SetColor.o(.text) for .text6
+    GUI_SetColor.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_SetColor.o(.iar.stackusage) refers to LCD.o(.text) for LCD_SetBkColor
+    GUI_SetColor.o(.iar.fraginfo) refers to GUI_SetColor.o(.text) for .text6
+    LCD_GetEx.o(.text) refers to GUI_Device.o(.text) for GUI_DEVICE__GetpDriver
+    LCD_GetEx.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    LCD_GetEx.o(.iar.stackusage) refers to LCD_GetEx.o(.text) for .text6
+    LCD_GetEx.o(.iar.stackusage) refers to GUI_Device.o(.text) for GUI_DEVICE__GetpDriver
+    LCD_GetEx.o(.iar.fraginfo) refers to LCD_GetEx.o(.text) for .text6
+    LCD_Set.o(.text) refers to GUI_Device.o(.text) for GUI_DEVICE__GetpDriver
+    LCD_Set.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    LCD_Set.o(.iar.stackusage) refers to LCD_Set.o(.text) for .text6
+    LCD_Set.o(.iar.stackusage) refers to GUI_Device.o(.text) for GUI_DEVICE__GetpDriver
+    LCD_Set.o(.iar.fraginfo) refers to LCD_Set.o(.text) for .text6
+    GUIDRV_Lin_16.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_GetFixedBlock
+    GUIDRV_Lin_16.o(.text) refers to GUI__memset.o(.text) for GUI__memset
+    GUIDRV_Lin_16.o(.text) refers to lcdconf.o(i.LCD_X_DisplayDriver) for LCD_X_DisplayDriver
+    GUIDRV_Lin_16.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    GUIDRV_Lin_16.o(.text) refers to LCD_GetEx.o(.text) for LCD_GetMirrorXEx
+    GUIDRV_Lin_16.o(.text) refers to LCD_Color.o(.data) for LCD_pColorIndex
+    GUIDRV_Lin_16.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUIDRV_Lin_16.o(.text) refers to LCD_Mirror.o(.rodata) for LCD_aMirror
+    GUIDRV_Lin_16.o(.text) refers to GUIDEV_16.o(.text) for GUI_MEMDEV_DEVICE_16
+    GUIDRV_Lin_16.o(.rodata) refers to GUIDRV_Lin_16.o(.text) for _DrawBitmap(GUI_DEVICE*, int, int, int, int, int, int, const unsigned char*, int, const unsigned long*)
+    GUIDRV_Lin_16.o(.iar.stackusage) refers to GUIDRV_Lin_16.o(.text) for .text6
+    GUIDRV_Lin_16.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_GetFixedBlock
+    GUIDRV_Lin_16.o(.iar.stackusage) refers to GUI__memset.o(.text) for GUI__memset
+    GUIDRV_Lin_16.o(.iar.stackusage) refers to lcdconf.o(i.LCD_X_DisplayDriver) for LCD_X_DisplayDriver
+    GUIDRV_Lin_16.o(.iar.stackusage) refers to memmovea.o(.text) for __aeabi_memcpy
+    GUIDRV_Lin_16.o(.iar.stackusage) refers to LCD_GetEx.o(.text) for LCD_GetMirrorXEx
+    GUIDRV_Lin_16.o(.iar.fraginfo) refers to GUIDRV_Lin_16.o(.text) for .text6
+    F6x8.o(.rodata) refers to GUI_CharM.o(.text) for GUIMONO_DispChar
+    F6x8.o(.iar.fraginfo) refers to F6x8.o(.rodata) for GUI_acFont6x8
+    GUICC_M565_Index2Color.o(.text) refers to GUI__DivTbl_31_255.o(.rodata) for GUI__aConvert_31_255
+    GUICC_M565_Index2Color.o(.text) refers to GUI__DivTbl_63_255.o(.rodata) for GUI__aConvert_63_255
+    GUICC_M565_Index2Color.o(.iar.stackusage) refers to GUICC_M565_Index2Color.o(.text) for .text6
+    GUI_CharM.o(.text) refers to LCD.o(.text) for LCD_SetDrawMode
+    GUI_CharM.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI_CharM.o(.text) refers to LCD_Color.o(.data) for LCD_pBkColorIndex
+    GUI_CharM.o(.iar.stackusage) refers to GUI_CharM.o(.text) for .text6
+    GUI_CharM.o(.iar.stackusage) refers to LCD.o(.text) for LCD_DrawBitmap
+    GUI_CharM.o(.iar.fraginfo) refers to GUI_CharM.o(.text) for .text6
+    GUI_DispString.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_DispString.o(.text) refers to GUI_Char.o(.text) for GUI_GetFontDistY
+    GUI_DispString.o(.text) refers to GUI_CharLine.o(.text) for GUI__GetLineNumChars
+    GUI_DispString.o(.text) refers to GUI_UC.o(.text) for GUI_UC__NumChars2NumBytes
+    GUI_DispString.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI_DispString.o(.iar.stackusage) refers to GUI_DispString.o(.text) for .text6
+    GUI_DispString.o(.iar.stackusage) refers to GUI_Char.o(.text) for GUI_GetFontDistY
+    GUI_DispString.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_DispString.o(.iar.stackusage) refers to GUI_UC.o(.text) for GUI_UC__NumChars2NumBytes
+    GUI_DispString.o(.iar.stackusage) refers to GUI_CharLine.o(.text) for GUI__DispLine
+    GUI_Error.o(.iar.stackusage) refers to GUI_Error.o(.text) for .text6
+    GUI_Goto.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_Goto.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI_Goto.o(.iar.stackusage) refers to GUI_Goto.o(.text) for .text6
+    GUI_Goto.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_Goto.o(.iar.fraginfo) refers to GUI_Goto.o(.text) for .text6
+    GUI_SetOrg.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_SetOrg.o(.text) refers to GUI_Core.o(.bss) for GUI_OrgX
+    GUI_SetOrg.o(.text) refers to GUI_Core.o(.bss) for GUI_OrgY
+    GUI_SetOrg.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI_SetOrg.o(.iar.stackusage) refers to GUI_SetOrg.o(.text) for .text6
+    GUI_SetOrg.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_Task.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_FreeFixedBlock
+    GUI_Task.o(.text) refers to gui_x.o(i.GUI_X_Unlock) for GUI_X_Unlock
+    GUI_Task.o(.text) refers to gui_x.o(i.GUI_X_GetTaskId) for GUI_X_GetTaskId
+    GUI_Task.o(.text) refers to gui_x.o(i.GUI_X_Lock) for GUI_X_Lock
+    GUI_Task.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy4
+    GUI_Task.o(.text) refers to GUI_Core.o(.text) for GUI__RegisterExit
+    GUI_Task.o(.text) refers to GUI__memset.o(.text) for GUI__memset
+    GUI_Task.o(.text) refers to gui_x.o(i.GUI_X_InitOS) for GUI_X_InitOS
+    GUI_Task.o(.text) refers to GUI_Task.o(.data) for _pSave
+    GUI_Task.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI_Task.o(.iar.stackusage) refers to GUI_Task.o(.text) for .text6
+    GUI_Task.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_FreeFixedBlock
+    GUI_Task.o(.iar.stackusage) refers to gui_x.o(i.GUI_X_Unlock) for GUI_X_Unlock
+    GUI_Task.o(.iar.stackusage) refers to gui_x.o(i.GUI_X_GetTaskId) for GUI_X_GetTaskId
+    GUI_Task.o(.iar.stackusage) refers to gui_x.o(i.GUI_X_Lock) for GUI_X_Lock
+    GUI_Task.o(.iar.stackusage) refers to memmovea.o(.text) for __aeabi_memcpy4
+    GUI_Task.o(.iar.stackusage) refers to gui_x.o(i.GUI_X_InitOS) for GUI_X_InitOS
+    GUI_Task.o(.iar.stackusage) refers to GUI_Core.o(.text) for GUI__RegisterExit
+    GUI_Task.o(.iar.stackusage) refers to GUI__memset.o(.text) for GUI__memset
+    GUI_Task.o(.iar.fraginfo) refers to GUI_Task.o(.text) for .text6
+    GUI_UC_EncodeNone.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_UC_EncodeNone.o(.text) refers to GUI_Core.o(.data) for GUI_pUC_API
+    GUI_UC_EncodeNone.o(.iar.stackusage) refers to GUI_UC_EncodeNone.o(.text) for .text6
+    GUI_UC_EncodeNone.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_UC_EncodeNone.o(.iar.fraginfo) refers to GUI_UC_EncodeNone.o(.text) for .text6
+    GUI__memset.o(.iar.stackusage) refers to GUI__memset.o(.text) for .text6
+    LCD.o(.text) refers to LCD_Color.o(.text) for LCD_InitColors
+    LCD.o(.text) refers to GUI_Device.o(.text) for GUI_DEVICE__GetpDriver
+    LCD.o(.text) refers to GUI_SelectLayer.o(.text) for GUI_SelectLayer
+    LCD.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    LCD.o(.text) refers to LCD_Color.o(.data) for LCD_pBkColorIndex
+    LCD.o(.text) refers to LCD_Color.o(.data) for LCD_pColorIndex
+    LCD.o(.text) refers to LCD.o(.data) for LCD__pSetColorAPI
+    LCD.o(.text) refers to GUI_Core.o(.bss) for GUI_pLCD_APIList
+    LCD.o(.rodata) refers to LCD.o(.text) for _SetColor(unsigned long)
+    LCD.o(.data) refers to LCD.o(.rodata) for _SetColorAPI
+    LCD.o(.iar.stackusage) refers to LCD.o(.text) for .text6
+    LCD.o(.iar.stackusage) refers to GUI_Device.o(.text) for GUI_DEVICE__GetpDriver
+    LCD.o(.iar.stackusage) refers to GUI_SelectLayer.o(.text) for GUI_SelectLayer
+    LCD.o(.iar.stackusage) refers to LCD_Color.o(.text) for LCD_InitColors
+    LCD.o(.iar.fraginfo) refers to LCD.o(.text) for .text6
+    LCD_Color.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_FreeFixedBlock
+    LCD_Color.o(.text) refers to GUI_Core.o(.text) for GUI__RegisterExit
+    LCD_Color.o(.text) refers to LCD.o(.text) for LCD_Color2Index
+    LCD_Color.o(.text) refers to LCD_GetNumDisplays.o(.text) for LCD_GetNumLayers
+    LCD_Color.o(.text) refers to GUI_Device.o(.text) for GUI_DEVICE__GetpDriver
+    LCD_Color.o(.text) refers to GUI_SelectLayer.o(.text) for GUI_SelectLayer
+    LCD_Color.o(.text) refers to LCD_GetEx.o(.text) for LCD_GetBitsPerPixelEx
+    LCD_Color.o(.text) refers to LCD_Set.o(.text) for LCD_SetLUTEntryEx
+    LCD_Color.o(.text) refers to LCD_Color.o(.data) for _NumColors
+    LCD_Color.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    LCD_Color.o(.text) refers to GUICC_0.o(.rodata) for LCD_API_ColorConv_0
+    LCD_Color.o(.data) refers to GUI_Core.o(.bss) for GUI_Context
+    LCD_Color.o(.data) refers to GUI_Core.o(.bss) for GUI_Context
+    LCD_Color.o(.data) refers to GUI_Core.o(.bss) for GUI_Context
+    LCD_Color.o(.iar.stackusage) refers to LCD_Color.o(.text) for .text6
+    LCD_Color.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_FreeFixedBlock
+    LCD_Color.o(.iar.stackusage) refers to GUI_Core.o(.text) for GUI__RegisterExit
+    LCD_Color.o(.iar.stackusage) refers to LCD.o(.text) for LCD_Color2Index
+    LCD_Color.o(.iar.stackusage) refers to GUI_Device.o(.text) for GUI_DEVICE__GetpDriver
+    LCD_Color.o(.iar.stackusage) refers to GUI_SelectLayer.o(.text) for GUI_SelectLayer
+    LCD_Color.o(.iar.stackusage) refers to LCD_GetEx.o(.text) for LCD_GetBitsPerPixelEx
+    LCD_Color.o(.iar.stackusage) refers to LCD_GetNumDisplays.o(.text) for LCD_GetNumLayers
+    LCD_Color.o(.iar.stackusage) refers to LCD_Set.o(.text) for LCD_SetLUTEntryEx
+    LCD_Color.o(.iar.fraginfo) refers to LCD_Color.o(.text) for .text6
+    GUIDEV_16.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_16.o(.text) refers to GUIDEV_Usage.o(.text) for GUI_USAGE_AddRect
+    GUIDEV_16.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    GUIDEV_16.o(.text) refers to GUI__memset16.o(.text) for GUI__memset16
+    GUIDEV_16.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUIDEV_16.o(.text) refers to LCD_Mirror.o(.rodata) for LCD_aMirror
+    GUIDEV_16.o(.text) refers to LCD_Color.o(.data) for LCD_pColorIndex
+    GUIDEV_16.o(.text) refers to GUIDEV_WriteToActiveOpaque.o(.text) for GUI_MEMDEV__WriteToActiveOpaque
+    GUIDEV_16.o(.iar.stackusage) refers to GUIDEV_16.o(.text) for .text6
+    GUIDEV_16.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_16.o(.iar.stackusage) refers to GUIDEV_Usage.o(.text) for GUI_USAGE_AddRect
+    GUIDEV_16.o(.iar.stackusage) refers to memmovea.o(.text) for __aeabi_memcpy
+    GUIDEV_16.o(.iar.stackusage) refers to GUI__memset16.o(.text) for GUI__memset16
+    GUIDEV_16.o(.iar.fraginfo) refers to GUIDEV_16.o(.text) for .text6
+    WM.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    WM.o(.text) refers to GUI__IntersectRects.o(.text) for GUI__IntersectRects
+    WM.o(.text) refers to GUI_MergeRect.o(.text) for GUI_MergeRect
+    WM.o(.text) refers to GUI_WaitEvent.o(.text) for GUI_SignalEvent
+    WM.o(.text) refers to GUI__IntersectRect.o(.text) for GUI__IntersectRect
+    WM.o(.text) refers to LCD_SetClipRectEx.o(.text) for LCD_SetClipRectEx
+    WM.o(.text) refers to GUI_MoveRect.o(.text) for GUI_MoveRect
+    WM.o(.text) refers to GUIDEV.o(.text) for GUI_MEMDEV_Delete
+    WM.o(.text) refers to WM_GetFirstChild.o(.text) for WM_GetFirstChild
+    WM.o(.text) refers to GUI_RectsIntersect.o(.text) for GUI_RectsIntersect
+    WM.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    WM.o(.text) refers to WM__SendMessage.o(.text) for WM__SendMessage
+    WM.o(.text) refers to GUI_ALLOC_AllocZero.o(.text) for GUI_ALLOC_AllocZero
+    WM.o(.text) refers to WM_BringToBottom.o(.text) for WM_BringToBottom
+    WM.o(.text) refers to WM_Timer.o(.text) for WM__DeleteAssocTimer
+    WM.o(.text) refers to WM_NotifyParent.o(.text) for WM_NotifyParent
+    WM.o(.text) refers to GUI_SelectLayer.o(.text) for GUI_SelectLayer
+    WM.o(.text) refers to LCD.o(.text) for LCD_SetClipRectMax
+    WM.o(.text) refers to GUI_SetDefault.o(.text) for GL_SetDefault
+    WM.o(.text) refers to WM_SendMessageNoPara.o(.text) for WM_SendMessageNoPara
+    WM.o(.text) refers to WM.o(.bss) for _IsInited
+    WM.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    WM.o(.text) refers to WM.o(.bss) for _ClipContext
+    WM.o(.text) refers to GUIDEV_Banding.o(.text) for GUI_MEMDEV_Draw
+    WM.o(.text) refers to GUI_SaveContext.o(.text) for GUI_SaveContext_W
+    WM.o(.text) refers to GUI_SetColor.o(.text) for GUI_SetColor
+    WM.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy4
+    WM.o(.text) refers to GUI_OnKey.o(.text) for GUI_PollKeyMsg
+    WM.o(.text) refers to GUI__ManageCache.o(.text) for GUI__ManageCache
+    WM.o(.text) refers to GUI_Core.o(.text) for GUI_Clear
+    WM.o(.text) refers to WM_GetClientRect.o(.text) for WM__GetClientRectEx
+    WM.o(.text) refers to WM_SendToParent.o(.text) for WM_SendToParent
+    WM.o(.text) refers to GUI_Device.o(.text) for GUI_DEVICE__GetpDriver
+    WM.o(.text) refers to WM_CriticalHandle.o(.text) for WM__AddCriticalHandle
+    WM.o(.text) refers to WM.o(.bss) for WM__ahCapture
+    WM.o(.text) refers to GUIDEV_StaticDevices.o(.text) for GUI_MEMDEV_Paint1Static
+    WM.o(.text) refers to GUI_Core.o(.bss) for WM_pfHandlePID
+    WM.o(.text) refers to WM.o(.bss) for WM__aBkColor
+    WM.o(.text) refers to WM_Touch.o(.bss) for WM__aCHWinModal
+    WM.o(.text) refers to WM_Touch.o(.bss) for WM__aCHWinLast
+    WM.o(.text) refers to WM_Touch.o(.bss) for WM__aCHWinMouseOver
+    WM.o(.iar.stackusage) refers to WM.o(.text) for .text6
+    WM.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    WM.o(.iar.stackusage) refers to GUI_MergeRect.o(.text) for GUI_MergeRect
+    WM.o(.iar.stackusage) refers to GUI_WaitEvent.o(.text) for GUI_SignalEvent
+    WM.o(.iar.stackusage) refers to GUI__IntersectRects.o(.text) for GUI__IntersectRects
+    WM.o(.iar.stackusage) refers to GUI__IntersectRect.o(.text) for GUI__IntersectRect
+    WM.o(.iar.stackusage) refers to LCD_SetClipRectEx.o(.text) for LCD_SetClipRectEx
+    WM.o(.iar.stackusage) refers to GUI_MoveRect.o(.text) for GUI_MoveRect
+    WM.o(.iar.stackusage) refers to GUIDEV.o(.text) for GUI_MEMDEV_Delete
+    WM.o(.iar.stackusage) refers to WM_GetFirstChild.o(.text) for WM_GetFirstChild
+    WM.o(.iar.stackusage) refers to GUI_RectsIntersect.o(.text) for GUI_RectsIntersect
+    WM.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    WM.o(.iar.stackusage) refers to WM__SendMessage.o(.text) for WM__SendMessage
+    WM.o(.iar.stackusage) refers to GUI_ALLOC_AllocZero.o(.text) for GUI_ALLOC_AllocZero
+    WM.o(.iar.stackusage) refers to WM_BringToBottom.o(.text) for WM_BringToBottom
+    WM.o(.iar.stackusage) refers to WM_NotifyParent.o(.text) for WM_NotifyParent
+    WM.o(.iar.stackusage) refers to WM_Timer.o(.text) for WM__DeleteAssocTimer
+    WM.o(.iar.stackusage) refers to GUI_SelectLayer.o(.text) for GUI_SelectLayer
+    WM.o(.iar.stackusage) refers to LCD.o(.text) for LCD_SetClipRectMax
+    WM.o(.iar.stackusage) refers to GUI_SetDefault.o(.text) for GL_SetDefault
+    WM.o(.iar.stackusage) refers to WM_SendMessageNoPara.o(.text) for WM_SendMessageNoPara
+    WM.o(.iar.stackusage) refers to GUIDEV_Banding.o(.text) for GUI_MEMDEV_Draw
+    WM.o(.iar.stackusage) refers to GUI_SaveContext.o(.text) for GUI_RestoreContext
+    WM.o(.iar.stackusage) refers to GUI_SetColor.o(.text) for GUI_SetBkColor
+    WM.o(.iar.stackusage) refers to memmovea.o(.text) for __aeabi_memcpy4
+    WM.o(.iar.stackusage) refers to GUI_OnKey.o(.text) for GUI_PollKeyMsg
+    WM.o(.iar.stackusage) refers to GUI__ManageCache.o(.text) for GUI__ManageCache
+    WM.o(.iar.stackusage) refers to GUI_Core.o(.text) for GUI_Clear
+    WM.o(.iar.stackusage) refers to WM_SendToParent.o(.text) for WM_SendToParent
+    WM.o(.iar.stackusage) refers to WM_GetClientRect.o(.text) for WM__GetClientRectEx
+    WM.o(.iar.stackusage) refers to GUI_Device.o(.text) for GUI_DEVICE__GetpDriver
+    WM.o(.iar.stackusage) refers to WM_CriticalHandle.o(.text) for WM__AddCriticalHandle
+    WM.o(.iar.fraginfo) refers to WM.o(.text) for .text6
+    WM_GetDesktopWindow.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    WM_GetDesktopWindow.o(.text) refers to WM.o(.bss) for WM__ahDesktopWin
+    WM_GetDesktopWindow.o(.iar.stackusage) refers to WM_GetDesktopWindow.o(.text) for .text6
+    GUICC_0.o(.text) refers to LCD_GetEx.o(.text) for LCD_GetNumColors
+    GUICC_0.o(.text) refers to GUI_CalcColorDist.o(.text) for GUI_CalcColorDist
+    GUICC_0.o(.text) refers to LCD_Set.o(.text) for LCD_SetLUTEntryEx
+    GUICC_0.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUICC_0.o(.rodata) refers to GUICC_0.o(.text) for _Color2Index_0(unsigned long)
+    GUICC_0.o(.iar.stackusage) refers to GUICC_0.o(.text) for .text6
+    GUICC_0.o(.iar.stackusage) refers to GUI_CalcColorDist.o(.text) for GUI_CalcColorDist
+    GUICC_0.o(.iar.stackusage) refers to LCD_GetEx.o(.text) for LCD_GetNumColors
+    GUICC_0.o(.iar.stackusage) refers to LCD_Set.o(.text) for LCD_SetLUTEntryEx
+    GUICC_0.o(.iar.fraginfo) refers to GUICC_0.o(.text) for .text6
+    GUI_ALLOC_AllocZero.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_ALLOC_AllocZero.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_AllocNoInit
+    GUI_ALLOC_AllocZero.o(.text) refers to GUI__memset.o(.text) for GUI__memset
+    GUI_ALLOC_AllocZero.o(.iar.stackusage) refers to GUI_ALLOC_AllocZero.o(.text) for .text6
+    GUI_ALLOC_AllocZero.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_AllocNoInit
+    GUI_ALLOC_AllocZero.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_ALLOC_AllocZero.o(.iar.stackusage) refers to GUI__memset.o(.text) for GUI__memset
+    GUI_Char.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_Char.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI_Char.o(.text) refers to GUI_Core.o(.bss) for GUI_pfDispCharStyle
+    GUI_Char.o(.iar.stackusage) refers to GUI_Char.o(.text) for .text6
+    GUI_Char.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_Char.o(.iar.fraginfo) refers to GUI_Char.o(.text) for .text6
+    GUI_CharLine.o(.text) refers to GUI_UC.o(.text) for GUI_UC__GetCharCodeInc
+    GUI_CharLine.o(.text) refers to GUI_Char.o(.text) for GUI_GetCharDistXEx
+    GUI_CharLine.o(.text) refers to WM.o(.text) for WM__InitIVRSearch
+    GUI_CharLine.o(.text) refers to GUI_RectsIntersect.o(.text) for GUI_RectsIntersect
+    GUI_CharLine.o(.text) refers to GUI__ManageCache.o(.text) for GUI__ManageCache
+    GUI_CharLine.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI_CharLine.o(.text) refers to GUI_CharLine.o(.data) for GUI_CharLine_pfLog2Vis
+    GUI_CharLine.o(.text) refers to GUI_Core.o(.bss) for GUI_pLCD_APIList
+    GUI_CharLine.o(.text) refers to GUI_Core.o(.bss) for GUI_pfDispCharStyle
+    GUI_CharLine.o(.data) refers to GUI_CharLine.o(.text) for _Log2VisBuffered(const char*, int*)
+    GUI_CharLine.o(.iar.stackusage) refers to GUI_CharLine.o(.text) for .text6
+    GUI_CharLine.o(.iar.stackusage) refers to GUI_UC.o(.text) for GUI_UC__GetCharCodeInc
+    GUI_CharLine.o(.iar.stackusage) refers to GUI_Char.o(.text) for GUI_GetCharDistXEx
+    GUI_CharLine.o(.iar.stackusage) refers to GUI_RectsIntersect.o(.text) for GUI_RectsIntersect
+    GUI_CharLine.o(.iar.stackusage) refers to GUI__ManageCache.o(.text) for GUI__ManageCache
+    GUI_CharLine.o(.iar.stackusage) refers to WM.o(.text) for WM__GetNextIVR
+    GUI_CharLine.o(.iar.fraginfo) refers to GUI_CharLine.o(.text) for .text6
+    GUI_MergeRect.o(.iar.stackusage) refers to GUI_MergeRect.o(.text) for .text6
+    GUI_MoveRect.o(.iar.stackusage) refers to GUI_MoveRect.o(.text) for .text6
+    GUI_OnKey.o(.text) refers to GUI_WaitEvent.o(.text) for GUI_SignalEvent
+    GUI_OnKey.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_OnKey.o(.text) refers to WM_OnKey.o(.text) for WM_OnKey
+    GUI_OnKey.o(.text) refers to GUI_OnKey.o(.data) for _pReadKey
+    GUI_OnKey.o(.iar.stackusage) refers to GUI_OnKey.o(.text) for .text7
+    GUI_OnKey.o(.iar.stackusage) refers to GUI_WaitEvent.o(.text) for GUI_SignalEvent
+    GUI_OnKey.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_OnKey.o(.iar.stackusage) refers to WM_OnKey.o(.text) for WM_OnKey
+    GUI_OnKey.o(.iar.fraginfo) refers to GUI_OnKey.o(.text) for .text7
+    GUI_RectsIntersect.o(.iar.stackusage) refers to GUI_RectsIntersect.o(.text) for .text6
+    GUI_SaveContext.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI_SaveContext.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy4
+    GUI_SaveContext.o(.iar.stackusage) refers to GUI_SaveContext.o(.text) for .text6
+    GUI_SaveContext.o(.iar.stackusage) refers to memmovea.o(.text) for __aeabi_memcpy4
+    GUI_SaveContext.o(.iar.fraginfo) refers to GUI_SaveContext.o(.text) for .text6
+    GUI_SelectLayer.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_SelectLayer.o(.text) refers to GUI_SelectLCD.o(.text) for GUI_SelectLCD
+    GUI_SelectLayer.o(.text) refers to GUI_Device.o(.text) for GUI_DEVICE__GetpDriver
+    GUI_SelectLayer.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI_SelectLayer.o(.text) refers to WM.o(.bss) for WM__TouchedLayer
+    GUI_SelectLayer.o(.text) refers to GUI_SelectLayer.o(.bss) for _aCursorLayer
+    GUI_SelectLayer.o(.text) refers to LCD_Set.o(.text) for LCD_SetPosEx
+    GUI_SelectLayer.o(.iar.stackusage) refers to GUI_SelectLayer.o(.text) for .text7
+    GUI_SelectLayer.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_SelectLayer.o(.iar.stackusage) refers to GUI_SelectLCD.o(.text) for GUI_SelectLCD
+    GUI_SelectLayer.o(.iar.stackusage) refers to GUI_Device.o(.text) for GUI_DEVICE__GetpDriver
+    GUI_SelectLayer.o(.iar.stackusage) refers to LCD_Set.o(.text) for LCD_SetPosEx
+    GUI_SelectLayer.o(.iar.fraginfo) refers to GUI_SelectLayer.o(.text) for .text7
+    GUI_SetDefault.o(.text) refers to GUI_SetColor.o(.text) for GUI_SetBkColor
+    GUI_SetDefault.o(.text) refers to GUI_Pen.o(.text) for GUI_SetPenSize
+    GUI_SetDefault.o(.text) refers to GUI_SetTextAlign.o(.text) for GUI_SetTextAlign
+    GUI_SetDefault.o(.text) refers to GUI_SetTextMode.o(.text) for GUI_SetTextMode
+    GUI_SetDefault.o(.text) refers to GUI_SetDrawMode.o(.text) for GUI_SetDrawMode
+    GUI_SetDefault.o(.text) refers to GUI_SetFont.o(.text) for GUI_SetFont
+    GUI_SetDefault.o(.text) refers to GUI_SetLineStyle.o(.text) for GUI_SetLineStyle
+    GUI_SetDefault.o(.text) refers to GUI_Core.o(.data) for GUI__pFontDefault
+    GUI_SetDefault.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_SetDefault.o(.iar.stackusage) refers to GUI_SetDefault.o(.text) for .text6
+    GUI_SetDefault.o(.iar.stackusage) refers to GUI_SetColor.o(.text) for GUI_SetBkColor
+    GUI_SetDefault.o(.iar.stackusage) refers to GUI_SetDrawMode.o(.text) for GUI_SetDrawMode
+    GUI_SetDefault.o(.iar.stackusage) refers to GUI_SetFont.o(.text) for GUI_SetFont
+    GUI_SetDefault.o(.iar.stackusage) refers to GUI_SetLineStyle.o(.text) for GUI_SetLineStyle
+    GUI_SetDefault.o(.iar.stackusage) refers to GUI_Pen.o(.text) for GUI_SetPenSize
+    GUI_SetDefault.o(.iar.stackusage) refers to GUI_SetTextAlign.o(.text) for GUI_SetTextAlign
+    GUI_SetDefault.o(.iar.stackusage) refers to GUI_SetTextMode.o(.text) for GUI_SetTextMode
+    GUI_SetDefault.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_SetDefault.o(.iar.fraginfo) refers to GUI_SetDefault.o(.text) for .text6
+    GUI_UC.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_UC.o(.text) refers to GUI_Core.o(.data) for GUI_pUC_API
+    GUI_UC.o(.iar.stackusage) refers to GUI_UC.o(.text) for .text6
+    GUI_UC.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_UC.o(.iar.fraginfo) refers to GUI_UC.o(.text) for .text6
+    GUI_WaitEvent.o(.data) refers to gui_x.o(i.GUI_X_ExecIdle) for GUI_X_ExecIdle
+    GUI_WaitEvent.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_WaitEvent.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_Lock
+    GUI_WaitEvent.o(.text) refers to GUI_Timer.o(.text) for GUI_TIMER__IsActive
+    GUI_WaitEvent.o(.text) refers to GUI_WaitEvent.o(.bss) for _pfSignalEvent
+    GUI_WaitEvent.o(.text) refers to GUI_WaitEvent.o(.data) for _pfWaitEvent
+    GUI_WaitEvent.o(.text) refers to GUI_Task.o(.data) for GUITASK__EntranceCnt
+    GUI_WaitEvent.o(.iar.stackusage) refers to GUI_WaitEvent.o(.text) for .text8
+    GUI_WaitEvent.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_Lock
+    GUI_WaitEvent.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_WaitEvent.o(.iar.stackusage) refers to GUI_Timer.o(.text) for GUI_TIMER__GetPeriod
+    GUI_WaitEvent.o(.iar.fraginfo) refers to GUI_WaitEvent.o(.text) for .text8
+    GUI__IntersectRect.o(.iar.stackusage) refers to GUI__IntersectRect.o(.text) for .text6
+    GUI__IntersectRects.o(.iar.stackusage) refers to GUI__IntersectRects.o(.text) for .text6
+    GUI__ManageCache.o(.text) refers to GUI_Device.o(.text) for GUI_DEVICE__GetpDriver
+    GUI__ManageCache.o(.text) refers to GUI__ManageCache.o(.bss) for ??aLockCnt
+    GUI__ManageCache.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI__ManageCache.o(.iar.stackusage) refers to GUI__ManageCache.o(.text) for .text6
+    GUI__ManageCache.o(.iar.stackusage) refers to GUI_Device.o(.text) for GUI_DEVICE__GetpDriver
+    GUI__ManageCache.o(.iar.fraginfo) refers to GUI__ManageCache.o(.text) for .text6
+    GUI__memset16.o(.iar.stackusage) refers to GUI__memset16.o(.text) for .text6
+    LCD_GetNumDisplays.o(.text) refers to GUI_Device.o(.text) for GUI_DEVICE__GetpDriver
+    LCD_GetNumDisplays.o(.iar.stackusage) refers to LCD_GetNumDisplays.o(.text) for .text6
+    LCD_GetNumDisplays.o(.iar.stackusage) refers to GUI_Device.o(.text) for GUI_DEVICE__GetpDriver
+    LCD_SetClipRectEx.o(.text) refers to GUI__IntersectRects.o(.text) for GUI__IntersectRects
+    LCD_SetClipRectEx.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    LCD_SetClipRectEx.o(.iar.stackusage) refers to LCD_SetClipRectEx.o(.text) for .text6
+    LCD_SetClipRectEx.o(.iar.stackusage) refers to GUI__IntersectRects.o(.text) for GUI__IntersectRects
+    GUIDEV.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV.o(.text) refers to GUI_Device.o(.text) for GUI_DEVICE_Create
+    GUIDEV.o(.text) refers to LCD_GetEx.o(.text) for LCD__GetBPPDevice
+    GUIDEV.o(.text) refers to GUIDEV_UsageBM.o(.text) for GUI_USAGE_BM_Create
+    GUIDEV.o(.text) refers to GUI_ALLOC_AllocZero.o(.text) for GUI_ALLOC_AllocZero
+    GUIDEV.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV.o(.text) refers to GUI_SelectLCD.o(.text) for GUI_SelectLCD
+    GUIDEV.o(.text) refers to GUIDEV_Usage.o(.text) for GUI_USAGE_DecUseCnt
+    GUIDEV.o(.text) refers to WM.o(.text) for WM_Deactivate
+    GUIDEV.o(.text) refers to LCD_UpdateColorIndices.o(.text) for LCD_UpdateColorIndices
+    GUIDEV.o(.text) refers to LCD.o(.text) for LCD_SetClipRectMax
+    GUIDEV.o(.text) refers to GUI_SetDrawMode.o(.text) for GUI_SetDrawMode
+    GUIDEV.o(.text) refers to GUI_SelectLayer.o(.text) for GUI_SelectLayer
+    GUIDEV.o(.text) refers to GUIDEV_WriteToActiveOpaque.o(.text) for GUI_MEMDEV__WriteToActiveOpaque
+    GUIDEV.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUIDEV.o(.iar.stackusage) refers to GUIDEV.o(.text) for .text6
+    GUIDEV.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV.o(.iar.stackusage) refers to GUI_ALLOC_AllocZero.o(.text) for GUI_ALLOC_AllocZero
+    GUIDEV.o(.iar.stackusage) refers to GUI_Device.o(.text) for GUI_DEVICE_Create
+    GUIDEV.o(.iar.stackusage) refers to GUIDEV_UsageBM.o(.text) for GUI_USAGE_BM_Create
+    GUIDEV.o(.iar.stackusage) refers to LCD_GetEx.o(.text) for LCD__GetBPPDevice
+    GUIDEV.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV.o(.iar.stackusage) refers to GUI_SelectLCD.o(.text) for GUI_SelectLCD
+    GUIDEV.o(.iar.stackusage) refers to GUIDEV_Usage.o(.text) for GUI_USAGE_DecUseCnt
+    GUIDEV.o(.iar.stackusage) refers to LCD.o(.text) for LCD_SetClipRectMax
+    GUIDEV.o(.iar.stackusage) refers to LCD_UpdateColorIndices.o(.text) for LCD_UpdateColorIndices
+    GUIDEV.o(.iar.stackusage) refers to WM.o(.text) for WM_Deactivate
+    GUIDEV.o(.iar.stackusage) refers to GUIDEV_WriteToActiveOpaque.o(.text) for GUI_MEMDEV__WriteToActiveOpaque
+    GUIDEV.o(.iar.stackusage) refers to GUI_SelectLayer.o(.text) for GUI_SelectLayer
+    GUIDEV.o(.iar.stackusage) refers to GUI_SetDrawMode.o(.text) for GUI_SetDrawMode
+    GUIDEV.o(.iar.fraginfo) refers to GUIDEV.o(.text) for .text6
+    GUIDEV_Banding.o(.text) refers to GUI_GetOrg.o(.text) for GUI_GetOrg
+    GUIDEV_Banding.o(.text) refers to LCD_GetEx.o(.text) for LCD_GetVXSizeEx
+    GUIDEV_Banding.o(.text) refers to GUIDEV.o(.text) for GUI_MEMDEV_CreateEx
+    GUIDEV_Banding.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUIDEV_Banding.o(.text) refers to GUIDEV_GetYSize.o(.text) for GUI_MEMDEV_GetYSize
+    GUIDEV_Banding.o(.text) refers to GUIDEV_ReduceYSize.o(.text) for GUI_MEMDEV_ReduceYSize
+    GUIDEV_Banding.o(.text) refers to GUIDEV_SetOrg.o(.text) for GUI_MEMDEV_SetOrg
+    GUIDEV_Banding.o(.text) refers to GUIDEV_Clear.o(.text) for GUI_MEMDEV_Clear
+    GUIDEV_Banding.o(.iar.stackusage) refers to GUIDEV_Banding.o(.text) for .text6
+    GUIDEV_Banding.o(.iar.stackusage) refers to GUI_GetOrg.o(.text) for GUI_GetOrg
+    GUIDEV_Banding.o(.iar.stackusage) refers to GUIDEV_Clear.o(.text) for GUI_MEMDEV_Clear
+    GUIDEV_Banding.o(.iar.stackusage) refers to GUIDEV.o(.text) for GUI_MEMDEV_CopyToLCD
+    GUIDEV_Banding.o(.iar.stackusage) refers to GUIDEV_GetYSize.o(.text) for GUI_MEMDEV_GetYSize
+    GUIDEV_Banding.o(.iar.stackusage) refers to GUIDEV_ReduceYSize.o(.text) for GUI_MEMDEV_ReduceYSize
+    GUIDEV_Banding.o(.iar.stackusage) refers to GUIDEV_SetOrg.o(.text) for GUI_MEMDEV_SetOrg
+    GUIDEV_Banding.o(.iar.stackusage) refers to LCD_GetEx.o(.text) for LCD_GetVXSizeEx
+    GUIDEV_Banding.o(.iar.fraginfo) refers to GUIDEV_Banding.o(.text) for .text6
+    GUIDEV_StaticDevices.o(.text) refers to GUIDEV_GetXSize.o(.text) for GUI_MEMDEV_GetXSize
+    GUIDEV_StaticDevices.o(.text) refers to GUIDEV_GetYSize.o(.text) for GUI_MEMDEV_GetYSize
+    GUIDEV_StaticDevices.o(.text) refers to GUIDEV_GetDataPtr.o(.text) for GUI_MEMDEV_GetDataPtr
+    GUIDEV_StaticDevices.o(.text) refers to GUIDEV_GetPos.o(.text) for GUI_MEMDEV_GetXPos
+    GUIDEV_StaticDevices.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy4
+    GUIDEV_StaticDevices.o(.text) refers to GUI__SetPixelAlpha.o(.text) for GUI__MixColors
+    GUIDEV_StaticDevices.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_StaticDevices.o(.text) refers to GUIDEV_SetOrg.o(.text) for GUI_MEMDEV_SetOrg
+    GUIDEV_StaticDevices.o(.text) refers to WM_GetDesktopWindow.o(.text) for WM_GetDesktopWindow
+    GUIDEV_StaticDevices.o(.text) refers to LCD_GetEx.o(.text) for LCD_GetXSize
+    GUIDEV_StaticDevices.o(.text) refers to WM_SetSize.o(.text) for WM_SetSize
+    GUIDEV_StaticDevices.o(.text) refers to GUIDEV.o(.text) for GUI_MEMDEV__CreateFixed
+    GUIDEV_StaticDevices.o(.text) refers to WM.o(.text) for WM__Paint1
+    GUIDEV_StaticDevices.o(.text) refers to GUI_SetAlpha.o(.text) for GUI__AlphaSuppressMixing
+    GUIDEV_StaticDevices.o(.text) refers to GUI__memset.o(.text) for GUI__memset
+    GUIDEV_StaticDevices.o(.text) refers to WM_GetWindowRect.o(.text) for WM_GetWindowRectEx
+    GUIDEV_StaticDevices.o(.text) refers to GUIDEV_CreateFixed.o(.text) for GUI_MEMDEV_CreateFixed
+    GUIDEV_StaticDevices.o(.text) refers to GUI_Goto.o(.text) for GUI_GotoXY
+    GUIDEV_StaticDevices.o(.text) refers to GUIDEV_Write.o(.text) for GUI_MEMDEV_Write
+    GUIDEV_StaticDevices.o(.text) refers to GUICC_8888.o(.rodata) for LCD_API_ColorConv_8888
+    GUIDEV_StaticDevices.o(.text) refers to GUIDEV_32.o(.text) for GUI_MEMDEV_DEVICE_32
+    GUIDEV_StaticDevices.o(.text) refers to GUIDEV_StaticDevices.o(.data) for _FillByte
+    GUIDEV_StaticDevices.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_StaticDevices.o(.iar.stackusage) refers to GUIDEV_StaticDevices.o(.text) for .text7
+    GUIDEV_StaticDevices.o(.iar.stackusage) refers to GUIDEV_GetDataPtr.o(.text) for GUI_MEMDEV_GetDataPtr
+    GUIDEV_StaticDevices.o(.iar.stackusage) refers to GUIDEV_GetPos.o(.text) for GUI_MEMDEV_GetXPos
+    GUIDEV_StaticDevices.o(.iar.stackusage) refers to GUIDEV_GetXSize.o(.text) for GUI_MEMDEV_GetXSize
+    GUIDEV_StaticDevices.o(.iar.stackusage) refers to GUIDEV_GetYSize.o(.text) for GUI_MEMDEV_GetYSize
+    GUIDEV_StaticDevices.o(.iar.stackusage) refers to GUI__SetPixelAlpha.o(.text) for GUI__MixColors
+    GUIDEV_StaticDevices.o(.iar.stackusage) refers to memmovea.o(.text) for __aeabi_memcpy4
+    GUIDEV_StaticDevices.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_StaticDevices.o(.iar.stackusage) refers to GUIDEV.o(.text) for GUI_MEMDEV_Select
+    GUIDEV_StaticDevices.o(.iar.stackusage) refers to GUIDEV_SetOrg.o(.text) for GUI_MEMDEV_SetOrg
+    GUIDEV_StaticDevices.o(.iar.stackusage) refers to GUI_SetAlpha.o(.text) for GUI__AlphaSuppressMixing
+    GUIDEV_StaticDevices.o(.iar.stackusage) refers to GUI__memset.o(.text) for GUI__memset
+    GUIDEV_StaticDevices.o(.iar.stackusage) refers to LCD_GetEx.o(.text) for LCD_GetXSize
+    GUIDEV_StaticDevices.o(.iar.stackusage) refers to WM_GetDesktopWindow.o(.text) for WM_GetDesktopWindow
+    GUIDEV_StaticDevices.o(.iar.stackusage) refers to WM_SetSize.o(.text) for WM_SetSize
+    GUIDEV_StaticDevices.o(.iar.stackusage) refers to WM.o(.text) for WM__Paint1
+    GUIDEV_StaticDevices.o(.iar.stackusage) refers to GUIDEV_CreateFixed.o(.text) for GUI_MEMDEV_CreateFixed
+    GUIDEV_StaticDevices.o(.iar.stackusage) refers to WM_GetWindowRect.o(.text) for WM_GetWindowRectEx
+    GUIDEV_StaticDevices.o(.iar.stackusage) refers to GUI_Goto.o(.text) for GUI_GotoXY
+    GUIDEV_StaticDevices.o(.iar.stackusage) refers to GUIDEV_Write.o(.text) for GUI_MEMDEV_Write
+    GUIDEV_StaticDevices.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_StaticDevices.o(.iar.fraginfo) refers to GUIDEV_StaticDevices.o(.text) for .text7
+    GUIDEV_Usage.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_Usage.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_Usage.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUIDEV_Usage.o(.iar.stackusage) refers to GUIDEV_Usage.o(.text) for .text6
+    GUIDEV_Usage.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_Usage.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_Usage.o(.iar.fraginfo) refers to GUIDEV_Usage.o(.text) for .text6
+    GUIDEV_WriteToActiveOpaque.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_WriteToActiveOpaque.o(.text) refers to LCD_GetEx.o(.text) for GUI_GetBitsPerPixelEx
+    GUIDEV_WriteToActiveOpaque.o(.text) refers to GUIDEV_GetDataPtr.o(.text) for GUI_MEMDEV_GetDataPtr
+    GUIDEV_WriteToActiveOpaque.o(.text) refers to GUI__CompactPixelIndices.o(.text) for GUI__CompactPixelIndices
+    GUIDEV_WriteToActiveOpaque.o(.text) refers to LCD.o(.text) for LCD_DrawBitmap
+    GUIDEV_WriteToActiveOpaque.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUIDEV_WriteToActiveOpaque.o(.text) refers to GUIDEV.o(.text) for GUI_MEMDEV_GetBitsPerPixel
+    GUIDEV_WriteToActiveOpaque.o(.iar.stackusage) refers to GUIDEV_WriteToActiveOpaque.o(.text) for .text6
+    GUIDEV_WriteToActiveOpaque.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_AllocNoInit
+    GUIDEV_WriteToActiveOpaque.o(.iar.stackusage) refers to LCD_GetEx.o(.text) for GUI_GetBitsPerPixelEx
+    GUIDEV_WriteToActiveOpaque.o(.iar.stackusage) refers to GUIDEV_GetDataPtr.o(.text) for GUI_MEMDEV_GetDataPtr
+    GUIDEV_WriteToActiveOpaque.o(.iar.stackusage) refers to GUI__CompactPixelIndices.o(.text) for GUI__CompactPixelIndices
+    GUIDEV_WriteToActiveOpaque.o(.iar.stackusage) refers to LCD.o(.text) for LCD_DrawBitmap
+    GUIDEV_WriteToActiveOpaque.o(.iar.stackusage) refers to GUIDEV.o(.text) for GUI_MEMDEV_GetBitsPerPixel
+    GUIDEV_WriteToActiveOpaque.o(.iar.fraginfo) refers to GUIDEV_WriteToActiveOpaque.o(.text) for .text6
+    WM_BringToBottom.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_BringToBottom.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    WM_BringToBottom.o(.text) refers to WM__GetPrevSibling.o(.text) for WM__GetPrevSibling
+    WM_BringToBottom.o(.text) refers to WM_GetParent.o(.text) for WM_GetParent
+    WM_BringToBottom.o(.text) refers to WM.o(.text) for WM__InvalidateRectEx
+    WM_BringToBottom.o(.iar.stackusage) refers to WM_BringToBottom.o(.text) for .text6
+    WM_BringToBottom.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    WM_BringToBottom.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_BringToBottom.o(.iar.stackusage) refers to WM_GetParent.o(.text) for WM_GetParent
+    WM_BringToBottom.o(.iar.stackusage) refers to WM__GetPrevSibling.o(.text) for WM__GetPrevSibling
+    WM_BringToBottom.o(.iar.stackusage) refers to WM.o(.text) for WM__InvalidateRectEx
+    WM_CriticalHandle.o(.text) refers to WM.o(.bss) for WM__pFirstCriticalHandle
+    WM_CriticalHandle.o(.iar.stackusage) refers to WM_CriticalHandle.o(.text) for .text6
+    WM_CriticalHandle.o(.iar.fraginfo) refers to WM_CriticalHandle.o(.text) for .text6
+    WM_GetClientRect.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    WM_GetClientRect.o(.text) refers to WM.o(.text) for WM__GetClientRectWin
+    WM_GetClientRect.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_GetClientRect.o(.text) refers to WM.o(.bss) for WM__hATransWindow
+    WM_GetClientRect.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    WM_GetClientRect.o(.iar.stackusage) refers to WM_GetClientRect.o(.text) for .text6
+    WM_GetClientRect.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    WM_GetClientRect.o(.iar.stackusage) refers to WM.o(.text) for WM__GetClientRectWin
+    WM_GetClientRect.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_GetClientRect.o(.iar.fraginfo) refers to WM_GetClientRect.o(.text) for .text6
+    WM_GetFirstChild.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_GetFirstChild.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    WM_GetFirstChild.o(.iar.stackusage) refers to WM_GetFirstChild.o(.text) for .text6
+    WM_GetFirstChild.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    WM_GetFirstChild.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_NotifyParent.o(.text) refers to WM_SendToParent.o(.text) for WM_SendToParent
+    WM_NotifyParent.o(.iar.stackusage) refers to WM_NotifyParent.o(.text) for .text6
+    WM_NotifyParent.o(.iar.stackusage) refers to WM_SendToParent.o(.text) for WM_SendToParent
+    WM_SendMessageNoPara.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_SendMessageNoPara.o(.text) refers to WM__SendMessageNoPara.o(.text) for WM__SendMessageNoPara
+    WM_SendMessageNoPara.o(.iar.stackusage) refers to WM_SendMessageNoPara.o(.text) for .text6
+    WM_SendMessageNoPara.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_SendMessageNoPara.o(.iar.stackusage) refers to WM__SendMessageNoPara.o(.text) for WM__SendMessageNoPara
+    WM_SendToParent.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_SendToParent.o(.text) refers to WM_GetParent.o(.text) for WM_GetParent
+    WM_SendToParent.o(.text) refers to WM__SendMessage.o(.text) for WM__SendMessage
+    WM_SendToParent.o(.iar.stackusage) refers to WM_SendToParent.o(.text) for .text6
+    WM_SendToParent.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_SendToParent.o(.iar.stackusage) refers to WM_GetParent.o(.text) for WM_GetParent
+    WM_SendToParent.o(.iar.stackusage) refers to WM__SendMessage.o(.text) for WM__SendMessage
+    WM_Timer.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    WM_Timer.o(.text) refers to WM.o(.text) for WM_SendMessage
+    WM_Timer.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_Timer.o(.text) refers to GUI_Timer.o(.text) for GUI_TIMER__GetFirstTimer
+    WM_Timer.o(.text) refers to GUI_ALLOC_AllocZero.o(.text) for GUI_ALLOC_AllocZero
+    WM_Timer.o(.text) refers to GUI_Time.o(.text) for GUI_GetTime
+    WM_Timer.o(.iar.stackusage) refers to WM_Timer.o(.text) for .text6
+    WM_Timer.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    WM_Timer.o(.iar.stackusage) refers to WM.o(.text) for WM_SendMessage
+    WM_Timer.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_Timer.o(.iar.stackusage) refers to GUI_Timer.o(.text) for GUI_TIMER_GetFlag
+    WM_Timer.o(.iar.stackusage) refers to GUI_ALLOC_AllocZero.o(.text) for GUI_ALLOC_AllocZero
+    WM_Timer.o(.iar.stackusage) refers to GUI_Time.o(.text) for GUI_GetTime
+    WM_Timer.o(.iar.fraginfo) refers to WM_Timer.o(.text) for .text6
+    WM_Touch.o(.text) refers to WM__IsAncestor.o(.text) for WM__IsAncestor
+    WM_Touch.o(.text) refers to WM_GetParent.o(.text) for WM_GetParent
+    WM_Touch.o(.text) refers to WM__SendMessageIfEnabled.o(.text) for WM__SendMessageIfEnabled
+    WM_Touch.o(.text) refers to WM_IsWindow.o(.text) for WM_IsWindow
+    WM_Touch.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    WM_Touch.o(.text) refers to WM.o(.bss) for WM__TouchedLayer
+    WM_Touch.o(.text) refers to WM_Touch.o(.bss) for WM__aCHWinModal
+    WM_Touch.o(.text) refers to WM_Touch.o(.bss) for WM__aCHWinLast
+    WM_Touch.o(.text) refers to WM_Touch.o(.bss) for WM__aCHWinMouseOver
+    WM_Touch.o(.text) refers to WM_Touch.o(.bss) for _pcbMotion
+    WM_Touch.o(.text) refers to GUI_PID.o(.text) for GUI_PID_IsEmpty
+    WM_Touch.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_Touch.o(.text) refers to WM_CriticalHandle.o(.text) for WM__AddCriticalHandle
+    WM_Touch.o(.text) refers to GUI_SelectLayer.o(.text) for GUI_GetLayerPosEx
+    WM_Touch.o(.text) refers to GUI_Curs1.o(.text) for GUI_CURSOR_SetPositionEx
+    WM_Touch.o(.text) refers to WM_Screen2Win.o(.text) for WM_Screen2hWin
+    WM_Touch.o(.text) refers to WM__IsEnabled.o(.text) for WM__IsEnabled
+    WM_Touch.o(.text) refers to WM_SetCapture.o(.text) for WM_ReleaseCapture
+    WM_Touch.o(.text) refers to WM_Touch.o(.bss) for _aStateLast
+    WM_Touch.o(.text) refers to GUI_Core.o(.bss) for GUI_OrgX
+    WM_Touch.o(.text) refers to GUI_Core.o(.bss) for GUI_OrgY
+    WM_Touch.o(.text) refers to WM.o(.bss) for WM__ahCapture
+    WM_Touch.o(.text) refers to WM.o(.bss) for WM__CaptureReleaseAuto
+    WM_Touch.o(.text) refers to WM_PID__GetPrevState.o(.text) for WM_PID__SetPrevState
+    WM_Touch.o(.iar.stackusage) refers to WM_Touch.o(.text) for .text11
+    WM_Touch.o(.iar.stackusage) refers to WM__IsAncestor.o(.text) for WM__IsAncestor
+    WM_Touch.o(.iar.stackusage) refers to WM_GetParent.o(.text) for WM_GetParent
+    WM_Touch.o(.iar.stackusage) refers to WM_IsWindow.o(.text) for WM_IsWindow
+    WM_Touch.o(.iar.stackusage) refers to WM__SendMessageIfEnabled.o(.text) for WM__SendMessageIfEnabled
+    WM_Touch.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    WM_Touch.o(.iar.stackusage) refers to GUI_Curs1.o(.text) for GUI_CURSOR_SetPositionEx
+    WM_Touch.o(.iar.stackusage) refers to GUI_SelectLayer.o(.text) for GUI_GetLayerPosEx
+    WM_Touch.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_Touch.o(.iar.stackusage) refers to GUI_PID.o(.text) for GUI_PID_GetState
+    WM_Touch.o(.iar.stackusage) refers to WM_PID__GetPrevState.o(.text) for WM_PID__SetPrevState
+    WM_Touch.o(.iar.stackusage) refers to WM_SetCapture.o(.text) for WM_ReleaseCapture
+    WM_Touch.o(.iar.stackusage) refers to WM_Screen2Win.o(.text) for WM_Screen2hWin
+    WM_Touch.o(.iar.stackusage) refers to WM_CriticalHandle.o(.text) for WM__AddCriticalHandle
+    WM_Touch.o(.iar.stackusage) refers to WM__IsEnabled.o(.text) for WM__IsEnabled
+    WM_Touch.o(.iar.fraginfo) refers to WM_Touch.o(.text) for .text11
+    WM__SendMessage.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    WM__SendMessage.o(.text) refers to WM.o(.text) for WM_DefaultProc
+    WM__SendMessage.o(.text) refers to WM__SendMessage.o(.bss) for ??_EntranceCnt
+    WM__SendMessage.o(.iar.stackusage) refers to WM__SendMessage.o(.text) for .text6
+    WM__SendMessage.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    WM__SendMessage.o(.iar.stackusage) refers to WM.o(.text) for WM_DefaultProc
+    GUICC_8888.o(.rodata) refers to GUICC_8888.o(.text) for _Color2Index_8888(unsigned long)
+    GUICC_8888.o(.rodata) refers to GUICC_8888_Index2Color.o(.text) for LCD_Index2Color_8888
+    GUICC_8888.o(.iar.stackusage) refers to GUICC_8888.o(.text) for .text6
+    GUICC_8888.o(.iar.fraginfo) refers to GUICC_8888.o(.text) for .text6
+    GUI_CalcColorDist.o(.iar.stackusage) refers to GUI_CalcColorDist.o(.text) for .text6
+    GUI_Curs1.o(.text) refers to GUI__memset.o(.text) for GUI__memset
+    GUI_Curs1.o(.text) refers to GUI_SelectLayer.o(.text) for GUI_GetCursorLayer
+    GUI_Curs1.o(.text) refers to GUI_SPRITE.o(.text) for GUI_SPRITE_Show
+    GUI_Curs1.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_Curs1.o(.text) refers to GUI_Core.o(.text) for GUI__RegisterExit
+    GUI_Curs1.o(.text) refers to GUI_SetColor.o(.text) for GUI_SetBkColor
+    GUI_Curs1.o(.text) refers to GUI_DrawBitmap.o(.text) for GUI_DrawBitmap
+    GUI_Curs1.o(.text) refers to GUI_Curs1.o(.bss) for _IsInitialized
+    GUI_Curs1.o(.text) refers to GUI_Curs1.o(.bss) for _aCursorContext
+    GUI_Curs1.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI_Curs1.o(.text) refers to GUI_CursorArrowM.o(.rodata) for GUI_CursorArrowM
+    GUI_Curs1.o(.iar.stackusage) refers to GUI_Curs1.o(.text) for .text7
+    GUI_Curs1.o(.iar.stackusage) refers to GUI__memset.o(.text) for GUI__memset
+    GUI_Curs1.o(.iar.stackusage) refers to GUI_SelectLayer.o(.text) for GUI_GetCursorLayer
+    GUI_Curs1.o(.iar.stackusage) refers to GUI_SPRITE.o(.text) for GUI_SPRITE_Show
+    GUI_Curs1.o(.iar.stackusage) refers to GUI_Core.o(.text) for GUI_Clear
+    GUI_Curs1.o(.iar.stackusage) refers to GUI_DrawBitmap.o(.text) for GUI_DrawBitmap
+    GUI_Curs1.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_Curs1.o(.iar.stackusage) refers to GUI_SetColor.o(.text) for GUI_SetBkColor
+    GUI_Curs1.o(.iar.fraginfo) refers to GUI_Curs1.o(.text) for .text7
+    GUI_GetOrg.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_GetOrg.o(.text) refers to GUI_Core.o(.bss) for GUI_OrgX
+    GUI_GetOrg.o(.text) refers to GUI_Core.o(.bss) for GUI_OrgY
+    GUI_GetOrg.o(.iar.stackusage) refers to GUI_GetOrg.o(.text) for .text6
+    GUI_GetOrg.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_GetOrg.o(.iar.fraginfo) refers to GUI_GetOrg.o(.text) for .text6
+    GUI_Pen.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_Pen.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI_Pen.o(.iar.stackusage) refers to GUI_Pen.o(.text) for .text6
+    GUI_Pen.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_Pen.o(.iar.fraginfo) refers to GUI_Pen.o(.text) for .text6
+    GUI_PID.o(.text) refers to GUI_WaitEvent.o(.text) for GUI_SignalEvent
+    GUI_PID.o(.text) refers to GUI_PID.o(.data) for _pRead
+    GUI_PID.o(.text) refers to GUI_Core.o(.bss) for WM_pfHandlePID
+    GUI_PID.o(.text) refers to WM_Touch.o(.text) for WM_HandlePID
+    GUI_PID.o(.iar.stackusage) refers to GUI_PID.o(.text) for .text7
+    GUI_PID.o(.iar.stackusage) refers to GUI_WaitEvent.o(.text) for GUI_SignalEvent
+    GUI_PID.o(.iar.fraginfo) refers to GUI_PID.o(.text) for .text7
+    GUI_SelectLCD.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_SelectLCD.o(.text) refers to LCD_SelectLCD.o(.text) for LCD_SelectLCD
+    GUI_SelectLCD.o(.text) refers to LCD_UpdateColorIndices.o(.text) for LCD_UpdateColorIndices
+    GUI_SelectLCD.o(.text) refers to WM.o(.text) for WM_Activate
+    GUI_SelectLCD.o(.iar.stackusage) refers to GUI_SelectLCD.o(.text) for .text6
+    GUI_SelectLCD.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_SelectLCD.o(.iar.stackusage) refers to LCD_SelectLCD.o(.text) for LCD_SelectLCD
+    GUI_SelectLCD.o(.iar.stackusage) refers to LCD_UpdateColorIndices.o(.text) for LCD_UpdateColorIndices
+    GUI_SelectLCD.o(.iar.stackusage) refers to WM.o(.text) for WM_Activate
+    GUI_SetAlpha.o(.text) refers to GUI__SetPixelAlpha.o(.text) for GUI__MixColors
+    GUI_SetAlpha.o(.text) refers to GUIDEV_GetPos.o(.text) for GUI_MEMDEV_GetXPos
+    GUI_SetAlpha.o(.text) refers to GUIDEV_GetXSize.o(.text) for GUI_MEMDEV_GetXSize
+    GUI_SetAlpha.o(.text) refers to GUIDEV.o(.text) for GUI_MEMDEV_GetBitsPerPixel
+    GUI_SetAlpha.o(.text) refers to GUIDEV_GetDataPtr.o(.text) for GUI_MEMDEV_GetDataPtr
+    GUI_SetAlpha.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    GUI_SetAlpha.o(.text) refers to GUI__ExpandPixelIndices.o(.text) for GUI__ExpandPixelIndices
+    GUI_SetAlpha.o(.text) refers to LCD_GetEx.o(.text) for LCD_GetBitsPerPixelEx
+    GUI_SetAlpha.o(.text) refers to GUI__CompactPixelIndices.o(.text) for GUI__CompactPixelIndices
+    GUI_SetAlpha.o(.text) refers to LCD.o(.text) for LCD_Index2Color
+    GUI_SetAlpha.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_FreeFixedBlock
+    GUI_SetAlpha.o(.text) refers to GUI_Device.o(.text) for GUI_DEVICE_Delete
+    GUI_SetAlpha.o(.text) refers to GUI_Core.o(.text) for GUI__RegisterExit
+    GUI_SetAlpha.o(.text) refers to LCD_AA.o(.text) for LCD_AA_SetAndMask
+    GUI_SetAlpha.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI_SetAlpha.o(.text) refers to GUI_SetAlpha.o(.bss) for _aAlpha
+    GUI_SetAlpha.o(.text) refers to LCD_Color.o(.data) for LCD_pColorIndex
+    GUI_SetAlpha.o(.iar.stackusage) refers to GUI_SetAlpha.o(.text) for .text6
+    GUI_SetAlpha.o(.iar.stackusage) refers to GUI__SetPixelAlpha.o(.text) for GUI__MixColors
+    GUI_SetAlpha.o(.iar.stackusage) refers to GUIDEV.o(.text) for GUI_MEMDEV_GetBitsPerPixel
+    GUI_SetAlpha.o(.iar.stackusage) refers to GUIDEV_GetDataPtr.o(.text) for GUI_MEMDEV_GetDataPtr
+    GUI_SetAlpha.o(.iar.stackusage) refers to GUIDEV_GetPos.o(.text) for GUI_MEMDEV_GetXPos
+    GUI_SetAlpha.o(.iar.stackusage) refers to GUIDEV_GetXSize.o(.text) for GUI_MEMDEV_GetXSize
+    GUI_SetAlpha.o(.iar.stackusage) refers to GUI__ExpandPixelIndices.o(.text) for GUI__ExpandPixelIndices
+    GUI_SetAlpha.o(.iar.stackusage) refers to memmovea.o(.text) for __aeabi_memcpy
+    GUI_SetAlpha.o(.iar.stackusage) refers to LCD_GetEx.o(.text) for LCD_GetBitsPerPixelEx
+    GUI_SetAlpha.o(.iar.stackusage) refers to GUI__CompactPixelIndices.o(.text) for GUI__CompactPixelIndices
+    GUI_SetAlpha.o(.iar.stackusage) refers to LCD.o(.text) for LCD_Index2Color
+    GUI_SetAlpha.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_FreeFixedBlock
+    GUI_SetAlpha.o(.iar.stackusage) refers to GUI_Device.o(.text) for GUI_DEVICE_Delete
+    GUI_SetAlpha.o(.iar.stackusage) refers to GUI_Core.o(.text) for GUI__RegisterExit
+    GUI_SetAlpha.o(.iar.stackusage) refers to LCD_AA.o(.text) for LCD_AA_SetAndMask
+    GUI_SetAlpha.o(.iar.fraginfo) refers to GUI_SetAlpha.o(.text) for .text6
+    GUI_SetDrawMode.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_SetDrawMode.o(.text) refers to LCD.o(.text) for LCD_SetDrawMode
+    GUI_SetDrawMode.o(.iar.stackusage) refers to GUI_SetDrawMode.o(.text) for .text6
+    GUI_SetDrawMode.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_SetDrawMode.o(.iar.stackusage) refers to LCD.o(.text) for LCD_SetDrawMode
+    GUI_SetFont.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_SetFont.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI_SetFont.o(.iar.stackusage) refers to GUI_SetFont.o(.text) for .text6
+    GUI_SetFont.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_SetLineStyle.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_SetLineStyle.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI_SetLineStyle.o(.iar.stackusage) refers to GUI_SetLineStyle.o(.text) for .text6
+    GUI_SetLineStyle.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_SetTextAlign.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_SetTextAlign.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI_SetTextAlign.o(.iar.stackusage) refers to GUI_SetTextAlign.o(.text) for .text6
+    GUI_SetTextAlign.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_SetTextMode.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_SetTextMode.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI_SetTextMode.o(.iar.stackusage) refers to GUI_SetTextMode.o(.text) for .text6
+    GUI_SetTextMode.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_Time.o(.text) refers to gui_x.o(i.GUI_X_GetTime) for GUI_X_GetTime
+    GUI_Time.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_Time.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_Lock
+    GUI_Time.o(.text) refers to gui_x.o(i.GUI_X_Delay) for GUI_X_Delay
+    GUI_Time.o(.text) refers to GUI_Exec.o(.text) for GUI_Exec
+    GUI_Time.o(.text) refers to GUI_Task.o(.data) for GUITASK__EntranceCnt
+    GUI_Time.o(.iar.stackusage) refers to GUI_Time.o(.text) for .text6
+    GUI_Time.o(.iar.stackusage) refers to gui_x.o(i.GUI_X_GetTime) for GUI_X_GetTime
+    GUI_Time.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_Lock
+    GUI_Time.o(.iar.stackusage) refers to GUI_Exec.o(.text) for GUI_Exec
+    GUI_Time.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_Time.o(.iar.stackusage) refers to gui_x.o(i.GUI_X_Delay) for GUI_X_Delay
+    GUI_Time.o(.iar.fraginfo) refers to GUI_Time.o(.text) for .text6
+    GUI_Timer.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUI_Timer.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_Timer.o(.text) refers to GUI_Time.o(.text) for GUI_GetTime
+    GUI_Timer.o(.text) refers to GUI_ALLOC_AllocZero.o(.text) for GUI_ALLOC_AllocZero
+    GUI_Timer.o(.text) refers to GUI_Core.o(.text) for GUI__RegisterExit
+    GUI_Timer.o(.text) refers to GUI_Timer.o(.bss) for _hFirstTimer
+    GUI_Timer.o(.text) refers to GUI_Core.o(.bss) for GUI_pfTimerExec
+    GUI_Timer.o(.iar.stackusage) refers to GUI_Timer.o(.text) for .text6
+    GUI_Timer.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUI_Timer.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_Timer.o(.iar.stackusage) refers to GUI_Time.o(.text) for GUI_GetTime
+    GUI_Timer.o(.iar.stackusage) refers to GUI_ALLOC_AllocZero.o(.text) for GUI_ALLOC_AllocZero
+    GUI_Timer.o(.iar.stackusage) refers to GUI_Core.o(.text) for GUI__RegisterExit
+    GUI_Timer.o(.iar.fraginfo) refers to GUI_Timer.o(.text) for .text6
+    GUI__CompactPixelIndices.o(.iar.stackusage) refers to GUI__CompactPixelIndices.o(.text) for .text6
+    GUI__CompactPixelIndices.o(.iar.fraginfo) refers to GUI__CompactPixelIndices.o(.text) for .text6
+    GUI__SetPixelAlpha.o(.text) refers to LCD_GetPixelColor.o(.text) for LCD_GetPixelColor
+    GUI__SetPixelAlpha.o(.text) refers to LCD.o(.text) for LCD_Color2Index
+    GUI__SetPixelAlpha.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI__SetPixelAlpha.o(.iar.stackusage) refers to GUI__SetPixelAlpha.o(.text) for .text6
+    GUI__SetPixelAlpha.o(.iar.stackusage) refers to LCD.o(.text) for LCD_Color2Index
+    GUI__SetPixelAlpha.o(.iar.stackusage) refers to LCD_GetPixelColor.o(.text) for LCD_GetPixelColor
+    GUI__SetPixelAlpha.o(.iar.fraginfo) refers to GUI__SetPixelAlpha.o(.text) for .text6
+    LCD_UpdateColorIndices.o(.text) refers to LCD.o(.text) for LCD_Color2Index
+    LCD_UpdateColorIndices.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    LCD_UpdateColorIndices.o(.iar.stackusage) refers to LCD_UpdateColorIndices.o(.text) for .text6
+    LCD_UpdateColorIndices.o(.iar.stackusage) refers to LCD.o(.text) for LCD_Color2Index
+    GUIDEV_32.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy4
+    GUIDEV_32.o(.text) refers to GUI__SetPixelAlpha.o(.text) for GUI__MixColors
+    GUIDEV_32.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_32.o(.text) refers to GUIDEV_Usage.o(.text) for GUI_USAGE_AddRect
+    GUIDEV_32.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUIDEV_32.o(.text) refers to LCD_Mirror.o(.rodata) for LCD_aMirror
+    GUIDEV_32.o(.text) refers to LCD_Color.o(.data) for LCD_pColorIndex
+    GUIDEV_32.o(.text) refers to GUIDEV_WriteToActiveAlpha.o(.text) for GUI_MEMDEV__WriteToActiveAlpha
+    GUIDEV_32.o(.iar.stackusage) refers to GUIDEV_32.o(.text) for .text6
+    GUIDEV_32.o(.iar.stackusage) refers to GUI__SetPixelAlpha.o(.text) for GUI__MixColors
+    GUIDEV_32.o(.iar.stackusage) refers to memmovea.o(.text) for __aeabi_memcpy4
+    GUIDEV_32.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_32.o(.iar.stackusage) refers to GUIDEV_Usage.o(.text) for GUI_USAGE_AddRect
+    GUIDEV_32.o(.iar.fraginfo) refers to GUIDEV_32.o(.text) for .text6
+    GUIDEV_Clear.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_Clear.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_Clear.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUIDEV_Clear.o(.iar.stackusage) refers to GUIDEV_Clear.o(.text) for .text6
+    GUIDEV_Clear.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_Clear.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_CreateFixed.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_CreateFixed.o(.text) refers to GUIDEV.o(.text) for GUI_MEMDEV__CreateFixed
+    GUIDEV_CreateFixed.o(.iar.stackusage) refers to GUIDEV_CreateFixed.o(.text) for .text6
+    GUIDEV_CreateFixed.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_CreateFixed.o(.iar.stackusage) refers to GUIDEV.o(.text) for GUI_MEMDEV__CreateFixed
+    GUIDEV_GetDataPtr.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_GetDataPtr.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_GetDataPtr.o(.iar.stackusage) refers to GUIDEV_GetDataPtr.o(.text) for .text6
+    GUIDEV_GetDataPtr.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_GetDataPtr.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_GetPos.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_GetPos.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_GetPos.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUIDEV_GetPos.o(.iar.stackusage) refers to GUIDEV_GetPos.o(.text) for .text6
+    GUIDEV_GetPos.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_GetPos.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_GetPos.o(.iar.fraginfo) refers to GUIDEV_GetPos.o(.text) for .text6
+    GUIDEV_GetXSize.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_GetXSize.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_GetXSize.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUIDEV_GetXSize.o(.iar.stackusage) refers to GUIDEV_GetXSize.o(.text) for .text6
+    GUIDEV_GetXSize.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_GetXSize.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_GetYSize.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_GetYSize.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_GetYSize.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUIDEV_GetYSize.o(.iar.stackusage) refers to GUIDEV_GetYSize.o(.text) for .text6
+    GUIDEV_GetYSize.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_GetYSize.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_ReduceYSize.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_ReduceYSize.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_ReduceYSize.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUIDEV_ReduceYSize.o(.iar.stackusage) refers to GUIDEV_ReduceYSize.o(.text) for .text6
+    GUIDEV_ReduceYSize.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_ReduceYSize.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_SetOrg.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_SetOrg.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_SetOrg.o(.text) refers to LCD.o(.text) for LCD_SetClipRectMax
+    GUIDEV_SetOrg.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUIDEV_SetOrg.o(.iar.stackusage) refers to GUIDEV_SetOrg.o(.text) for .text6
+    GUIDEV_SetOrg.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_SetOrg.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_SetOrg.o(.iar.stackusage) refers to LCD.o(.text) for LCD_SetClipRectMax
+    GUIDEV_UsageBM.o(.text) refers to memseta.o(.text) for __aeabi_memset
+    GUIDEV_UsageBM.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_Free
+    GUIDEV_UsageBM.o(.text) refers to GUI_ALLOC_AllocZero.o(.text) for GUI_ALLOC_AllocZero
+    GUIDEV_UsageBM.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_UsageBM.o(.iar.stackusage) refers to GUIDEV_UsageBM.o(.text) for .text6
+    GUIDEV_UsageBM.o(.iar.stackusage) refers to memseta.o(.text) for __aeabi_memset
+    GUIDEV_UsageBM.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_Free
+    GUIDEV_UsageBM.o(.iar.stackusage) refers to GUI_ALLOC_AllocZero.o(.text) for GUI_ALLOC_AllocZero
+    GUIDEV_UsageBM.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_UsageBM.o(.iar.fraginfo) refers to GUIDEV_UsageBM.o(.text) for .text6
+    GUIDEV_Write.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_Write.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_Write.o(.text) refers to WM.o(.text) for WM__InitIVRSearch
+    GUIDEV_Write.o(.text) refers to GUIDEV.o(.text) for GUI_MEMDEV__WriteToActiveAt
+    GUIDEV_Write.o(.iar.stackusage) refers to GUIDEV_Write.o(.text) for .text6
+    GUIDEV_Write.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_Write.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUIDEV_Write.o(.iar.stackusage) refers to GUIDEV.o(.text) for GUI_MEMDEV__WriteToActiveAt
+    GUIDEV_Write.o(.iar.stackusage) refers to WM.o(.text) for WM__GetNextIVR
+    GUIDEV_Write.o(.iar.fraginfo) refers to GUIDEV_Write.o(.text) for .text6
+    WM_GetParent.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_GetParent.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    WM_GetParent.o(.iar.stackusage) refers to WM_GetParent.o(.text) for .text6
+    WM_GetParent.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    WM_GetParent.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_GetWindowRect.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_GetWindowRect.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    WM_GetWindowRect.o(.text) refers to WM.o(.bss) for WM__hATransWindow
+    WM_GetWindowRect.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    WM_GetWindowRect.o(.iar.stackusage) refers to WM_GetWindowRect.o(.text) for .text6
+    WM_GetWindowRect.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    WM_GetWindowRect.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_GetWindowRect.o(.iar.fraginfo) refers to WM_GetWindowRect.o(.text) for .text6
+    WM_IsWindow.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_IsWindow.o(.text) refers to WM.o(.text) for WM__IsWindow
+    WM_IsWindow.o(.iar.stackusage) refers to WM_IsWindow.o(.text) for .text6
+    WM_IsWindow.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_IsWindow.o(.iar.stackusage) refers to WM.o(.text) for WM__IsWindow
+    WM_OnKey.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_OnKey.o(.text) refers to WM__SendMessage.o(.text) for WM__SendMessage
+    WM_OnKey.o(.text) refers to WM.o(.bss) for WM__TouchedLayer
+    WM_OnKey.o(.text) refers to WM.o(.bss) for WM__ahWinFocus
+    WM_OnKey.o(.iar.stackusage) refers to WM_OnKey.o(.text) for .text6
+    WM_OnKey.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_OnKey.o(.iar.stackusage) refers to WM__SendMessage.o(.text) for WM__SendMessage
+    WM_PID__GetPrevState.o(.text) refers to WM_PID__GetPrevState.o(.bss) for _aPrevState
+    WM_PID__GetPrevState.o(.iar.stackusage) refers to WM_PID__GetPrevState.o(.text) for .text7
+    WM_PID__GetPrevState.o(.iar.fraginfo) refers to WM_PID__GetPrevState.o(.text) for .text7
+    WM_Screen2Win.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    WM_Screen2Win.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_Screen2Win.o(.text) refers to WM_GetDesktopWindowEx.o(.text) for WM_GetDesktopWindowEx
+    WM_Screen2Win.o(.text) refers to WM.o(.bss) for WM__TouchedLayer
+    WM_Screen2Win.o(.iar.stackusage) refers to WM_Screen2Win.o(.text) for .text6
+    WM_Screen2Win.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    WM_Screen2Win.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_Screen2Win.o(.iar.stackusage) refers to WM_GetDesktopWindowEx.o(.text) for WM_GetDesktopWindowEx
+    WM_Screen2Win.o(.iar.fraginfo) refers to WM_Screen2Win.o(.text) for .text6
+    WM_SetCapture.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_SetCapture.o(.text) refers to WM__SendMessage.o(.text) for WM__SendMessage
+    WM_SetCapture.o(.text) refers to WM.o(.bss) for WM__TouchedLayer
+    WM_SetCapture.o(.text) refers to WM.o(.bss) for WM__ahCapture
+    WM_SetCapture.o(.text) refers to WM.o(.bss) for WM__CaptureReleaseAuto
+    WM_SetCapture.o(.iar.stackusage) refers to WM_SetCapture.o(.text) for .text6
+    WM_SetCapture.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_SetCapture.o(.iar.stackusage) refers to WM__SendMessage.o(.text) for WM__SendMessage
+    WM_SetCapture.o(.iar.fraginfo) refers to WM_SetCapture.o(.text) for .text6
+    WM_SetSize.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_SetSize.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    WM_SetSize.o(.text) refers to WM_ResizeWindow.o(.text) for WM_ResizeWindow
+    WM_SetSize.o(.iar.stackusage) refers to WM_SetSize.o(.text) for .text6
+    WM_SetSize.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    WM_SetSize.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_SetSize.o(.iar.stackusage) refers to WM_ResizeWindow.o(.text) for WM_ResizeWindow
+    WM__GetPrevSibling.o(.text) refers to WM__GetFirstSibling.o(.text) for WM__GetFirstSibling
+    WM__GetPrevSibling.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    WM__GetPrevSibling.o(.iar.stackusage) refers to WM__GetPrevSibling.o(.text) for .text6
+    WM__GetPrevSibling.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    WM__GetPrevSibling.o(.iar.stackusage) refers to WM__GetFirstSibling.o(.text) for WM__GetFirstSibling
+    WM__IsAncestor.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    WM__IsAncestor.o(.iar.stackusage) refers to WM__IsAncestor.o(.text) for .text6
+    WM__IsAncestor.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    WM__IsAncestor.o(.iar.fraginfo) refers to WM__IsAncestor.o(.text) for .text6
+    WM__IsEnabled.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    WM__IsEnabled.o(.iar.stackusage) refers to WM__IsEnabled.o(.text) for .text6
+    WM__IsEnabled.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    WM__SendMessageIfEnabled.o(.text) refers to WM__IsEnabled.o(.text) for WM__IsEnabled
+    WM__SendMessageIfEnabled.o(.text) refers to WM__SendMessage.o(.text) for WM__SendMessage
+    WM__SendMessageIfEnabled.o(.iar.stackusage) refers to WM__SendMessageIfEnabled.o(.text) for .text6
+    WM__SendMessageIfEnabled.o(.iar.stackusage) refers to WM__IsEnabled.o(.text) for WM__IsEnabled
+    WM__SendMessageIfEnabled.o(.iar.stackusage) refers to WM__SendMessage.o(.text) for WM__SendMessage
+    WM__SendMessageNoPara.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    WM__SendMessageNoPara.o(.iar.stackusage) refers to WM__SendMessageNoPara.o(.text) for .text6
+    WM__SendMessageNoPara.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    GUICC_8888_Index2Color.o(.iar.stackusage) refers to GUICC_8888_Index2Color.o(.text) for .text6
+    GUI_CursorArrowM.o(.rodata) refers to GUI_CursorArrowMPx.o(.rodata) for GUI_Pixels_ArrowM
+    GUI_CursorArrowM.o(.rodata) refers to GUI_CursorPal.o(.rodata) for GUI_CursorPal
+    GUI_CursorArrowM.o(.iar.fraginfo) refers to GUI_CursorArrowM.o(.rodata) for GUI_BitmapArrowM
+    GUI_DrawBitmap.o(.text) refers to GUI_SetDrawMode.o(.text) for GUI_SetDrawMode
+    GUI_DrawBitmap.o(.text) refers to LCD_Color.o(.text) for LCD_GetpPalConvTable
+    GUI_DrawBitmap.o(.text) refers to LCD.o(.text) for LCD_DrawBitmap
+    GUI_DrawBitmap.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_DrawBitmap.o(.text) refers to WM.o(.text) for WM__InitIVRSearch
+    GUI_DrawBitmap.o(.text) refers to LCD_Color.o(.data) for LCD_pBkColorIndex
+    GUI_DrawBitmap.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI_DrawBitmap.o(.iar.stackusage) refers to GUI_DrawBitmap.o(.text) for .text6
+    GUI_DrawBitmap.o(.iar.stackusage) refers to GUI_SetDrawMode.o(.text) for GUI_SetDrawMode
+    GUI_DrawBitmap.o(.iar.stackusage) refers to LCD.o(.text) for LCD_DrawBitmap
+    GUI_DrawBitmap.o(.iar.stackusage) refers to LCD_Color.o(.text) for LCD_GetpPalConvTable
+    GUI_DrawBitmap.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_DrawBitmap.o(.iar.stackusage) refers to WM.o(.text) for WM__GetNextIVR
+    GUI_DrawBitmap.o(.iar.fraginfo) refers to GUI_DrawBitmap.o(.text) for .text6
+    GUI_Exec.o(.text) refers to WM.o(.text) for WM_Exec
+    GUI_Exec.o(.text) refers to GUI_Core.o(.bss) for GUI_pfTimerExec
+    GUI_Exec.o(.iar.stackusage) refers to GUI_Exec.o(.text) for .text6
+    GUI_Exec.o(.iar.stackusage) refers to WM.o(.text) for WM_Exec
+    GUI_Exec.o(.iar.fraginfo) refers to GUI_Exec.o(.text) for .text6
+    GUI_SPRITE.o(.text) refers to GUI_GetBitmapPixelIndex.o(.text) for GUI_GetBitmapPixelIndex
+    GUI_SPRITE.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUI_SPRITE.o(.text) refers to GUI_RectsIntersect.o(.text) for GUI_RectsIntersect
+    GUI_SPRITE.o(.text) refers to GUI__IntersectRect.o(.text) for GUI__IntersectRect
+    GUI_SPRITE.o(.text) refers to GUIDEV.o(.text) for GUI_MEMDEV_Select
+    GUI_SPRITE.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI_SPRITE.o(.text) refers to GUI_ALLOC_AllocZero.o(.text) for GUI_ALLOC_AllocZero
+    GUI_SPRITE.o(.text) refers to GUI_Device.o(.text) for GUI_DEVICE_Create
+    GUI_SPRITE.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_SPRITE.o(.text) refers to LCD_Color.o(.data) for LCD_pColorIndex
+    GUI_SPRITE.o(.iar.stackusage) refers to GUI_SPRITE.o(.text) for .text6
+    GUI_SPRITE.o(.iar.stackusage) refers to GUI_GetBitmapPixelIndex.o(.text) for GUI_GetBitmapPixelIndex
+    GUI_SPRITE.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUI_SPRITE.o(.iar.stackusage) refers to GUI_RectsIntersect.o(.text) for GUI_RectsIntersect
+    GUI_SPRITE.o(.iar.stackusage) refers to GUI__IntersectRect.o(.text) for GUI__IntersectRect
+    GUI_SPRITE.o(.iar.stackusage) refers to GUIDEV.o(.text) for GUI_MEMDEV_Select
+    GUI_SPRITE.o(.iar.stackusage) refers to GUI_ALLOC_AllocZero.o(.text) for GUI_ALLOC_AllocZero
+    GUI_SPRITE.o(.iar.stackusage) refers to GUI_Device.o(.text) for GUI_DEVICE_Create
+    GUI_SPRITE.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    GUI_SPRITE.o(.iar.fraginfo) refers to GUI_SPRITE.o(.text) for .text6
+    GUI_SPRITE.o(.iar.fraginfo) refers to GUI_SPRITE.o(.rodata) for ?<Constant {(GUI_RECT *)0}>
+    GUI__ExpandPixelIndices.o(.iar.stackusage) refers to GUI__ExpandPixelIndices.o(.text) for .text6
+    GUI__ExpandPixelIndices.o(.iar.fraginfo) refers to GUI__ExpandPixelIndices.o(.text) for .text6
+    LCD_AA.o(.text) refers to GUI__SetPixelAlpha.o(.text) for GUI__MixColors
+    LCD_AA.o(.text) refers to LCD.o(.text) for LCD_Index2Color
+    LCD_AA.o(.text) refers to LCD_GetPixelColor.o(.text) for LCD_GetPixelColor
+    LCD_AA.o(.text) refers to LCD_AA.o(.data) for _AndMask
+    LCD_AA.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    LCD_AA.o(.text) refers to LCD_Color.o(.data) for LCD_pColorIndex
+    LCD_AA.o(.text) refers to LCD_Color.o(.data) for LCD_pBkColorIndex
+    LCD_AA.o(.iar.stackusage) refers to LCD_AA.o(.text) for .text7
+    LCD_AA.o(.iar.stackusage) refers to GUI__SetPixelAlpha.o(.text) for GUI__MixColors
+    LCD_AA.o(.iar.stackusage) refers to LCD.o(.text) for LCD_Color2Index
+    LCD_AA.o(.iar.stackusage) refers to LCD_GetPixelColor.o(.text) for LCD_GetPixelColor
+    LCD_AA.o(.iar.fraginfo) refers to LCD_AA.o(.text) for .text7
+    LCD_GetPixelColor.o(.text) refers to LCD_GetP.o(.text) for LCD_GetPixelIndex
+    LCD_GetPixelColor.o(.text) refers to LCD.o(.text) for LCD_Index2Color
+    LCD_GetPixelColor.o(.iar.stackusage) refers to LCD_GetPixelColor.o(.text) for .text6
+    LCD_GetPixelColor.o(.iar.stackusage) refers to LCD_GetP.o(.text) for LCD_GetPixelIndex
+    LCD_GetPixelColor.o(.iar.stackusage) refers to LCD.o(.text) for LCD_Index2Color
+    LCD_SelectLCD.o(.text) refers to GUI_Device.o(.text) for GUI_DEVICE_Unlink
+    LCD_SelectLCD.o(.text) refers to LCD.o(.text) for LCD_SetClipRectMax
+    LCD_SelectLCD.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    LCD_SelectLCD.o(.iar.stackusage) refers to LCD_SelectLCD.o(.text) for .text6
+    LCD_SelectLCD.o(.iar.stackusage) refers to GUI_Device.o(.text) for GUI_DEVICE_Unlink
+    LCD_SelectLCD.o(.iar.stackusage) refers to LCD.o(.text) for LCD_SetClipRectMax
+    GUIDEV_WriteToActiveAlpha.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_WriteToActiveAlpha.o(.text) refers to GUI__Alpha.o(.text) for GUI__AllocAlphaBuffer
+    GUIDEV_WriteToActiveAlpha.o(.text) refers to GUIDEV_GetDataPtr.o(.text) for GUI_MEMDEV_GetDataPtr
+    GUIDEV_WriteToActiveAlpha.o(.text) refers to GUI__CompactPixelIndices.o(.text) for GUI__CompactPixelIndicesEx
+    GUIDEV_WriteToActiveAlpha.o(.text) refers to LCD.o(.text) for LCD_DrawBitmap
+    GUIDEV_WriteToActiveAlpha.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUIDEV_WriteToActiveAlpha.o(.text) refers to GUICC_8888_Index2Color.o(.text) for LCD_Index2Color_8888
+    GUIDEV_WriteToActiveAlpha.o(.iar.stackusage) refers to GUIDEV_WriteToActiveAlpha.o(.text) for .text6
+    GUIDEV_WriteToActiveAlpha.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    GUIDEV_WriteToActiveAlpha.o(.iar.stackusage) refers to GUIDEV_GetDataPtr.o(.text) for GUI_MEMDEV_GetDataPtr
+    GUIDEV_WriteToActiveAlpha.o(.iar.stackusage) refers to GUI__Alpha.o(.text) for GUI__AllocAlphaBuffer
+    GUIDEV_WriteToActiveAlpha.o(.iar.stackusage) refers to GUI__CompactPixelIndices.o(.text) for GUI__CompactPixelIndicesEx
+    GUIDEV_WriteToActiveAlpha.o(.iar.stackusage) refers to LCD.o(.text) for LCD_DrawBitmap
+    WM_GetDesktopWindowEx.o(.text) refers to WM.o(.bss) for WM__ahDesktopWin
+    WM_GetDesktopWindowEx.o(.iar.stackusage) refers to WM_GetDesktopWindowEx.o(.text) for .text6
+    WM_ResizeWindow.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_ResizeWindow.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    WM_ResizeWindow.o(.text) refers to WM.o(.text) for WM__InvalidateDrawAndDescs
+    WM_ResizeWindow.o(.text) refers to GUI_MergeRect.o(.text) for GUI_MergeRect
+    WM_ResizeWindow.o(.text) refers to WM__UpdateChildPositions.o(.text) for WM__UpdateChildPositions
+    WM_ResizeWindow.o(.text) refers to GUI__IntersectRect.o(.text) for GUI__IntersectRect
+    WM_ResizeWindow.o(.iar.stackusage) refers to WM_ResizeWindow.o(.text) for .text6
+    WM_ResizeWindow.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    WM_ResizeWindow.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_ResizeWindow.o(.iar.stackusage) refers to GUI_MergeRect.o(.text) for GUI_MergeRect
+    WM_ResizeWindow.o(.iar.stackusage) refers to GUI__IntersectRect.o(.text) for GUI__IntersectRect
+    WM_ResizeWindow.o(.iar.stackusage) refers to WM.o(.text) for WM__InvalidateDrawAndDescs
+    WM_ResizeWindow.o(.iar.stackusage) refers to WM__UpdateChildPositions.o(.text) for WM__UpdateChildPositions
+    WM__GetFirstSibling.o(.text) refers to WM_GetParent.o(.text) for WM_GetParent
+    WM__GetFirstSibling.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    WM__GetFirstSibling.o(.iar.stackusage) refers to WM__GetFirstSibling.o(.text) for .text6
+    WM__GetFirstSibling.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_h2p
+    WM__GetFirstSibling.o(.iar.stackusage) refers to WM_GetParent.o(.text) for WM_GetParent
+    GUI_CursorPal.o(.iar.fraginfo) refers to GUI_CursorPal.o(.rodata) for _aColor
+    GUI_GetBitmapPixelIndex.o(.iar.stackusage) refers to GUI_GetBitmapPixelIndex.o(.text) for .text6
+    GUI_GetBitmapPixelIndex.o(.iar.fraginfo) refers to GUI_GetBitmapPixelIndex.o(.text) for .text6
+    GUI__Alpha.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_FreeFixedBlock
+    GUI__Alpha.o(.text) refers to LCD_GetEx.o(.text) for GUI_GetBitsPerPixelEx
+    GUI__Alpha.o(.text) refers to LCD_ReadRect.o(.text) for GUI_ReadRectEx
+    GUI__Alpha.o(.text) refers to GUI__ExpandPixelIndices.o(.text) for GUI__ExpandPixelIndicesEx
+    GUI__Alpha.o(.text) refers to GUI__SetPixelAlpha.o(.text) for GUI__MixColors
+    GUI__Alpha.o(.text) refers to GUI_Core.o(.text) for GUI__RegisterExit
+    GUI__Alpha.o(.text) refers to GUI__Alpha.o(.bss) for _pCurrent
+    GUI__Alpha.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    GUI__Alpha.o(.text) refers to GUICC_8888_Index2Color.o(.text) for LCD_Index2Color_8888
+    GUI__Alpha.o(.text) refers to GUICC_888_Index2Color.o(.text) for LCD_Index2Color_888
+    GUI__Alpha.o(.iar.stackusage) refers to GUI__Alpha.o(.text) for .text6
+    GUI__Alpha.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_FreeFixedBlock
+    GUI__Alpha.o(.iar.stackusage) refers to LCD_GetEx.o(.text) for GUI_GetBitsPerPixelEx
+    GUI__Alpha.o(.iar.stackusage) refers to LCD_ReadRect.o(.text) for GUI_ReadRectEx
+    GUI__Alpha.o(.iar.stackusage) refers to GUI__ExpandPixelIndices.o(.text) for GUI__ExpandPixelIndicesEx
+    GUI__Alpha.o(.iar.stackusage) refers to GUI__SetPixelAlpha.o(.text) for GUI__MixColors
+    GUI__Alpha.o(.iar.stackusage) refers to GUI_Core.o(.text) for GUI__RegisterExit
+    GUI__Alpha.o(.iar.fraginfo) refers to GUI__Alpha.o(.text) for .text6
+    LCD_GetP.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    LCD_GetP.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    LCD_GetP.o(.iar.stackusage) refers to LCD_GetP.o(.text) for .text6
+    LCD_GetP.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    LCD_GetP.o(.iar.fraginfo) refers to LCD_GetP.o(.text) for .text6
+    WM__UpdateChildPositions.o(.text) refers to WM_Move.o(.text) for WM_MoveWindow
+    WM__UpdateChildPositions.o(.text) refers to WM_ResizeWindow.o(.text) for WM_ResizeWindow
+    WM__UpdateChildPositions.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_UnlockH
+    WM__UpdateChildPositions.o(.iar.stackusage) refers to WM__UpdateChildPositions.o(.text) for .text6
+    WM__UpdateChildPositions.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    WM__UpdateChildPositions.o(.iar.stackusage) refers to WM_Move.o(.text) for WM_MoveWindow
+    WM__UpdateChildPositions.o(.iar.stackusage) refers to WM_ResizeWindow.o(.text) for WM_ResizeWindow
+    GUICC_888_Index2Color.o(.iar.stackusage) refers to GUICC_888_Index2Color.o(.text) for .text6
+    LCD_ReadRect.o(.text) refers to LCD_GetEx.o(.text) for GUI_GetBitsPerPixelEx
+    LCD_ReadRect.o(.text) refers to GUI_Core.o(.bss) for GUI_Context
+    LCD_ReadRect.o(.text) refers to GUI__ExpandPixelIndices.o(.text) for GUI__ExpandPixelIndices
+    LCD_ReadRect.o(.iar.stackusage) refers to LCD_ReadRect.o(.text) for .text6
+    LCD_ReadRect.o(.iar.stackusage) refers to LCD_GetEx.o(.text) for GUI_GetBitsPerPixelEx
+    LCD_ReadRect.o(.iar.stackusage) refers to GUI__ExpandPixelIndices.o(.text) for GUI__ExpandPixelIndices
+    LCD_ReadRect.o(.iar.fraginfo) refers to LCD_ReadRect.o(.text) for .text6
+    WM_Move.o(.text) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    WM_Move.o(.text) refers to GUI_MoveRect.o(.text) for GUI_MoveRect
+    WM_Move.o(.text) refers to WM__SendMessage.o(.text) for WM__SendMessage
+    WM_Move.o(.text) refers to WM.o(.text) for WM__InvalidateParent
+    WM_Move.o(.text) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_Move.o(.iar.stackusage) refers to WM_Move.o(.text) for .text6
+    WM_Move.o(.iar.stackusage) refers to GUI_Alloc.o(.text) for GUI_ALLOC_LockH
+    WM_Move.o(.iar.stackusage) refers to GUI_MoveRect.o(.text) for GUI_MoveRect
+    WM_Move.o(.iar.stackusage) refers to WM__SendMessage.o(.text) for WM__SendMessage
+    WM_Move.o(.iar.stackusage) refers to WM.o(.text) for WM__InvalidateParent
+    WM_Move.o(.iar.stackusage) refers to GUI_Task.o(.text) for GUI_Lock
+    WM_Move.o(.iar.fraginfo) refers to WM_Move.o(.text) for .text6
+    WM_Move.o(.iar.fraginfo) refers to WM_Move.o(.rodata) for ?<Constant {0}>
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    uldiv.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    uldiv.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    dadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dadd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
+    dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dmul.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ddiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ddiv.o(.text) refers to depilogue.o(.text) for _double_round
+    ffltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ffltui.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    dflti.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dflti.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dfltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfltui.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dfixui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixui.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    cdcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cfrcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_lpc177x_8x.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_lpc177x_8x.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(i.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(i.main) for main
+    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing main.o(.emb_text), (8 bytes).
+    Removing main.o(i.Chip_Clock_EnablePLL), (6 bytes).
+    Removing main.o(i.HAL_USBInit), (14 bytes).
+    Removing timer.o(.emb_text), (8 bytes).
+    Removing timer.o(i.NVIC_EnableIRQ), (22 bytes).
+    Removing timer.o(i.disable_timer), (56 bytes).
+    Removing timer.o(i.enable_timer), (60 bytes).
+    Removing timer.o(i.init_timer), (244 bytes).
+    Removing timer.o(i.reset_timer), (80 bytes).
+    Removing lpc177x_8x_lcd.o(.emb_text), (8 bytes).
+    Removing lpc177x_8x_lcd.o(i.GUI_Text), (80 bytes).
+    Removing lpc177x_8x_lcd.o(i.LCD_ShowFontCN), (232 bytes).
+    Removing lpc177x_8x_lcd.o(i.PutChar_12), (96 bytes).
+    Removing lpc177x_8x_lcd.o(i.WriteOneHzChar), (26 bytes).
+    Removing lpc177x_8x_lcd.o(i.WriteString), (200 bytes).
+    Removing lpc177x_8x_lcd.o(i.WriteString_12), (204 bytes).
+    Removing lpc177x_8x_lcd.o(i.findHzIndex), (60 bytes).
+    Removing lpc177x_8x_lcd.o(i.lcd_Clear), (24 bytes).
+    Removing lpc177x_8x_lcd.o(i.lcd_display_coord), (294 bytes).
+    Removing logo.o(.emb_text), (8 bytes).
+    Removing asciilib.o(i.GetASCIICode_12), (32 bytes).
+    Removing touchpanel.o(.emb_text), (8 bytes).
+    Removing touchpanel.o(i.Read_XTP2046), (464 bytes).
+    Removing touchpanel.o(i.SPI_WriteByte), (52 bytes).
+    Removing touchpanel.o(i.SSPI1_Init), (84 bytes).
+    Removing touchpanel.o(i.TP_DrawPoint), (64 bytes).
+    Removing touchpanel.o(i.TP_GetAdXY), (124 bytes).
+    Removing touchpanel.o(i.TouchPanel_Calibrate), (164 bytes).
+    Removing touchpanel.o(i.delay_ms), (30 bytes).
+    Removing touchpanel.o(i.delay_us), (30 bytes).
+    Removing touchpanel.o(i.getDisplayPoint), (238 bytes).
+    Removing touchpanel.o(i.setCalibrationMatrix), (356 bytes).
+    Removing touchpanel.o(i.touch_init), (50 bytes).
+    Removing touchpanel.o(.bss), (92 bytes).
+    Removing touchpanel.o(.data), (24 bytes).
+    Removing use_disp.o(.emb_text), (8 bytes).
+    Removing use_disp.o(i.Disp_Button_Sys), (112 bytes).
+    Removing use_disp.o(i.Disp_Key_Box), (312 bytes).
+    Removing use_disp.o(i.Disp_Num_Key), (436 bytes).
+    Removing use_disp.o(i.Disp_Num_Keyboard_Box), (848 bytes).
+    Removing use_disp.o(i.Disp_UpOrLow_Limit_Word), (172 bytes).
+    Removing use_disp.o(i.Draw_LIN5), (82 bytes).
+    Removing use_disp.o(i.Input_Bar), (80 bytes).
+    Removing use_disp.o(i.Num_Key_Dark_Block), (222 bytes).
+    Removing use_disp.o(i.Num_Key_Thin_Block), (288 bytes).
+    Removing use_disp.o(i.Num_Keyboard), (48 bytes).
+    Removing use_disp.o(i.R_ADJ_Pro1), (2592 bytes).
+    Removing use_disp.o(i.SysSet_Polygon_Box), (484 bytes).
+    Removing use_disp.o(i.lcd_image), (48 bytes).
+    Removing use_disp.o(.data), (3 bytes).
+    Removing key.o(.emb_text), (8 bytes).
+    Removing key.o(i.Key_Dw_Pro), (904 bytes).
+    Removing key.o(i.Key_Left_Pro), (296 bytes).
+    Removing key.o(i.Key_Pro), (384 bytes).
+    Removing key.o(i.Key_Right_Pro), (296 bytes).
+    Removing key.o(i.Key_Up_Pro), (900 bytes).
+    Removing key.o(i.key_enter_pro), (2512 bytes).
+    Removing key.o(i.key_setup_pro), (356 bytes).
+    Removing test.o(.emb_text), (8 bytes).
+    Removing test.o(i.rr5463), (124 bytes).
+    Removing lpc177x_8x_rtc.o(.emb_text), (8 bytes).
+    Removing lpc177x_8x_rtc.o(i.RTC_AlarmIntConfig), (202 bytes).
+    Removing lpc177x_8x_rtc.o(i.RTC_CalibConfig), (24 bytes).
+    Removing lpc177x_8x_rtc.o(i.RTC_CalibCounterCmd), (24 bytes).
+    Removing lpc177x_8x_rtc.o(i.RTC_ClearIntPending), (8 bytes).
+    Removing lpc177x_8x_rtc.o(i.RTC_Cmd), (24 bytes).
+    Removing lpc177x_8x_rtc.o(i.RTC_CntIncrIntConfig), (202 bytes).
+    Removing lpc177x_8x_rtc.o(i.RTC_DeInit), (20 bytes).
+    Removing lpc177x_8x_rtc.o(i.RTC_GetAlarmTime), (102 bytes).
+    Removing lpc177x_8x_rtc.o(i.RTC_GetFullAlarmTime), (70 bytes).
+    Removing lpc177x_8x_rtc.o(i.RTC_GetFullTime), (70 bytes).
+    Removing lpc177x_8x_rtc.o(i.RTC_GetIntPending), (16 bytes).
+    Removing lpc177x_8x_rtc.o(i.RTC_GetTime), (98 bytes).
+    Removing lpc177x_8x_rtc.o(i.RTC_Init), (30 bytes).
+    Removing lpc177x_8x_rtc.o(i.RTC_ReadGPREG), (16 bytes).
+    Removing lpc177x_8x_rtc.o(i.RTC_ResetClockTickCounter), (18 bytes).
+    Removing lpc177x_8x_rtc.o(i.RTC_SetAlarmTime), (232 bytes).
+    Removing lpc177x_8x_rtc.o(i.RTC_SetFullAlarmTime), (70 bytes).
+    Removing lpc177x_8x_rtc.o(i.RTC_SetFullTime), (70 bytes).
+    Removing lpc177x_8x_rtc.o(i.RTC_SetTime), (228 bytes).
+    Removing lpc177x_8x_rtc.o(i.RTC_WriteGPREG), (14 bytes).
+    Removing ex_sdram.o(.emb_text), (8 bytes).
+    Removing ex_sdram.o(.data), (8 bytes).
+    Removing startup_lpc177x_8x.o(HEAP), (0 bytes).
+    Removing system_lpc177x_8x.o(.emb_text), (8 bytes).
+    Removing system_lpc177x_8x.o(i.SystemCoreClockUpdate), (700 bytes).
+    Removing lpc177x_8x_gpio.o(.emb_text), (8 bytes).
+    Removing lpc177x_8x_gpio.o(i.FIO_ByteClearValue), (36 bytes).
+    Removing lpc177x_8x_gpio.o(i.FIO_ByteGetPointer), (56 bytes).
+    Removing lpc177x_8x_gpio.o(i.FIO_ByteReadValue), (34 bytes).
+    Removing lpc177x_8x_gpio.o(i.FIO_ByteSetDir), (54 bytes).
+    Removing lpc177x_8x_gpio.o(i.FIO_ByteSetMask), (70 bytes).
+    Removing lpc177x_8x_gpio.o(i.FIO_ByteSetValue), (36 bytes).
+    Removing lpc177x_8x_gpio.o(i.FIO_ClearInt), (16 bytes).
+    Removing lpc177x_8x_gpio.o(i.FIO_ClearValue), (16 bytes).
+    Removing lpc177x_8x_gpio.o(i.FIO_HalfWordClearValue), (32 bytes).
+    Removing lpc177x_8x_gpio.o(i.FIO_HalfWordGetPointer), (64 bytes).
+    Removing lpc177x_8x_gpio.o(i.FIO_HalfWordReadValue), (30 bytes).
+    Removing lpc177x_8x_gpio.o(i.FIO_HalfWordSetDir), (62 bytes).
+    Removing lpc177x_8x_gpio.o(i.FIO_HalfWordSetMask), (62 bytes).
+    Removing lpc177x_8x_gpio.o(i.FIO_HalfWordSetValue), (32 bytes).
+    Removing lpc177x_8x_gpio.o(i.FIO_IntCmd), (20 bytes).
+    Removing lpc177x_8x_gpio.o(i.FIO_ReadValue), (12 bytes).
+    Removing lpc177x_8x_gpio.o(i.FIO_SetDir), (20 bytes).
+    Removing lpc177x_8x_gpio.o(i.FIO_SetMask), (40 bytes).
+    Removing lpc177x_8x_gpio.o(i.FIO_SetValue), (16 bytes).
+    Removing lpc177x_8x_gpio.o(i.GPIO_ClearInt), (32 bytes).
+    Removing lpc177x_8x_gpio.o(i.GPIO_IntCmd), (64 bytes).
+    Removing lpc177x_8x_gpio.o(i.GPIO_OutputValue), (30 bytes).
+    Removing lpc177x_8x_systick.o(.emb_text), (8 bytes).
+    Removing lpc177x_8x_systick.o(i.SYSTICK_ClearCounterFlag), (18 bytes).
+    Removing lpc177x_8x_systick.o(i.SYSTICK_Cmd), (40 bytes).
+    Removing lpc177x_8x_systick.o(i.SYSTICK_ExternalInit), (110 bytes).
+    Removing lpc177x_8x_systick.o(i.SYSTICK_GetCurrentValue), (8 bytes).
+    Removing lpc177x_8x_systick.o(i.SYSTICK_IntCmd), (40 bytes).
+    Removing lpc177x_8x_systick.o(i.SYSTICK_InternalInit), (92 bytes).
+    Removing lpc177x_8x_clkpwr.o(.emb_text), (8 bytes).
+    Removing lpc177x_8x_clkpwr.o(i.CLKPWR_DeepPowerDown), (24 bytes).
+    Removing lpc177x_8x_clkpwr.o(i.CLKPWR_DeepSleep), (24 bytes).
+    Removing lpc177x_8x_clkpwr.o(i.CLKPWR_PowerDown), (24 bytes).
+    Removing lpc177x_8x_clkpwr.o(i.CLKPWR_SetCLKDiv), (104 bytes).
+    Removing lpc177x_8x_clkpwr.o(i.CLKPWR_Sleep), (16 bytes).
+    Removing lpc177x_8x_clkpwr.o(.data), (8 bytes).
+    Removing lpc177x_8x_ssp.o(.emb_text), (8 bytes).
+    Removing lpc177x_8x_ssp.o(i.SSP_ClearIntPending), (4 bytes).
+    Removing lpc177x_8x_ssp.o(i.SSP_Cmd), (24 bytes).
+    Removing lpc177x_8x_ssp.o(i.SSP_ConfigStructInit), (28 bytes).
+    Removing lpc177x_8x_ssp.o(i.SSP_DMACmd), (26 bytes).
+    Removing lpc177x_8x_ssp.o(i.SSP_DeInit), (48 bytes).
+    Removing lpc177x_8x_ssp.o(i.SSP_GetDataSize), (10 bytes).
+    Removing lpc177x_8x_ssp.o(i.SSP_GetIntStatus), (16 bytes).
+    Removing lpc177x_8x_ssp.o(i.SSP_GetRawIntStatus), (16 bytes).
+    Removing lpc177x_8x_ssp.o(i.SSP_GetRawIntStatusReg), (6 bytes).
+    Removing lpc177x_8x_ssp.o(i.SSP_GetStatus), (16 bytes).
+    Removing lpc177x_8x_ssp.o(i.SSP_Init), (88 bytes).
+    Removing lpc177x_8x_ssp.o(i.SSP_IntConfig), (26 bytes).
+    Removing lpc177x_8x_ssp.o(i.SSP_LoopBackCmd), (24 bytes).
+    Removing lpc177x_8x_ssp.o(i.SSP_ReadWrite), (540 bytes).
+    Removing lpc177x_8x_ssp.o(i.SSP_ReceiveData), (8 bytes).
+    Removing lpc177x_8x_ssp.o(i.SSP_SendData), (6 bytes).
+    Removing lpc177x_8x_ssp.o(i.SSP_SlaveOutputCmd), (24 bytes).
+    Removing lpc177x_8x_ssp.o(i.setSSPclock), (80 bytes).
+    Removing lpc177x_8x_uart.o(.emb_text), (8 bytes).
+    Removing lpc177x_8x_uart.o(i.UART_ABClearIntPending), (28 bytes).
+    Removing lpc177x_8x_uart.o(i.UART_ABCmd), (132 bytes).
+    Removing lpc177x_8x_uart.o(i.UART_CheckBusy), (18 bytes).
+    Removing lpc177x_8x_uart.o(i.UART_DeInit), (92 bytes).
+    Removing lpc177x_8x_uart.o(i.UART_FIFOConfig), (108 bytes).
+    Removing lpc177x_8x_uart.o(i.UART_FIFOConfigStructInit), (14 bytes).
+    Removing lpc177x_8x_uart.o(i.UART_ForceBreak), (32 bytes).
+    Removing lpc177x_8x_uart.o(i.UART_FullModemConfigMode), (56 bytes).
+    Removing lpc177x_8x_uart.o(i.UART_FullModemForcePinState), (48 bytes).
+    Removing lpc177x_8x_uart.o(i.UART_FullModemGetStatus), (6 bytes).
+    Removing lpc177x_8x_uart.o(i.UART_GetIntId), (12 bytes).
+    Removing lpc177x_8x_uart.o(i.UART_IrDACmd), (32 bytes).
+    Removing lpc177x_8x_uart.o(i.UART_IrDAInvtInputCmd), (34 bytes).
+    Removing lpc177x_8x_uart.o(i.UART_IrDAPulseDivConfig), (30 bytes).
+    Removing lpc177x_8x_uart.o(i.UART_RS485Config), (100 bytes).
+    Removing lpc177x_8x_uart.o(i.UART_RS485ReceiverCmd), (32 bytes).
+    Removing lpc177x_8x_uart.o(i.UART_RS485Send), (88 bytes).
+    Removing lpc177x_8x_uart.o(i.UART_RS485SendData), (22 bytes).
+    Removing lpc177x_8x_uart.o(i.UART_RS485SendSlvAddr), (18 bytes).
+    Removing debug_frmwrk.o(.emb_text), (8 bytes).
+    Removing debug_frmwrk.o(i.Uart0RecTimeOut), (56 bytes).
+    Removing debug_frmwrk.o(i._printf), (32 bytes).
+    Removing debug_frmwrk.o(i.enter_chn), (328 bytes).
+    Removing debug_frmwrk.o(i.txdp), (2 bytes).
+    Removing lpc177x_8x_pinsel.o(.emb_text), (8 bytes).
+    Removing lpc177x_8x_pinsel.o(i.PINSEL_DacEnable), (54 bytes).
+    Removing lpc177x_8x_pinsel.o(i.PINSEL_SetAnalogPinMode), (126 bytes).
+    Removing lpc177x_8x_pinsel.o(i.PINSEL_SetFilter), (74 bytes).
+    Removing lpc177x_8x_pinsel.o(i.PINSEL_SetHysMode), (46 bytes).
+    Removing lpc177x_8x_pinsel.o(i.PINSEL_SetI2CMode), (42 bytes).
+    Removing lpc177x_8x_pinsel.o(i.PINSEL_SetInBufMode), (46 bytes).
+    Removing lpc177x_8x_pinsel.o(i.PINSEL_SetOpenDrainMode), (46 bytes).
+    Removing lpc177x_8x_pinsel.o(i.PINSEL_SetPinMode), (40 bytes).
+    Removing lpc177x_8x_pinsel.o(i.PINSEL_SetSlewMode), (46 bytes).
+    Removing lpc177x_8x_eeprom.o(.emb_text), (8 bytes).
+    Removing lpc177x_8x_eeprom.o(i.EEPROM_Erase), (92 bytes).
+    Removing lpc177x_8x_eeprom.o(i.EEPROM_PowerDown), (24 bytes).
+    Removing gui_x.o(i.GUI_X_ErrorOut), (2 bytes).
+    Removing gui_x.o(i.GUI_X_Log), (2 bytes).
+    Removing gui_x.o(i.GUI_X_Warn), (2 bytes).
+    Removing guiconf.o(.emb_text), (8 bytes).
+    Removing lcdconf.o(.emb_text), (8 bytes).
+    Removing simconf.o(i.SIMConf_C), (2 bytes).
+    Removing GUICC_M565.o(.iar.rtmodel), (41 bytes).
+    Removing GUICC_M565.o(.iar_vfe_header), (4 bytes).
+    Removing GUICC_M565.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUICC_M565.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUICC_M565.o(.iar.stackusage), (20 bytes).
+    Removing GUICC_M565.o(.iar.fraginfo), (10 bytes).
+    Removing GUI_Alloc.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_Alloc.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_Alloc.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_Alloc.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_Alloc.o(.iar.stackusage), (262 bytes).
+    Removing GUI_Alloc.o(.iar.fraginfo), (45 bytes).
+    Removing GUI_Core.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_Core.o(.bss), (4 bytes).
+    Removing GUI_Core.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_Core.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_Core.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_Core.o(.iar.stackusage), (97 bytes).
+    Removing GUI_Core.o(.iar.fraginfo), (17 bytes).
+    Removing GUI_Device.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_Device.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_Device.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_Device.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_Device.o(.iar.stackusage), (41 bytes).
+    Removing GUI_Device.o(.iar.fraginfo), (10 bytes).
+    Removing GUI_DispStringAt.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_DispStringAt.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_DispStringAt.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_DispStringAt.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_DispStringAt.o(.iar.stackusage), (12 bytes).
+    Removing GUI_SetColor.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_SetColor.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_SetColor.o(.iar.stackusage), (34 bytes).
+    Removing GUI_SetColor.o(.iar.fraginfo), (5 bytes).
+    Removing LCD_GetEx.o(.iar.rtmodel), (41 bytes).
+    Removing LCD_GetEx.o(.iar_vfe_header), (4 bytes).
+    Removing LCD_GetEx.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing LCD_GetEx.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing LCD_GetEx.o(.iar.stackusage), (286 bytes).
+    Removing LCD_GetEx.o(.iar.fraginfo), (42 bytes).
+    Removing LCD_Set.o(.iar.rtmodel), (41 bytes).
+    Removing LCD_Set.o(.iar_vfe_header), (4 bytes).
+    Removing LCD_Set.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing LCD_Set.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing LCD_Set.o(.iar.stackusage), (189 bytes).
+    Removing LCD_Set.o(.iar.fraginfo), (28 bytes).
+    Removing GUIDRV_Lin_16.o(.iar.rtmodel), (41 bytes).
+    Removing GUIDRV_Lin_16.o(.iar_vfe_header), (4 bytes).
+    Removing GUIDRV_Lin_16.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUIDRV_Lin_16.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUIDRV_Lin_16.o(.iar.stackusage), (297 bytes).
+    Removing GUIDRV_Lin_16.o(.iar.fraginfo), (71 bytes).
+    Removing F6x8.o(.iar.rtmodel), (41 bytes).
+    Removing F6x8.o(.iar_vfe_header), (4 bytes).
+    Removing F6x8.o(.iar.stackusage), (0 bytes).
+    Removing F6x8.o(.iar.fraginfo), (8 bytes).
+    Removing GUICC_M565_Index2Color.o(.iar.rtmodel), (41 bytes).
+    Removing GUICC_M565_Index2Color.o(.iar_vfe_header), (4 bytes).
+    Removing GUICC_M565_Index2Color.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUICC_M565_Index2Color.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUICC_M565_Index2Color.o(.iar.stackusage), (5 bytes).
+    Removing GUI_CharM.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_CharM.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_CharM.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_CharM.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_CharM.o(.iar.stackusage), (27 bytes).
+    Removing GUI_CharM.o(.iar.fraginfo), (8 bytes).
+    Removing GUI_DispString.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_DispString.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_DispString.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_DispString.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_DispString.o(.iar.stackusage), (27 bytes).
+    Removing GUI_Error.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_Error.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_Error.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_Error.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_Error.o(.iar.stackusage), (5 bytes).
+    Removing GUI_Goto.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_Goto.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_Goto.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_Goto.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_Goto.o(.iar.stackusage), (33 bytes).
+    Removing GUI_Goto.o(.iar.fraginfo), (7 bytes).
+    Removing GUI_SetOrg.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_SetOrg.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_SetOrg.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_SetOrg.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_SetOrg.o(.iar.stackusage), (12 bytes).
+    Removing GUI_Task.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_Task.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_Task.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_Task.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_Task.o(.iar.stackusage), (59 bytes).
+    Removing GUI_Task.o(.iar.fraginfo), (12 bytes).
+    Removing GUI_UC_EncodeNone.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_UC_EncodeNone.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_UC_EncodeNone.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_UC_EncodeNone.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_UC_EncodeNone.o(.iar.stackusage), (29 bytes).
+    Removing GUI_UC_EncodeNone.o(.iar.fraginfo), (9 bytes).
+    Removing GUI__DivTbl_255_31.o(.iar.rtmodel), (41 bytes).
+    Removing GUI__DivTbl_255_31.o(.iar_vfe_header), (4 bytes).
+    Removing GUI__DivTbl_255_31.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI__DivTbl_255_31.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI__DivTbl_255_31.o(.iar.stackusage), (0 bytes).
+    Removing GUI__DivTbl_255_63.o(.iar.rtmodel), (41 bytes).
+    Removing GUI__DivTbl_255_63.o(.iar_vfe_header), (4 bytes).
+    Removing GUI__DivTbl_255_63.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI__DivTbl_255_63.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI__DivTbl_255_63.o(.iar.stackusage), (0 bytes).
+    Removing GUI__DivTbl_31_255.o(.iar.rtmodel), (41 bytes).
+    Removing GUI__DivTbl_31_255.o(.iar_vfe_header), (4 bytes).
+    Removing GUI__DivTbl_31_255.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI__DivTbl_31_255.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI__DivTbl_31_255.o(.iar.stackusage), (0 bytes).
+    Removing GUI__DivTbl_63_255.o(.iar.rtmodel), (41 bytes).
+    Removing GUI__DivTbl_63_255.o(.iar_vfe_header), (4 bytes).
+    Removing GUI__DivTbl_63_255.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI__DivTbl_63_255.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI__DivTbl_63_255.o(.iar.stackusage), (0 bytes).
+    Removing GUI__memset.o(.iar.rtmodel), (41 bytes).
+    Removing GUI__memset.o(.iar_vfe_header), (4 bytes).
+    Removing GUI__memset.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI__memset.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI__memset.o(.iar.stackusage), (5 bytes).
+    Removing LCD.o(.iar.rtmodel), (41 bytes).
+    Removing LCD.o(.iar_vfe_header), (4 bytes).
+    Removing LCD.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing LCD.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing LCD.o(.iar.stackusage), (167 bytes).
+    Removing LCD.o(.iar.fraginfo), (28 bytes).
+    Removing LCD_Color.o(.iar.rtmodel), (41 bytes).
+    Removing LCD_Color.o(.data), (4 bytes).
+    Removing LCD_Color.o(.iar_vfe_header), (4 bytes).
+    Removing LCD_Color.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing LCD_Color.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing LCD_Color.o(.iar.stackusage), (56 bytes).
+    Removing LCD_Color.o(.iar.fraginfo), (12 bytes).
+    Removing LCD_Mirror.o(.iar.rtmodel), (41 bytes).
+    Removing LCD_Mirror.o(.iar_vfe_header), (4 bytes).
+    Removing LCD_Mirror.o(.iar.stackusage), (0 bytes).
+    Removing GUIDEV_16.o(.iar.rtmodel), (41 bytes).
+    Removing GUIDEV_16.o(.iar_vfe_header), (4 bytes).
+    Removing GUIDEV_16.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUIDEV_16.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUIDEV_16.o(.iar.stackusage), (166 bytes).
+    Removing GUIDEV_16.o(.iar.fraginfo), (24 bytes).
+    Removing WM.o(.iar.rtmodel), (41 bytes).
+    Removing WM.o(.bss), (1 bytes).
+    Removing WM.o(.iar_vfe_header), (4 bytes).
+    Removing WM.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM.o(.iar.stackusage), (771 bytes).
+    Removing WM.o(.iar.fraginfo), (72 bytes).
+    Removing WM_GetDesktopWindow.o(.iar.rtmodel), (41 bytes).
+    Removing WM_GetDesktopWindow.o(.iar_vfe_header), (4 bytes).
+    Removing WM_GetDesktopWindow.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM_GetDesktopWindow.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM_GetDesktopWindow.o(.iar.stackusage), (5 bytes).
+    Removing GUICC_0.o(.iar.rtmodel), (41 bytes).
+    Removing GUICC_0.o(.iar_vfe_header), (4 bytes).
+    Removing GUICC_0.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUICC_0.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUICC_0.o(.iar.stackusage), (39 bytes).
+    Removing GUICC_0.o(.iar.fraginfo), (8 bytes).
+    Removing GUI_ALLOC_AllocZero.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_ALLOC_AllocZero.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_ALLOC_AllocZero.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_ALLOC_AllocZero.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_ALLOC_AllocZero.o(.iar.stackusage), (21 bytes).
+    Removing GUI_Char.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_Char.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_Char.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_Char.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_Char.o(.iar.stackusage), (78 bytes).
+    Removing GUI_Char.o(.iar.fraginfo), (11 bytes).
+    Removing GUI_CharLine.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_CharLine.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_CharLine.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_CharLine.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_CharLine.o(.iar.stackusage), (56 bytes).
+    Removing GUI_CharLine.o(.iar.fraginfo), (11 bytes).
+    Removing GUI_MergeRect.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_MergeRect.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_MergeRect.o(.iar.stackusage), (5 bytes).
+    Removing GUI_MoveRect.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_MoveRect.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_MoveRect.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_MoveRect.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_MoveRect.o(.iar.stackusage), (5 bytes).
+    Removing GUI_OnKey.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_OnKey.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_OnKey.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_OnKey.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_OnKey.o(.iar.stackusage), (54 bytes).
+    Removing GUI_OnKey.o(.iar.fraginfo), (10 bytes).
+    Removing GUI_RectsIntersect.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_RectsIntersect.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_RectsIntersect.o(.iar.stackusage), (5 bytes).
+    Removing GUI_SaveContext.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_SaveContext.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_SaveContext.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_SaveContext.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_SaveContext.o(.iar.stackusage), (22 bytes).
+    Removing GUI_SaveContext.o(.iar.fraginfo), (6 bytes).
+    Removing GUI_SelectLayer.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_SelectLayer.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_SelectLayer.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_SelectLayer.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_SelectLayer.o(.iar.stackusage), (98 bytes).
+    Removing GUI_SelectLayer.o(.iar.fraginfo), (15 bytes).
+    Removing GUI_SetDefault.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_SetDefault.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_SetDefault.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_SetDefault.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_SetDefault.o(.iar.stackusage), (39 bytes).
+    Removing GUI_SetDefault.o(.iar.fraginfo), (5 bytes).
+    Removing GUI_UC.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_UC.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_UC.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_UC.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_UC.o(.iar.stackusage), (66 bytes).
+    Removing GUI_UC.o(.iar.fraginfo), (11 bytes).
+    Removing GUI_WaitEvent.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_WaitEvent.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_WaitEvent.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_WaitEvent.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_WaitEvent.o(.iar.stackusage), (45 bytes).
+    Removing GUI_WaitEvent.o(.iar.fraginfo), (10 bytes).
+    Removing GUI__IntersectRect.o(.iar.rtmodel), (41 bytes).
+    Removing GUI__IntersectRect.o(.iar_vfe_header), (4 bytes).
+    Removing GUI__IntersectRect.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI__IntersectRect.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI__IntersectRect.o(.iar.stackusage), (5 bytes).
+    Removing GUI__IntersectRects.o(.iar.rtmodel), (41 bytes).
+    Removing GUI__IntersectRects.o(.iar_vfe_header), (4 bytes).
+    Removing GUI__IntersectRects.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI__IntersectRects.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI__IntersectRects.o(.iar.stackusage), (5 bytes).
+    Removing GUI__ManageCache.o(.iar.rtmodel), (41 bytes).
+    Removing GUI__ManageCache.o(.iar_vfe_header), (4 bytes).
+    Removing GUI__ManageCache.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI__ManageCache.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI__ManageCache.o(.iar.stackusage), (15 bytes).
+    Removing GUI__ManageCache.o(.iar.fraginfo), (6 bytes).
+    Removing GUI__memset16.o(.iar.rtmodel), (41 bytes).
+    Removing GUI__memset16.o(.iar_vfe_header), (4 bytes).
+    Removing GUI__memset16.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI__memset16.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI__memset16.o(.iar.stackusage), (5 bytes).
+    Removing LCD_GetNumDisplays.o(.iar.rtmodel), (41 bytes).
+    Removing LCD_GetNumDisplays.o(.iar_vfe_header), (4 bytes).
+    Removing LCD_GetNumDisplays.o(.iar.stackusage), (6 bytes).
+    Removing LCD_SetClipRectEx.o(.iar.rtmodel), (41 bytes).
+    Removing LCD_SetClipRectEx.o(.iar_vfe_header), (4 bytes).
+    Removing LCD_SetClipRectEx.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing LCD_SetClipRectEx.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing LCD_SetClipRectEx.o(.iar.stackusage), (9 bytes).
+    Removing GUIDEV.o(.iar.rtmodel), (41 bytes).
+    Removing GUIDEV.o(.iar_vfe_header), (4 bytes).
+    Removing GUIDEV.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUIDEV.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUIDEV.o(.iar.stackusage), (215 bytes).
+    Removing GUIDEV.o(.iar.fraginfo), (15 bytes).
+    Removing GUIDEV_Banding.o(.iar.rtmodel), (41 bytes).
+    Removing GUIDEV_Banding.o(.iar_vfe_header), (4 bytes).
+    Removing GUIDEV_Banding.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUIDEV_Banding.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUIDEV_Banding.o(.iar.stackusage), (45 bytes).
+    Removing GUIDEV_Banding.o(.iar.fraginfo), (4 bytes).
+    Removing GUIDEV_StaticDevices.o(.iar.rtmodel), (41 bytes).
+    Removing GUIDEV_StaticDevices.o(.iar_vfe_header), (4 bytes).
+    Removing GUIDEV_StaticDevices.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUIDEV_StaticDevices.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUIDEV_StaticDevices.o(.iar.stackusage), (187 bytes).
+    Removing GUIDEV_StaticDevices.o(.iar.fraginfo), (16 bytes).
+    Removing GUIDEV_Usage.o(.iar.rtmodel), (41 bytes).
+    Removing GUIDEV_Usage.o(.iar_vfe_header), (4 bytes).
+    Removing GUIDEV_Usage.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUIDEV_Usage.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUIDEV_Usage.o(.iar.stackusage), (39 bytes).
+    Removing GUIDEV_Usage.o(.iar.fraginfo), (6 bytes).
+    Removing GUIDEV_WriteToActiveOpaque.o(.iar.rtmodel), (41 bytes).
+    Removing GUIDEV_WriteToActiveOpaque.o(.iar_vfe_header), (4 bytes).
+    Removing GUIDEV_WriteToActiveOpaque.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUIDEV_WriteToActiveOpaque.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUIDEV_WriteToActiveOpaque.o(.iar.stackusage), (86 bytes).
+    Removing GUIDEV_WriteToActiveOpaque.o(.iar.fraginfo), (8 bytes).
+    Removing WM_BringToBottom.o(.iar.rtmodel), (41 bytes).
+    Removing WM_BringToBottom.o(.iar_vfe_header), (4 bytes).
+    Removing WM_BringToBottom.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM_BringToBottom.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM_BringToBottom.o(.iar.stackusage), (24 bytes).
+    Removing WM_CriticalHandle.o(.iar.rtmodel), (41 bytes).
+    Removing WM_CriticalHandle.o(.iar_vfe_header), (4 bytes).
+    Removing WM_CriticalHandle.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM_CriticalHandle.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM_CriticalHandle.o(.iar.stackusage), (10 bytes).
+    Removing WM_CriticalHandle.o(.iar.fraginfo), (5 bytes).
+    Removing WM_GetClientRect.o(.iar.rtmodel), (41 bytes).
+    Removing WM_GetClientRect.o(.iar_vfe_header), (4 bytes).
+    Removing WM_GetClientRect.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM_GetClientRect.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM_GetClientRect.o(.iar.stackusage), (49 bytes).
+    Removing WM_GetClientRect.o(.iar.fraginfo), (6 bytes).
+    Removing WM_GetFirstChild.o(.iar.rtmodel), (41 bytes).
+    Removing WM_GetFirstChild.o(.iar_vfe_header), (4 bytes).
+    Removing WM_GetFirstChild.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM_GetFirstChild.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM_GetFirstChild.o(.iar.stackusage), (12 bytes).
+    Removing WM_NotifyParent.o(.iar.rtmodel), (41 bytes).
+    Removing WM_NotifyParent.o(.iar_vfe_header), (4 bytes).
+    Removing WM_NotifyParent.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM_NotifyParent.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM_NotifyParent.o(.iar.stackusage), (6 bytes).
+    Removing WM_SendMessageNoPara.o(.iar.rtmodel), (41 bytes).
+    Removing WM_SendMessageNoPara.o(.iar_vfe_header), (4 bytes).
+    Removing WM_SendMessageNoPara.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM_SendMessageNoPara.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM_SendMessageNoPara.o(.iar.stackusage), (12 bytes).
+    Removing WM_SendToParent.o(.iar.rtmodel), (41 bytes).
+    Removing WM_SendToParent.o(.iar_vfe_header), (4 bytes).
+    Removing WM_SendToParent.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM_SendToParent.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM_SendToParent.o(.iar.stackusage), (15 bytes).
+    Removing WM_Timer.o(.iar.rtmodel), (41 bytes).
+    Removing WM_Timer.o(.iar_vfe_header), (4 bytes).
+    Removing WM_Timer.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM_Timer.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM_Timer.o(.rodata), (16 bytes).
+    Removing WM_Timer.o(.iar.stackusage), (122 bytes).
+    Removing WM_Timer.o(.iar.fraginfo), (9 bytes).
+    Removing WM_Touch.o(.iar.rtmodel), (41 bytes).
+    Removing WM_Touch.o(.bss), (192 bytes).
+    Removing WM_Touch.o(.bss), (8 bytes).
+    Removing WM_Touch.o(.text), (1100 bytes).
+    Removing WM_Touch.o(.iar_vfe_header), (4 bytes).
+    Removing WM_Touch.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM_Touch.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM_Touch.o(.rodata), (12 bytes).
+    Removing WM_Touch.o(.iar.stackusage), (110 bytes).
+    Removing WM_Touch.o(.iar.fraginfo), (15 bytes).
+    Removing WM__SendMessage.o(.iar.rtmodel), (41 bytes).
+    Removing WM__SendMessage.o(.iar_vfe_header), (4 bytes).
+    Removing WM__SendMessage.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM__SendMessage.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM__SendMessage.o(.iar.stackusage), (12 bytes).
+    Removing GUICC_8888.o(.iar.rtmodel), (41 bytes).
+    Removing GUICC_8888.o(.iar_vfe_header), (4 bytes).
+    Removing GUICC_8888.o(.iar.stackusage), (20 bytes).
+    Removing GUICC_8888.o(.iar.fraginfo), (6 bytes).
+    Removing GUI_CalcColorDist.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_CalcColorDist.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_CalcColorDist.o(.iar.stackusage), (5 bytes).
+    Removing GUI_Curs1.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_Curs1.o(.bss), (384 bytes).
+    Removing GUI_Curs1.o(.text), (708 bytes).
+    Removing GUI_Curs1.o(.bss), (12 bytes).
+    Removing GUI_Curs1.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_Curs1.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_Curs1.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_Curs1.o(.iar.stackusage), (197 bytes).
+    Removing GUI_Curs1.o(.iar.fraginfo), (22 bytes).
+    Removing GUI_GetOrg.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_GetOrg.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_GetOrg.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_GetOrg.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_GetOrg.o(.iar.stackusage), (14 bytes).
+    Removing GUI_GetOrg.o(.iar.fraginfo), (6 bytes).
+    Removing GUI_Pen.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_Pen.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_Pen.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_Pen.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_Pen.o(.iar.stackusage), (48 bytes).
+    Removing GUI_Pen.o(.iar.fraginfo), (9 bytes).
+    Removing GUI_PID.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_PID.o(.data), (80 bytes).
+    Removing GUI_PID.o(.text), (288 bytes).
+    Removing GUI_PID.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_PID.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_PID.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_PID.o(.iar.stackusage), (34 bytes).
+    Removing GUI_PID.o(.iar.fraginfo), (11 bytes).
+    Removing GUI_SelectLCD.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_SelectLCD.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_SelectLCD.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_SelectLCD.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_SelectLCD.o(.iar.stackusage), (18 bytes).
+    Removing GUI_SetAlpha.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_SetAlpha.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_SetAlpha.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_SetAlpha.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_SetAlpha.o(.iar.stackusage), (338 bytes).
+    Removing GUI_SetAlpha.o(.iar.fraginfo), (35 bytes).
+    Removing GUI_SetDrawMode.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_SetDrawMode.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_SetDrawMode.o(.iar.stackusage), (12 bytes).
+    Removing GUI_SetFont.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_SetFont.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_SetFont.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_SetFont.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_SetFont.o(.iar.stackusage), (9 bytes).
+    Removing GUI_SetLineStyle.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_SetLineStyle.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_SetLineStyle.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_SetLineStyle.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_SetLineStyle.o(.iar.stackusage), (9 bytes).
+    Removing GUI_SetTextAlign.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_SetTextAlign.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_SetTextAlign.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_SetTextAlign.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_SetTextAlign.o(.iar.stackusage), (9 bytes).
+    Removing GUI_SetTextMode.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_SetTextMode.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_SetTextMode.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_SetTextMode.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_SetTextMode.o(.iar.stackusage), (9 bytes).
+    Removing GUI_Time.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_Time.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_Time.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_Time.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_Time.o(.iar.stackusage), (30 bytes).
+    Removing GUI_Time.o(.iar.fraginfo), (5 bytes).
+    Removing GUI_Timer.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_Timer.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_Timer.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_Timer.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_Timer.o(.iar.stackusage), (233 bytes).
+    Removing GUI_Timer.o(.iar.fraginfo), (22 bytes).
+    Removing GUI__CompactPixelIndices.o(.iar.rtmodel), (41 bytes).
+    Removing GUI__CompactPixelIndices.o(.iar_vfe_header), (4 bytes).
+    Removing GUI__CompactPixelIndices.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI__CompactPixelIndices.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI__CompactPixelIndices.o(.iar.stackusage), (11 bytes).
+    Removing GUI__CompactPixelIndices.o(.iar.fraginfo), (4 bytes).
+    Removing GUI__SetPixelAlpha.o(.iar.rtmodel), (41 bytes).
+    Removing GUI__SetPixelAlpha.o(.iar_vfe_header), (4 bytes).
+    Removing GUI__SetPixelAlpha.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI__SetPixelAlpha.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI__SetPixelAlpha.o(.iar.stackusage), (20 bytes).
+    Removing GUI__SetPixelAlpha.o(.iar.fraginfo), (5 bytes).
+    Removing LCD_UpdateColorIndices.o(.iar.rtmodel), (41 bytes).
+    Removing LCD_UpdateColorIndices.o(.iar_vfe_header), (4 bytes).
+    Removing LCD_UpdateColorIndices.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing LCD_UpdateColorIndices.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing LCD_UpdateColorIndices.o(.iar.stackusage), (12 bytes).
+    Removing GUIDEV_32.o(.iar.rtmodel), (41 bytes).
+    Removing GUIDEV_32.o(.iar_vfe_header), (4 bytes).
+    Removing GUIDEV_32.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUIDEV_32.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUIDEV_32.o(.iar.stackusage), (192 bytes).
+    Removing GUIDEV_32.o(.iar.fraginfo), (26 bytes).
+    Removing GUIDEV_Clear.o(.iar.rtmodel), (41 bytes).
+    Removing GUIDEV_Clear.o(.iar_vfe_header), (4 bytes).
+    Removing GUIDEV_Clear.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUIDEV_Clear.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUIDEV_Clear.o(.iar.stackusage), (18 bytes).
+    Removing GUIDEV_CreateFixed.o(.iar.rtmodel), (41 bytes).
+    Removing GUIDEV_CreateFixed.o(.iar_vfe_header), (4 bytes).
+    Removing GUIDEV_CreateFixed.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUIDEV_CreateFixed.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUIDEV_CreateFixed.o(.iar.stackusage), (12 bytes).
+    Removing GUIDEV_GetDataPtr.o(.iar.rtmodel), (41 bytes).
+    Removing GUIDEV_GetDataPtr.o(.iar_vfe_header), (4 bytes).
+    Removing GUIDEV_GetDataPtr.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUIDEV_GetDataPtr.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUIDEV_GetDataPtr.o(.iar.stackusage), (15 bytes).
+    Removing GUIDEV_GetPos.o(.iar.rtmodel), (41 bytes).
+    Removing GUIDEV_GetPos.o(.iar_vfe_header), (4 bytes).
+    Removing GUIDEV_GetPos.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUIDEV_GetPos.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUIDEV_GetPos.o(.iar.stackusage), (36 bytes).
+    Removing GUIDEV_GetPos.o(.iar.fraginfo), (6 bytes).
+    Removing GUIDEV_GetXSize.o(.iar.rtmodel), (41 bytes).
+    Removing GUIDEV_GetXSize.o(.iar_vfe_header), (4 bytes).
+    Removing GUIDEV_GetXSize.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUIDEV_GetXSize.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUIDEV_GetXSize.o(.iar.stackusage), (15 bytes).
+    Removing GUIDEV_GetYSize.o(.iar.rtmodel), (41 bytes).
+    Removing GUIDEV_GetYSize.o(.iar_vfe_header), (4 bytes).
+    Removing GUIDEV_GetYSize.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUIDEV_GetYSize.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUIDEV_GetYSize.o(.iar.stackusage), (15 bytes).
+    Removing GUIDEV_ReduceYSize.o(.iar.rtmodel), (41 bytes).
+    Removing GUIDEV_ReduceYSize.o(.iar_vfe_header), (4 bytes).
+    Removing GUIDEV_ReduceYSize.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUIDEV_ReduceYSize.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUIDEV_ReduceYSize.o(.iar.stackusage), (15 bytes).
+    Removing GUIDEV_SetOrg.o(.iar.rtmodel), (41 bytes).
+    Removing GUIDEV_SetOrg.o(.iar_vfe_header), (4 bytes).
+    Removing GUIDEV_SetOrg.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUIDEV_SetOrg.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUIDEV_SetOrg.o(.iar.stackusage), (18 bytes).
+    Removing GUIDEV_UsageBM.o(.iar.rtmodel), (41 bytes).
+    Removing GUIDEV_UsageBM.o(.iar_vfe_header), (4 bytes).
+    Removing GUIDEV_UsageBM.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUIDEV_UsageBM.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUIDEV_UsageBM.o(.iar.stackusage), (46 bytes).
+    Removing GUIDEV_UsageBM.o(.iar.fraginfo), (9 bytes).
+    Removing GUIDEV_Write.o(.iar.rtmodel), (41 bytes).
+    Removing GUIDEV_Write.o(.iar_vfe_header), (4 bytes).
+    Removing GUIDEV_Write.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUIDEV_Write.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUIDEV_Write.o(.iar.stackusage), (30 bytes).
+    Removing GUIDEV_Write.o(.iar.fraginfo), (5 bytes).
+    Removing WM_GetParent.o(.iar.rtmodel), (41 bytes).
+    Removing WM_GetParent.o(.iar_vfe_header), (4 bytes).
+    Removing WM_GetParent.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM_GetParent.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM_GetParent.o(.iar.stackusage), (12 bytes).
+    Removing WM_GetWindowRect.o(.iar.rtmodel), (41 bytes).
+    Removing WM_GetWindowRect.o(.iar_vfe_header), (4 bytes).
+    Removing WM_GetWindowRect.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM_GetWindowRect.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM_GetWindowRect.o(.iar.stackusage), (24 bytes).
+    Removing WM_GetWindowRect.o(.iar.fraginfo), (6 bytes).
+    Removing WM_IsWindow.o(.iar.rtmodel), (41 bytes).
+    Removing WM_IsWindow.o(.text), (24 bytes).
+    Removing WM_IsWindow.o(.iar_vfe_header), (4 bytes).
+    Removing WM_IsWindow.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM_IsWindow.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM_IsWindow.o(.iar.stackusage), (12 bytes).
+    Removing WM_OnKey.o(.iar.rtmodel), (41 bytes).
+    Removing WM_OnKey.o(.iar_vfe_header), (4 bytes).
+    Removing WM_OnKey.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM_OnKey.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM_OnKey.o(.iar.stackusage), (12 bytes).
+    Removing WM_PID__GetPrevState.o(.iar.rtmodel), (41 bytes).
+    Removing WM_PID__GetPrevState.o(.bss), (192 bytes).
+    Removing WM_PID__GetPrevState.o(.text), (44 bytes).
+    Removing WM_PID__GetPrevState.o(.iar_vfe_header), (4 bytes).
+    Removing WM_PID__GetPrevState.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM_PID__GetPrevState.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM_PID__GetPrevState.o(.iar.stackusage), (10 bytes).
+    Removing WM_PID__GetPrevState.o(.iar.fraginfo), (5 bytes).
+    Removing WM_Screen2Win.o(.iar.rtmodel), (41 bytes).
+    Removing WM_Screen2Win.o(.text), (224 bytes).
+    Removing WM_Screen2Win.o(.iar_vfe_header), (4 bytes).
+    Removing WM_Screen2Win.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM_Screen2Win.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM_Screen2Win.o(.iar.stackusage), (53 bytes).
+    Removing WM_Screen2Win.o(.iar.fraginfo), (7 bytes).
+    Removing WM_SetCapture.o(.iar.rtmodel), (41 bytes).
+    Removing WM_SetCapture.o(.text), (124 bytes).
+    Removing WM_SetCapture.o(.iar_vfe_header), (4 bytes).
+    Removing WM_SetCapture.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM_SetCapture.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM_SetCapture.o(.iar.stackusage), (24 bytes).
+    Removing WM_SetCapture.o(.iar.fraginfo), (7 bytes).
+    Removing WM_SetSize.o(.iar.rtmodel), (41 bytes).
+    Removing WM_SetSize.o(.iar_vfe_header), (4 bytes).
+    Removing WM_SetSize.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM_SetSize.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM_SetSize.o(.iar.stackusage), (18 bytes).
+    Removing WM__GetPrevSibling.o(.iar.rtmodel), (41 bytes).
+    Removing WM__GetPrevSibling.o(.iar_vfe_header), (4 bytes).
+    Removing WM__GetPrevSibling.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM__GetPrevSibling.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM__GetPrevSibling.o(.iar.stackusage), (9 bytes).
+    Removing WM__IsAncestor.o(.iar.rtmodel), (41 bytes).
+    Removing WM__IsAncestor.o(.text), (48 bytes).
+    Removing WM__IsAncestor.o(.iar_vfe_header), (4 bytes).
+    Removing WM__IsAncestor.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM__IsAncestor.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM__IsAncestor.o(.iar.stackusage), (12 bytes).
+    Removing WM__IsAncestor.o(.iar.fraginfo), (4 bytes).
+    Removing WM__IsEnabled.o(.iar.rtmodel), (41 bytes).
+    Removing WM__IsEnabled.o(.text), (22 bytes).
+    Removing WM__IsEnabled.o(.iar_vfe_header), (4 bytes).
+    Removing WM__IsEnabled.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM__IsEnabled.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM__IsEnabled.o(.iar.stackusage), (6 bytes).
+    Removing WM__SendMessageIfEnabled.o(.iar.rtmodel), (41 bytes).
+    Removing WM__SendMessageIfEnabled.o(.text), (26 bytes).
+    Removing WM__SendMessageIfEnabled.o(.iar_vfe_header), (4 bytes).
+    Removing WM__SendMessageIfEnabled.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM__SendMessageIfEnabled.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM__SendMessageIfEnabled.o(.iar.stackusage), (9 bytes).
+    Removing WM__SendMessageNoPara.o(.iar.rtmodel), (41 bytes).
+    Removing WM__SendMessageNoPara.o(.iar_vfe_header), (4 bytes).
+    Removing WM__SendMessageNoPara.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM__SendMessageNoPara.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM__SendMessageNoPara.o(.rodata), (16 bytes).
+    Removing WM__SendMessageNoPara.o(.iar.stackusage), (9 bytes).
+    Removing GUICC_8888_Index2Color.o(.iar.rtmodel), (41 bytes).
+    Removing GUICC_8888_Index2Color.o(.iar_vfe_header), (4 bytes).
+    Removing GUICC_8888_Index2Color.o(.iar.stackusage), (5 bytes).
+    Removing GUI_CursorArrowM.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_CursorArrowM.o(.rodata), (32 bytes).
+    Removing GUI_CursorArrowM.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_CursorArrowM.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_CursorArrowM.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_CursorArrowM.o(.iar.stackusage), (0 bytes).
+    Removing GUI_CursorArrowM.o(.iar.fraginfo), (4 bytes).
+    Removing GUI_DrawBitmap.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_DrawBitmap.o(.text), (236 bytes).
+    Removing GUI_DrawBitmap.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_DrawBitmap.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_DrawBitmap.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_DrawBitmap.o(.iar.stackusage), (33 bytes).
+    Removing GUI_DrawBitmap.o(.iar.fraginfo), (6 bytes).
+    Removing GUI_Exec.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_Exec.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_Exec.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_Exec.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_Exec.o(.iar.stackusage), (15 bytes).
+    Removing GUI_Exec.o(.iar.fraginfo), (5 bytes).
+    Removing GUI_SPRITE.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_SPRITE.o(.text), (5460 bytes).
+    Removing GUI_SPRITE.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_SPRITE.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_SPRITE.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_SPRITE.o(.rodata), (96 bytes).
+    Removing GUI_SPRITE.o(.iar.stackusage), (566 bytes).
+    Removing GUI_SPRITE.o(.iar.fraginfo), (47 bytes).
+    Removing GUI__ExpandPixelIndices.o(.iar.rtmodel), (41 bytes).
+    Removing GUI__ExpandPixelIndices.o(.iar_vfe_header), (4 bytes).
+    Removing GUI__ExpandPixelIndices.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI__ExpandPixelIndices.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI__ExpandPixelIndices.o(.iar.stackusage), (11 bytes).
+    Removing GUI__ExpandPixelIndices.o(.iar.fraginfo), (4 bytes).
+    Removing LCD_AA.o(.iar.rtmodel), (41 bytes).
+    Removing LCD_AA.o(.iar_vfe_header), (4 bytes).
+    Removing LCD_AA.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing LCD_AA.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing LCD_AA.o(.iar.stackusage), (59 bytes).
+    Removing LCD_AA.o(.iar.fraginfo), (11 bytes).
+    Removing LCD_GetPixelColor.o(.iar.rtmodel), (41 bytes).
+    Removing LCD_GetPixelColor.o(.iar_vfe_header), (4 bytes).
+    Removing LCD_GetPixelColor.o(.iar.stackusage), (9 bytes).
+    Removing LCD_SelectLCD.o(.iar.rtmodel), (41 bytes).
+    Removing LCD_SelectLCD.o(.iar_vfe_header), (4 bytes).
+    Removing LCD_SelectLCD.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing LCD_SelectLCD.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing LCD_SelectLCD.o(.iar.stackusage), (9 bytes).
+    Removing GUIDEV_WriteToActiveAlpha.o(.iar.rtmodel), (41 bytes).
+    Removing GUIDEV_WriteToActiveAlpha.o(.iar_vfe_header), (4 bytes).
+    Removing GUIDEV_WriteToActiveAlpha.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUIDEV_WriteToActiveAlpha.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUIDEV_WriteToActiveAlpha.o(.iar.stackusage), (27 bytes).
+    Removing WM_GetDesktopWindowEx.o(.iar.rtmodel), (41 bytes).
+    Removing WM_GetDesktopWindowEx.o(.text), (20 bytes).
+    Removing WM_GetDesktopWindowEx.o(.iar_vfe_header), (4 bytes).
+    Removing WM_GetDesktopWindowEx.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM_GetDesktopWindowEx.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM_GetDesktopWindowEx.o(.iar.stackusage), (5 bytes).
+    Removing WM_ResizeWindow.o(.iar.rtmodel), (41 bytes).
+    Removing WM_ResizeWindow.o(.iar_vfe_header), (4 bytes).
+    Removing WM_ResizeWindow.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM_ResizeWindow.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM_ResizeWindow.o(.iar.stackusage), (33 bytes).
+    Removing WM__GetFirstSibling.o(.iar.rtmodel), (41 bytes).
+    Removing WM__GetFirstSibling.o(.iar_vfe_header), (4 bytes).
+    Removing WM__GetFirstSibling.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM__GetFirstSibling.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM__GetFirstSibling.o(.iar.stackusage), (9 bytes).
+    Removing GUI_CursorArrowMPx.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_CursorArrowMPx.o(.rodata), (60 bytes).
+    Removing GUI_CursorArrowMPx.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_CursorArrowMPx.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_CursorArrowMPx.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_CursorArrowMPx.o(.iar.stackusage), (0 bytes).
+    Removing GUI_CursorPal.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_CursorPal.o(.rodata), (24 bytes).
+    Removing GUI_CursorPal.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_CursorPal.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_CursorPal.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_CursorPal.o(.iar.stackusage), (0 bytes).
+    Removing GUI_CursorPal.o(.iar.fraginfo), (4 bytes).
+    Removing GUI_GetBitmapPixelIndex.o(.iar.rtmodel), (41 bytes).
+    Removing GUI_GetBitmapPixelIndex.o(.text), (172 bytes).
+    Removing GUI_GetBitmapPixelIndex.o(.iar_vfe_header), (4 bytes).
+    Removing GUI_GetBitmapPixelIndex.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI_GetBitmapPixelIndex.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI_GetBitmapPixelIndex.o(.iar.stackusage), (11 bytes).
+    Removing GUI_GetBitmapPixelIndex.o(.iar.fraginfo), (4 bytes).
+    Removing GUI__Alpha.o(.iar.rtmodel), (41 bytes).
+    Removing GUI__Alpha.o(.iar_vfe_header), (4 bytes).
+    Removing GUI__Alpha.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing GUI__Alpha.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing GUI__Alpha.o(.iar.stackusage), (62 bytes).
+    Removing GUI__Alpha.o(.iar.fraginfo), (13 bytes).
+    Removing LCD_GetP.o(.iar.rtmodel), (41 bytes).
+    Removing LCD_GetP.o(.iar_vfe_header), (4 bytes).
+    Removing LCD_GetP.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing LCD_GetP.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing LCD_GetP.o(.iar.stackusage), (18 bytes).
+    Removing LCD_GetP.o(.iar.fraginfo), (5 bytes).
+    Removing WM__UpdateChildPositions.o(.iar.rtmodel), (41 bytes).
+    Removing WM__UpdateChildPositions.o(.iar_vfe_header), (4 bytes).
+    Removing WM__UpdateChildPositions.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM__UpdateChildPositions.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM__UpdateChildPositions.o(.iar.stackusage), (15 bytes).
+    Removing GUICC_888_Index2Color.o(.iar.rtmodel), (41 bytes).
+    Removing GUICC_888_Index2Color.o(.iar_vfe_header), (4 bytes).
+    Removing GUICC_888_Index2Color.o(.iar.stackusage), (5 bytes).
+    Removing LCD_ReadRect.o(.iar.rtmodel), (41 bytes).
+    Removing LCD_ReadRect.o(.iar_vfe_header), (4 bytes).
+    Removing LCD_ReadRect.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing LCD_ReadRect.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing LCD_ReadRect.o(.iar.stackusage), (39 bytes).
+    Removing LCD_ReadRect.o(.iar.fraginfo), (8 bytes).
+    Removing WM_Move.o(.iar.rtmodel), (41 bytes).
+    Removing WM_Move.o(.iar_vfe_header), (4 bytes).
+    Removing WM_Move.o(__DLIB_PERTHREAD), (0 bytes).
+    Removing WM_Move.o(__DLIB_PERTHREAD_init), (0 bytes).
+    Removing WM_Move.o(.rodata), (32 bytes).
+    Removing WM_Move.o(.iar.stackusage), (85 bytes).
+    Removing WM_Move.o(.iar.fraginfo), (10 bytes).
+    Removing dadd.o(.text), (334 bytes).
+    Removing dmul.o(.text), (228 bytes).
+    Removing ddiv.o(.text), (222 bytes).
+    Removing ffltui.o(.text), (10 bytes).
+    Removing dflti.o(.text), (34 bytes).
+    Removing dfltui.o(.text), (26 bytes).
+    Removing dfixui.o(.text), (50 bytes).
+    Removing cdcmple.o(.text), (48 bytes).
+    Removing cfrcmple.o(.text), (20 bytes).
+    Removing fepilogue.o(.text), (110 bytes).
+    Removing depilogue.o(.text), (186 bytes).
+
+906 unused section(s) (total 46054 bytes) removed from the image.

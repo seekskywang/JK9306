@@ -1,0 +1,13 @@
+.\objects\debug_frmwrk.o: ..\Libraries\Drivers\source\debug_frmwrk.c
+.\objects\debug_frmwrk.o: ..\Libraries\Drivers\include\debug_frmwrk.h
+.\objects\debug_frmwrk.o: ..\User\Globalvalue\GlobalValue.h
+.\objects\debug_frmwrk.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\debug_frmwrk.o: ..\Libraries\Drivers\include\lpc177x_8x_uart.h
+.\objects\debug_frmwrk.o: ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h
+.\objects\debug_frmwrk.o: ..\Libraries\Core\CM3\CoreSupport\core_cm3.h
+.\objects\debug_frmwrk.o: ..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h
+.\objects\debug_frmwrk.o: ..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h
+.\objects\debug_frmwrk.o: ..\Libraries\Drivers\include\lpc_types.h
+.\objects\debug_frmwrk.o: ..\Libraries\Drivers\include\lpc177x_8x_pinsel.h
+.\objects\debug_frmwrk.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\debug_frmwrk.o: ..\Modubus\modbus_slave.h

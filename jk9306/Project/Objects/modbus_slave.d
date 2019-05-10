@@ -1,0 +1,12 @@
+.\objects\modbus_slave.o: ..\Modubus\modbus_slave.c
+.\objects\modbus_slave.o: ..\Modubus\modbus_slave.h
+.\objects\modbus_slave.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\modbus_slave.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\modbus_slave.o: ..\Libraries\Drivers\include\debug_frmwrk.h
+.\objects\modbus_slave.o: ..\User\Globalvalue\GlobalValue.h
+.\objects\modbus_slave.o: ..\Libraries\Drivers\include\lpc177x_8x_uart.h
+.\objects\modbus_slave.o: ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h
+.\objects\modbus_slave.o: ..\Libraries\Core\CM3\CoreSupport\core_cm3.h
+.\objects\modbus_slave.o: ..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h
+.\objects\modbus_slave.o: ..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h
+.\objects\modbus_slave.o: ..\Libraries\Drivers\include\lpc_types.h
