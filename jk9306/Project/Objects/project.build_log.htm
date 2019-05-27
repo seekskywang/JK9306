@@ -27,10 +27,13 @@ Project File Date:  05/10/2019
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Open1788'
-compiling test.c...
+compiling main.c...
+..\User\main.c(234): warning:  #177-D: variable "buff"  was declared but never referenced
+  char  buff[15]={0};
+..\User\main.c: 1 warning, 0 errors
 linking...
-Program Size: Code=44912 RO-data=18776 RW-data=11676 ZI-data=2604  
-".\Objects\project.axf" - 0 Error(s), 0 Warning(s).
+Program Size: Code=44876 RO-data=410456 RW-data=11676 ZI-data=2604  
+".\Objects\project.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -44,7 +47,7 @@ Package Vendor: Keil
   D:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.5.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>

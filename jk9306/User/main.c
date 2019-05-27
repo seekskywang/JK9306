@@ -264,13 +264,13 @@ Colour.black=LCD_COLOR_TURQUOISE;
 LCD_DrawRect(0,0,480,272,Colour.black);
 
 Power_Process();
-Colour.black=LCD_COLOR_TURQUOISE;
-LCD_DrawRect(0,0,480,272,Colour.black);
-//2.2
-buff[0]='2';buff[1]='0';buff[2]='1';buff[3]='9';
-buff[4]='.';buff[5]='0';buff[6]='3';
-buff[7]=0;
-	WriteString_Big(110,120,buff);
+//Colour.black=LCD_COLOR_TURQUOISE;
+//LCD_DrawRect(0,0,480,272,Colour.black);
+////2.2
+//buff[0]='2';buff[1]='0';buff[2]='1';buff[3]='9';
+//buff[4]='.';buff[5]='0';buff[6]='3';
+//buff[7]=0;
+//	WriteString_Big(110,120,buff);
 Delay(550);
 Colour.black=Black;
 LCD_DrawRect(0,0,480,272,Colour.black);

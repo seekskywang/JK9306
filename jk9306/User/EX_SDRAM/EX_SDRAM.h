@@ -27,6 +27,8 @@
 #define Green          0x00FF00
 #define Blue           0xFF0000
 #define Yellow         0x00FFFF
+#define PCOLOR 		   0xCAFF70
+#define FCOLOR 		   0x247FFF
 /*
   * @brief  LCD color  
   */ 

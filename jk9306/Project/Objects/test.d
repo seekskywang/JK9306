@@ -20,3 +20,4 @@
 .\objects\test.o: ..\User\LCD/AsciiLib.h
 .\objects\test.o: ..\User\set_manu.h
 .\objects\test.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\test.o: ..\Libraries\Drivers\include\open.h

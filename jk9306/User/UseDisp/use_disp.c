@@ -932,6 +932,22 @@ void lcd_image(uint8_t *pt)
     }
 }
 */
+void lcd_image(uint8_t *pt)
+{
+    unsigned long i;
+	uint32_t color;
+	unsigned long *pDst = (unsigned long *)LCD_VRAM_BASE_ADDR+480*272;
+  
+    for( i = 0; (C_GLCD_H_SIZE * C_GLCD_V_SIZE) > i; i++)
+    {
+		color=(uint32_t)*pt<<16|(uint32_t)*(pt+1)<<8|*(pt+2);
+    	*pDst-- = color; 
+		*pt++;
+		*pt++;
+		*pt++;
+    }
+}
+
 //uint8_t buff3[6]={0};
 void Savetoeeprom(void)
 {

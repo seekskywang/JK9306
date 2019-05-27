@@ -17,6 +17,7 @@
 #include "set_manu.h"
 #include "string.h"
 #include "stdio.h"
+#include "open.h"
 extern	void 	Disp_Box(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2,uint8_t bevel_edge,uint32_t color);
 void flashSetFlags(u8 blank);
 void flashMainFlags(u8 blank);
@@ -222,7 +223,7 @@ void Power_Process(void)
 	ReadSavedata();//读取保存数据
 //GPIO_5463_Configuration();
 //	Disp_PowerOn_Menu();//显示开机界面
-//lcd_image((uint8_t *)gImage_open);
+lcd_image((uint8_t *)gImage_open);
 //	Electric_currentAmp(0);
 
 	if(AddressVal==0xff)
@@ -654,9 +655,9 @@ void Disp_R(uint8_t para)
 
 	Disp_Box(3,25,478,268,3,Yellow);
 	Draw_LIN5(155,74,322,Green);
-	Draw_LIN5(155,123,322,Blue);
+	Draw_LIN5(155,123,322,PCOLOR);
 	Draw_LIN5(155,172,322,LCD_COLOR_MAGENTA);
-	Draw_LIN5(155,221,322,LCD_COLOR_BLUE2);
+	Draw_LIN5(155,221,322,FCOLOR);
 	Draw_LIN3_Y(152,25,242,Yellow);
 	Draw_LIN5(3,123,150,Yellow);
 //	LCD_DrawLine(120,55,478,55,Yellow);
@@ -688,7 +689,7 @@ V_val.c[1]=ComBuf.rec.buf[5];//[5];
 V_val.c[0]=ComBuf.rec.buf[6];//=0xb9;//[6];
 	
 	valp=V_val.f*100.1;
-	if(V_val.f < 2)
+	if(V_val.f < 6)
 		valp = 0;
 //val*=200;
 	if(valp<100000)
@@ -733,6 +734,8 @@ A_val.c[1]=ComBuf.rec.buf[5];
 A_val.c[0]=ComBuf.rec.buf[6];
 valp=A_val.f*100000;
 //val=1234567;
+if(V_val.f < 6)
+		valp = 0;
 if(valp>CurrentLimit*100)alrmi=1;
 
 else	alrmi=0;
@@ -768,7 +771,7 @@ WriteString_Big(238,83,over);
 	else
 	WriteString_Big(238,83,buf);
 }/////////////////////////////////////////end i
-Colour.Fword=Blue;
+Colour.Fword=PCOLOR;
 //P :
 LCD_ShowFontCN_40_55(159,130,24,34,(uint8_t*)nAsciiDot20X40E+102*48);//P
 LCD_ShowFontCN_40_55(215,130,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
@@ -781,7 +784,7 @@ P_val.c[1]=ComBuf.rec.buf[5];//[13];
 P_val.c[0]=ComBuf.rec.buf[6];//[14];
 pfx=valp=P_val.f*100;
 //val=3456789;
-if(valp>=POWLimit*10)	alrmp=1;
+if(POWLimit != 0 && (valp>=POWLimit*10))alrmp=1;
 else	alrmp=0;
 	if(valp<100000){potw=2;}
 else if(valp<1000000){valp/=10;potw=1;}
@@ -822,6 +825,8 @@ PF_val.c[0]=ComBuf.rec.buf[6];
 valp=PF_val.f*1000;
 if(valp>1000)
 	valp=1000;
+if(V_val.f < 6)
+		valp = 0;
 //val=POWLimit;
 buf[0]='0'+valp%10000/1000;
 buf[1]='.';
@@ -831,20 +836,20 @@ buf[4]='0'+valp%10;
 buf[5]=0;
 WriteString_Big(270,180,buf);
 }////////////////////////////////////////end pf
-Colour.Fword=LCD_COLOR_BLUE2;//LCD_COLOR_CYAN;//
+Colour.Fword=FCOLOR;//LCD_COLOR_CYAN;//
 //Freq:
 LCD_ShowFontCN_40_55(159,228,24,34,(uint8_t*)nAsciiDot20X40E+102*38);//F
-LCD_ShowFontCN_40_55(181,228,24,34,(uint8_t*)nAsciiDot20X40E+102*82);//r
-LCD_ShowFontCN_40_55(203,228,24,34,(uint8_t*)nAsciiDot20X40E+102*69);//e
-LCD_ShowFontCN_40_55(225,228,24,34,(uint8_t*)nAsciiDot20X40E+102*81);//q
-LCD_ShowFontCN_40_55(247,228,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
+//LCD_ShowFontCN_40_55(181,228,24,34,(uint8_t*)nAsciiDot20X40E+102*82);//r
+//LCD_ShowFontCN_40_55(203,228,24,34,(uint8_t*)nAsciiDot20X40E+102*69);//e
+//LCD_ShowFontCN_40_55(225,228,24,34,(uint8_t*)nAsciiDot20X40E+102*81);//q
+LCD_ShowFontCN_40_55(215,228,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
 if(para==5)
 {HZ_val.c[3]=ComBuf.rec.buf[3];//[19];
 HZ_val.c[2]=ComBuf.rec.buf[4];//[20];
 HZ_val.c[1]=ComBuf.rec.buf[5];//[21];
 HZ_val.c[0]=ComBuf.rec.buf[6];//[22];
 valp=HZ_val.f*10;
-if(V_val.f < 2)
+if(V_val.f < 6)
 	valp = 0;
 hz_t++;
 if(hz_t>10)hz_t=1;
@@ -871,7 +876,7 @@ if(para==1)
 {
 	
 	valp=V_val.f*141.4;
-	if(V_val.f < 2)
+	if(V_val.f < 6)
 	{
 		valp = 0;
 	}
