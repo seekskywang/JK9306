@@ -774,7 +774,7 @@ WriteString_Big(238,83,over);
 Colour.Fword=PCOLOR;
 //P :
 LCD_ShowFontCN_40_55(159,130,24,34,(uint8_t*)nAsciiDot20X40E+102*48);//P
-LCD_ShowFontCN_40_55(215,130,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
+LCD_ShowFontCN_40_55(183,130,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
 LCD_ShowFontCN_40_55(452,132,24,34,(uint8_t*)nAsciiDot20X40E+102*55);//W
 //p_val
 if(para==4)
@@ -782,33 +782,38 @@ if(para==4)
 P_val.c[2]=ComBuf.rec.buf[4];//[12];
 P_val.c[1]=ComBuf.rec.buf[5];//[13];
 P_val.c[0]=ComBuf.rec.buf[6];//[14];
-pfx=valp=P_val.f*100;
+pfx=valp=P_val.f*1000;
 //val=3456789;
 if(POWLimit != 0 && (valp>=POWLimit*10))alrmp=1;
 else	alrmp=0;
-	if(valp<100000){potw=2;}
-else if(valp<1000000){valp/=10;potw=1;}
-else	{valp/=100;potw=0;}
-buf[0]='0'+valp/10000;
-buf[1]='0'+valp%10000/1000;
-buf[2]='0'+valp%1000/100;
-if(potw==2)
-{buf[3]='.';
-buf[4]='0'+valp%100/10;}
-else if(potw==1)
-{buf[3]='0'+valp%100/10;
-buf[4]='.';}
-	else
-	{buf[3]='0'+valp%100/10;
-	buf[4]='0'+valp%10;}
-if(potw==0)
-buf[5]=' ';
-else
-	buf[5]='0'+valp%10;
+//	if(valp<1000000){potw=3;}
+//else if(valp<10000000){valp/=10;potw=2;}
+//else if(valp<100000000){valp/=100;potw=1;}
+//else	{valp/=1000;potw=0;}
+buf[0]='0'+valp/100000;
+buf[1]='0'+valp%100000/10000;
+buf[2]='0'+valp%10000/1000;
+buf[3]='.';
+buf[4]='0'+valp%1000/100;
+buf[5]='0'+valp%100/10;
+buf[6]='0'+valp%10;
+//if(potw==2)
+//{buf[3]='.';
+//buf[4]='0'+valp%100/10;}
+//else if(potw==1)
+//{buf[3]='0'+valp%100/10;
+//buf[4]='.';}
+//	else
+//	{buf[3]='0'+valp%100/10;
+//	buf[4]='0'+valp%10;}
+//if(potw==0)
+//buf[5]=' ';
+//else
+//	buf[5]='0'+valp%10;
 if(alrmp&&t>20)
-WriteString_Big(238,130,over);
+WriteString_Big(206,130,over);
 	else
-WriteString_Big(238,130,buf);
+WriteString_Big(206,130,buf);
 }///////////////////////////////////////end p
 Colour.Fword=LCD_COLOR_MAGENTA;
 //pf
