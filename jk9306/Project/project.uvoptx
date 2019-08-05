@@ -119,12 +119,13 @@
       <TargetDriverDllRegistry>
         <SetRegEntry>
           <Number>0</Number>
-          <Key>PWSTATINFO</Key>
-          <Name>200,50,700</Name>
+          <Key>DLGUARM</Key>
+          <Name>猬褀渮?渮?趏萈</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
-          <Key>DLGUARM</Key>
+          <Key>PWSTATINFO</Key>
+          <Name>200,50,700</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>

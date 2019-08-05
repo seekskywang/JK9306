@@ -646,7 +646,7 @@ void DisBlank_main(unsigned char bank,uint8_t mode)
 void Disp_R(uint8_t para)
 {
 	char  buf[8]={"0"};
-	char  over[7]={"      "};
+	char  over[7]={"       "};
 	static char t,alrmi,alrmp;
 	uint8_t i=0,potv,potvp,poti,potw,potva;
 	uint32_t valp,pfx;
@@ -736,7 +736,7 @@ valp=A_val.f*100000;
 //val=1234567;
 if(V_val.f < 6)
 		valp = 0;
-if(valp>CurrentLimit*100)alrmi=1;
+if(CurrentLimit != 0 && valp>CurrentLimit*100)alrmi=1;
 
 else	alrmi=0;
 if(valp<100000)poti=2;
@@ -784,7 +784,7 @@ P_val.c[1]=ComBuf.rec.buf[5];//[13];
 P_val.c[0]=ComBuf.rec.buf[6];//[14];
 pfx=valp=P_val.f*1000;
 //val=3456789;
-if(POWLimit != 0 && (valp>=POWLimit*10))alrmp=1;
+if(POWLimit != 0 && (valp>POWLimit*10))alrmp=1;
 else	alrmp=0;
 //	if(valp<1000000){potw=3;}
 //else if(valp<10000000){valp/=10;potw=2;}
