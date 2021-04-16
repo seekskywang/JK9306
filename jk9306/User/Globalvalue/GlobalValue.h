@@ -208,6 +208,7 @@ typedef struct
 	uint8_t irange;
 	uint8_t usbmode;
 	uint8_t hotkey;
+	uint8_t whswitch;
 }Main_Func_TypeDef;
 typedef union UUUU
 {
@@ -259,6 +260,7 @@ typedef struct
 	uint8_t Ordel;
 	uint8_t name;
 } Send_Ord_Typedef;
+
 typedef struct
 {
 	Send_Ord_Typedef first;

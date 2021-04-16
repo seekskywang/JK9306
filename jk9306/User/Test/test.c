@@ -256,7 +256,7 @@ const char RNG_I[][7]=
 const char PFHZ[][6]=
 	{  "PF:",	"Freq:"};
 const char PIA[][3]=
-	{  "V","mA","Hz","W","va","var"};
+	{  "V","mA","Hz","W","va","s"};
 
 union fc
 {
@@ -264,7 +264,7 @@ union fc
 	uint32_t sum;
     uint8_t c[4];
 };
-union fc V_val,A_val,P_val,HZ_val,PF_val,VA_val,E_val,VAR_val,VHz_val,IHz_val;	
+union fc V_val,A_val,P_val,HZ_val,PF_val,VA_val,E_val,VAR_val,VHz_val,IHz_val,WH_val,T_val;	
 
 //unsigned char Bmp030[]=
 //{
@@ -683,10 +683,10 @@ Colour.Fword=Yellow;
 
 if(ComBuf.rec.end)	ComBuf.rec.end=0;
 if(para==1)
-{	V_val.c[3]=ComBuf.rec.buf[3];//[3];
-V_val.c[2]=ComBuf.rec.buf[4];//[4];
-V_val.c[1]=ComBuf.rec.buf[5];//[5];
-V_val.c[0]=ComBuf.rec.buf[6];//=0xb9;//[6];
+{	V_val.c[3]=ComBuf.rec.buf[5];//[3];
+V_val.c[2]=ComBuf.rec.buf[6];//[4];
+V_val.c[1]=ComBuf.rec.buf[4];//[5];
+V_val.c[0]=ComBuf.rec.buf[3];//=0xb9;//[6];
 	
 	valp=V_val.f*100.1;
 	if(V_val.f < 6)
@@ -727,11 +727,11 @@ LCD_ShowFontCN_40_55(159,82,24,34,(uint8_t*)nAsciiDot20X40E+102*41);//I
 		WriteString_16(185,102,Rms[0], 0);
 		LCD_ShowFontCN_40_55(215,83,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
 	 LCD_ShowFontCN_STR_40_55(431,85,24,34,"mA",2);
-if(para==2)
-{A_val.c[3]=ComBuf.rec.buf[3];
-A_val.c[2]=ComBuf.rec.buf[4];
-A_val.c[1]=ComBuf.rec.buf[5];
-A_val.c[0]=ComBuf.rec.buf[6];
+if(para==1)
+{A_val.c[3]=ComBuf.rec.buf[9];
+A_val.c[2]=ComBuf.rec.buf[10];
+A_val.c[1]=ComBuf.rec.buf[8];
+A_val.c[0]=ComBuf.rec.buf[7];
 valp=A_val.f*100000;
 //val=1234567;
 if(V_val.f < 6)
@@ -777,11 +777,11 @@ LCD_ShowFontCN_40_55(159,130,24,34,(uint8_t*)nAsciiDot20X40E+102*48);//P
 LCD_ShowFontCN_40_55(183,130,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
 LCD_ShowFontCN_40_55(452,132,24,34,(uint8_t*)nAsciiDot20X40E+102*55);//W
 //p_val
-if(para==4)
-{P_val.c[3]=ComBuf.rec.buf[3];//[11];
-P_val.c[2]=ComBuf.rec.buf[4];//[12];
-P_val.c[1]=ComBuf.rec.buf[5];//[13];
-P_val.c[0]=ComBuf.rec.buf[6];//[14];
+if(para==1)
+{P_val.c[3]=ComBuf.rec.buf[17];//[11];
+P_val.c[2]=ComBuf.rec.buf[18];//[12];
+P_val.c[1]=ComBuf.rec.buf[16];//[13];
+P_val.c[0]=ComBuf.rec.buf[15];//[14];
 pfx=valp=P_val.f*1000;
 //val=3456789;
 if(POWLimit != 0 && (valp>POWLimit*10))alrmp=1;
@@ -822,11 +822,11 @@ LCD_ShowFontCN_40_55(181,180,24,34,(uint8_t*)nAsciiDot20X40E+102*70);//f
 LCD_ShowFontCN_40_55(215,180,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
 
 //pf_val
-if(para==3)
-{PF_val.c[3]=ComBuf.rec.buf[3];
-PF_val.c[2]=ComBuf.rec.buf[4];
-PF_val.c[1]=ComBuf.rec.buf[5];
-PF_val.c[0]=ComBuf.rec.buf[6];
+if(para==1)
+{PF_val.c[3]=ComBuf.rec.buf[13];
+PF_val.c[2]=ComBuf.rec.buf[14];
+PF_val.c[1]=ComBuf.rec.buf[12];
+PF_val.c[0]=ComBuf.rec.buf[11];
 valp=PF_val.f*1000;
 if(valp>1000)
 	valp=1000;
@@ -849,10 +849,10 @@ LCD_ShowFontCN_40_55(159,228,24,34,(uint8_t*)nAsciiDot20X40E+102*38);//F
 //LCD_ShowFontCN_40_55(225,228,24,34,(uint8_t*)nAsciiDot20X40E+102*81);//q
 LCD_ShowFontCN_40_55(215,228,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
 if(para==5)
-{HZ_val.c[3]=ComBuf.rec.buf[3];//[19];
-HZ_val.c[2]=ComBuf.rec.buf[4];//[20];
-HZ_val.c[1]=ComBuf.rec.buf[5];//[21];
-HZ_val.c[0]=ComBuf.rec.buf[6];//[22];
+{HZ_val.c[3]=ComBuf.rec.buf[5];//[19];
+HZ_val.c[2]=ComBuf.rec.buf[6];//[20];
+HZ_val.c[1]=ComBuf.rec.buf[4];//[21];
+HZ_val.c[0]=ComBuf.rec.buf[3];//[22];
 valp=HZ_val.f*10;
 if(V_val.f < 6)
 	valp = 0;
@@ -920,7 +920,7 @@ WriteString_16(130,140,"V",0);
 
 //S:
 WriteString_16(8,170,"S:",0);
-if(para==3)
+if(para==1)
 {if(pfx)
 VA_val.f=P_val.f/PF_val.f;
 else
@@ -969,26 +969,94 @@ WriteString_16(130, 170, "VA", 0);
 	//	  WriteString_16(Para_main[i].row, Para_main[i].col, (uint8_t *)Para_main[i].En,  0);		
 		}
 	}*/
+if(para==1)
+{
 	Colour.Fword=White;
 //VAR:
-WriteString_16(8,205,"Q:",0);
-buf[0]='0';//+VAR_val.sum/10000;
-buf[1]='0';//+VAR_val.sum%10000/1000;
-		buf[2]='0';//+alrmp+VAR_val.sum%1000/100;
-		buf[3]='.';
-buf[4]='0';//+VAR_val.sum%100/10;
-		buf[5]='0';//+alrmi+VAR_val.sum%10;
-		buf[6]=0;
+WriteString_16(8,205,"T:",0);
+	
+	T_val.c[3]=ComBuf.rec.buf[25];//[3];
+	T_val.c[2]=ComBuf.rec.buf[26];//[4];
+	T_val.c[1]=ComBuf.rec.buf[23];//[5];
+	T_val.c[0]=ComBuf.rec.buf[24];//=0xb9;//[6];
+	
+		valp=(uint16_t)T_val.f;
+//	if(V_val.f < 6)
+//		valp = 0;
+//val*=200;
+//	if(valp<100000)
+//	potv=2;
+//	else
+//	{valp/=10;potv=1;}
+//		buf[0]='0'+valp/10000;
+//	buf[1]='0'+valp%10000/1000;
+//	buf[2]='0'+valp%1000/100;
+//	if(potv==2)
+//	{
+////		buf[3]='.';
+////		buf[4]='0'+valp%100/10;
+//		buf[3]=0;
+//		buf[4]=0;
+//	}
+//	else
+//	{buf[3]='0'+valp%100/10;
+////	buf[4]='.';
+
+//		buf[4]=0;
+//	}
+////	buf[5]='0'+valp%10;
+//	buf[5]=0;
+//	buf[6]=0;
+	
+//buf[0]='0';//+VAR_val.sum/10000;
+//buf[1]='0';//+VAR_val.sum%10000/1000;
+//		buf[2]='0';//+alrmp+VAR_val.sum%1000/100;
+//		buf[3]='.';
+//buf[4]='0';//+VAR_val.sum%100/10;
+//		buf[5]='0';//+alrmi+VAR_val.sum%10;
+//		buf[6]=0;
 //		strncpy(DisVARInputNum,buf,6);
 //VAR:_val
+	sprintf(buf,"%d",valp);
 WriteString_16(45,205,buf,0);
 WriteString_16(118,205,PIA[5],0);//var
+}
+if(para==1)
+{
+	WH_val.c[3]=ComBuf.rec.buf[21];//[3];
+WH_val.c[2]=ComBuf.rec.buf[22];//[4];
+WH_val.c[1]=ComBuf.rec.buf[20];//[5];
+WH_val.c[0]=ComBuf.rec.buf[19];//=0xb9;//[6];
+	
+	valp=WH_val.f*100.1;
+	if(V_val.f < 6)
+		valp = 0;
+//val*=200;
+	if(valp<100000)
+potv=2;
+else
+{valp/=10;potv=1;}
+	buf[0]='0'+valp/10000;
+buf[1]='0'+valp%10000/1000;
+buf[2]='0'+valp%1000/100;
+if(potv==2)
+{buf[3]='.';
+buf[4]='0'+valp%100/10;
+}
+else
+{buf[3]='0'+valp%100/10;
+buf[4]='.';
+}
+buf[5]='0'+valp%10;
 
-WriteString_16(8,235,"W:",0);//pf:PFHZ[0]
-WriteString_16(110,235,"KW.h",0);
+buf[6]=0;
+//WriteString_Big(238,33,buf);
+
+WriteString_16(8,240,"W:",0);//pf:PFHZ[0]
+WriteString_16(110,240,"W.h",0);
 		//pf_val
-WriteString_16(45,235,buf,0);
-
+WriteString_16(45,240,buf,0);
+}
 //strncpy(DisFInputNum,buf,6);
 
 //strncpy(DisVHzInputNum,buf,6);
@@ -1006,19 +1074,31 @@ WriteString_16(45,235,buf,0);
 
 void Send_Uart3(u8 x)//(uint8_t *buff)
 {
-	u8 bread_v[9]={0x01,0x03,0x0d,0x09,0x00,0x02,0x16,0xa5,0xaf};//v
-	u8 bread_i[9]={0x01,0x03,0x0d,0x0b,0x00,0x02,0xb7,0x65,0xaf};//i
-	u8 bread_pf[9]={0x01,0x03,0x0d,0x0d,0x00,0x02,0x57,0x64,0xaf};//pf
-	u8 bread_pw[9]={0x01,0x03,0x0d,0x11,0x00,0x02,0x96,0xa2,0xaf};//pw
-	u8 bread_hz[9]={0x01,0x03,0x0d,0x13,0x00,0x02,0x37,0x62,0xaf};//hz
+	u8 bread_v1[9]={0x01,0x03,0x0d,0x20,0x00,0x0c,0x46,0xa9,0xa1};//v
+	u8 bread_v[9]={0x01,0x03,0x0d,0x20,0x00,0x02,0xc7,0x6d,0xa1};//v
+	u8 bread_i[9]={0x01,0x03,0x0d,0x22,0x00,0x02,0x66,0xad,0xa1};//i
+	u8 bread_pf[9]={0x01,0x03,0x0d,0x24,0x00,0x02,0x86,0xac,0xa1};//pf
+	u8 bread_pw[9]={0x01,0x03,0x0d,0x26,0x00,0x02,0x27,0x6c,0xa1};//pw
+	u8 bread_wh[9]={0x01,0x03,0x0d,0x28,0x00,0x02,0x46,0xaf,0xa1};//wh
+	u8 bread_s[9]={0x01,0x03,0x0d,0x2a,0x00,0x02,0xe7,0x6f,0xa1};//time
+	u8 bread_hz[9]={0x01,0x03,0x0d,0x12,0x00,0x02,0x66,0xa2,0xa1};//hz
+	u8 set_whon[9]={0x01,0x06,0x00,0xa6,0xff,0x00,0x28,0x19,0xa1};//wh
+	u8 set_whoff[9]={0x01,0x06,0x00,0xa6,0x00,0x00,0x69,0xe9,0xa1};//wh
+	u8 clear_wh[9]={0x01,0x06,0x0d,0x2e,0xff,0x00,0xaa,0x9f,0xa1};//wh
+	u8 reset_wh[9]={0x01,0x06,0x0d,0x2e,0x00,0x00,0xeb,0x6f,0xa1};//wh
 //jp1	u8 Send_buff[5]={0x55,0x01,0x11,0x67,0xaf};
 	//u8 Send_buff[7]={0xfb,0xfb,0x07,0x00,0xfd,0xfe,0xfe};
-	if(x==1)	UARTPuts(LPC_UART0,bread_v);
-	else if(x==2)		UARTPuts(LPC_UART0,bread_i);
-	else if(x==3)		UARTPuts(LPC_UART0,bread_pf);
-	else if(x==4)		UARTPuts(LPC_UART0,bread_pw);
+	if(x==1)	UARTPuts(LPC_UART0,bread_v1);
+//	else if(x==2)		UARTPuts(LPC_UART0,bread_wh);
+//	else if(x==3)		UARTPuts(LPC_UART0,bread_pf);
+//	else if(x==4)		UARTPuts(LPC_UART0,bread_pw);
 	else if(x==5)		UARTPuts(LPC_UART0,bread_hz);
+	else if(x==6)		UARTPuts(LPC_UART0,set_whon);
+	else if(x==7)		UARTPuts(LPC_UART0,set_whoff);
+	else if(x==8)		UARTPuts(LPC_UART0,clear_wh);
+	else if(x==9)		UARTPuts(LPC_UART0,reset_wh);
 }
+
 
 void Use_MainProcess(void)
 {
@@ -1091,6 +1171,21 @@ void Use_MainProcess(void)
 		//Key_Pro(key);
 			switch(key)
 			{
+				case KEY_Mid:
+				{
+					Send_Uart3(9);
+				}break;
+				case KEY_Trig:
+				{
+					Send_Uart3(8);
+//					Send_Uart3(1);
+//					p = 1;
+				}break;
+				case KEY_File:
+				{
+//					Send_Uart3(5);
+//					p = 5;
+				}break;
 				case KEY_Disp:
 //					if(BlankP++>IHzPnt)
 //					 BlankP=0;
@@ -1299,9 +1394,9 @@ void Use_SysSetProcess(void)
 							KInputF = CursorP-1;//??“??2è?“?…￥??°??????é??
 						DisBlank_set(BlankP,KEY_Left);				
 					}else{
-						if(BlankP>6)
+						if(BlankP>7)
 						{
-							BlankP -= 7;
+							BlankP -= 8;
 						}
 						Disp_Sys_set();
 					}
@@ -1322,9 +1417,9 @@ void Use_SysSetProcess(void)
 								KInputF = CursorP-1;//??“??2è?“?…￥??°??????é??
 							DisBlank_set(BlankP,KEY_Right);
 					}else{
-						if(BlankP<7)
+						if(BlankP<8)
 						{
-							BlankP += 7;
+							BlankP += 8;
 						}
 						Disp_Sys_set();
 					}
@@ -1334,11 +1429,21 @@ void Use_SysSetProcess(void)
 					{
 						Setvalue_Reduction();//
 						DisBlank_set(BlankP,0);
+						if(BlankP == Wh)
+						{
+							if(Para_Set[Wh].val == 0)
+							{
+								Send_Uart3(6);
+							}else{
+								Send_Uart3(7);
+							}
+						}
 					}else{
+						
 						if(BlankP++>ILimitPnt)
 						 BlankP=0;
 						 TSetInput = RESET; 
-
+	
 						 Disp_Sys_set();
 					}
 					
@@ -1349,10 +1454,19 @@ void Use_SysSetProcess(void)
 					{
 						Setvalue_Add();//
 						DisBlank_set(BlankP,0);
+						if(BlankP == Wh)
+						{
+							if(Para_Set[Wh].val == 0)
+							{
+								Send_Uart3(6);
+							}else{
+								Send_Uart3(7);
+							}
+						}
 					}else{
 						BlankP --;
 						if(BlankP>ILimitPnt)
-						 BlankP=13;
+						 BlankP=14;
 						 TSetInput = RESET; 
 
 						 Disp_Sys_set();

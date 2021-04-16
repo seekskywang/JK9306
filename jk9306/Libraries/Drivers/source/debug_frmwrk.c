@@ -212,7 +212,7 @@ void UARTPuts(LPC_UART_TypeDef *UARTx, const void *str)
 {
 	uint8_t *s = (uint8_t *) str;
 
-	while (*s!=0xaf)
+	while (*s!=0xa1)
 	{
 		UARTPutChar(UARTx, *s++);
 	}
@@ -833,7 +833,7 @@ void UART0_IRQHandler(void)//UART0_IRQn
 			else if(ComBuf.rec.ptr==3)
 			{
 				#ifdef MODBAS
-				if(dat==4)
+				if(dat==4 || dat==16 || dat==24)
 				#else
 				if(dat==17)
 				#endif
@@ -841,7 +841,8 @@ void UART0_IRQHandler(void)//UART0_IRQn
 				
 			else		ComBuf.rec.ptr=0;//指针清零重新开始新的一帧接收
 				if(dat==4)r_byte=6;
-				else if(dat==17)r_byte=36;
+				else if(dat==16)r_byte=18;
+				else if(dat==24)r_byte=26;
 
 			}
 			else if(ComBuf.rec.ptr>3)

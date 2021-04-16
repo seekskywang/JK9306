@@ -9,14 +9,15 @@
 #define  IOModePnt			4
 #define  AutoZeroPnt    5
 #define  LanguagePnt		6
-#define  PowerPnt				7
-#define  USBModePnt			8
-#define  HotKeyPnt			9
-#define  BeeperPnt			10
-#define  PLimitPnt			11
-#define  ILimitPnt			12
-#define  BeepPnt			13
-#define  ParaNUM       14
+#define  Wh					7
+#define  PowerPnt				8
+#define  USBModePnt			9
+#define  HotKeyPnt			10
+#define  BeeperPnt			11
+#define  PLimitPnt			12
+#define  ILimitPnt			13
+#define  BeepPnt			14
+#define  ParaNUM       15
 #define Clearcur			0
 //#define MAX_LPW  1
 //#define MAX_LCUR  100
@@ -66,8 +67,9 @@ struct RDispPara
 #define   flag_SetIOMode  		(Para_Set[IOModePnt].val)				//传感器开关	  
 #define   flag_SetAutoZero  	(Para_Set[AutoZeroPnt].val)     		//自检开关	
 #define   flag_SetLang  			(Para_Set[LanguagePnt].val)		//语言设置中文为0,英文为1		
-#define   flag_SetPower 			(Para_Set[PowerPnt].val)				//电源开关	  
-
+#define   flag_SetPower 			(Para_Set[PowerPnt].val)
+//电源开关	  
+#define  	flag_SetWh			(Para_Set[Wh].val)
 #define   flag_SetUSBMode			(Para_Set[USBModePnt].val)			//usb模式	  
 #define  	flag_SetHotKey			(Para_Set[HotKeyPnt].val)				//快捷键开关	
 #define 	Flag_Beep_OFF 			(Para_Set[BeeperPnt].val)				//蜂鸣器开关	

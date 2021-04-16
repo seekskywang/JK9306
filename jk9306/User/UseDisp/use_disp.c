@@ -980,7 +980,7 @@ void Savetoeeprom(void)
 	Saveeeprom.Save_Main.usbmode=flag_SetUSBMode;
 	Saveeeprom.Save_Main.beep=Flag_Beep_OFF;
 	Saveeeprom.Save_Main.hotkey=flag_SetHotKey;
-	
+	Saveeeprom.Save_Main.whswitch=flag_SetWh;
 //	Saveeeprom.Save_Main.speed=SaveData.Main.speed;
 
 //	Saveeeprom.Save_Main.beep=SaveData.Main.beep;
@@ -1085,6 +1085,9 @@ void ReadSavedata(void)
 	
 	Saveeeprom.Save_Main.hotkey%=2;
 	flag_SetHotKey = Saveeeprom.Save_Main.hotkey;
+	
+	Saveeeprom.Save_Main.whswitch%=2;
+	flag_SetWh = Saveeeprom.Save_Main.whswitch;
 	
 //	Saveeeprom.Save_Main.speed%=3;
 //	SaveData.Main.speed=Saveeeprom.Save_Main.speed;

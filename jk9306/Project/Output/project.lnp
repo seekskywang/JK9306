@@ -11,6 +11,8 @@
 ".\output\globalvalue.o"
 ".\output\lpc177x_8x_rtc.o"
 ".\output\ex_sdram.o"
+".\output\page.o"
+".\output\set_manu.o"
 ".\output\startup_lpc177x_8x.o"
 ".\output\system_lpc177x_8x.o"
 ".\output\core_cm3.o"
@@ -20,14 +22,15 @@
 ".\output\lpc177x_8x_ssp.o"
 ".\output\lpc177x_8x_uart.o"
 ".\output\debug_frmwrk.o"
-".\output\lpc177x_8x_pinsel.o"
 ".\output\lpc177x_8x_eeprom.o"
+".\output\lpc177x_8x_pinsel.o"
 ".\output\gui_x.o"
 ".\output\guiconf.o"
 ".\output\lcdconf.o"
 ".\output\simconf.o"
-"..\emWin\Library\emWin_516_Keil4_M3_LE.lib"
+"..\emWin\Library\GUI_CM3.lib"
+".\output\modbus_slave.o"
 --library_type=microlib --strict --scatter ".\Output\project.sct"
---summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
---list ".\Listing\project.map" -o .\Output\project.axf
+--list ".\Listings\project.map" -o .\Output\project.axf

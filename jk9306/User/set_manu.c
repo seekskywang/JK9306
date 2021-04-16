@@ -20,6 +20,7 @@ struct RDispPara Para_Set[ParaNUM]={
 	{20, 142, 5, 0,1,0, "IOMode:","接口模式:"},
 	{20, 170, 4, 0,1,0, "AutoZero:","归零:"},
   {20, 198, 10, 0,1,0, "Language:","语言:"},
+  {20, 226, 10, 0,1,0, "WH:","电能累计:"},
 	{250, 30, 4,  0,1,0, "Signal:","测量源:"},
 	{250, 58, 10, 0,1,0, "USBMode:","闪存模式:"},
 	{250, 86, 4,  0,1,0, "HotKey:","快捷键:"},
@@ -27,6 +28,7 @@ struct RDispPara Para_Set[ParaNUM]={
 	{250, 142, 6, 0,MAX_PW,0,"PLimit:","功率上限:"},
 	{250, 170, 6, 0,MAX_CUR,0,"ILimit:","电流上限:"},
 	{250, 198, 6, 0,1,0,"BeepAlm:","报警声:"}
+	
 };
 static char BaudRate[8][7]=
 {
@@ -135,6 +137,7 @@ static void SlectPara( uint8_t ip,uint8_t blank)
 				strncpy(str,IOMode_En[Para_Set[ip].val],len);
 			break;
 		case AutoZeroPnt:
+		case Wh:
 		case PowerPnt:
 		case HotKeyPnt:
 		case BeeperPnt:
@@ -151,37 +154,37 @@ static void SlectPara( uint8_t ip,uint8_t blank)
 			}
 			break;
 		case PLimitPnt:
-			DisULInputNum[0] =  Para_Set[11].val /10000;
-			DisULInputNum[1] =  Para_Set[11].val %10000/1000;
-			DisULInputNum[2] =  Para_Set[11].val %1000/100;
-			DisULInputNum[3] =  Para_Set[11].val %100/10;
+			DisULInputNum[0] =  Para_Set[12].val /10000;
+			DisULInputNum[1] =  Para_Set[12].val %10000/1000;
+			DisULInputNum[2] =  Para_Set[12].val %1000/100;
+			DisULInputNum[3] =  Para_Set[12].val %100/10;
 		DisULInputNum[4] =  '.';
-			DisULInputNum[5] =  Para_Set[11].val %10;
+			DisULInputNum[5] =  Para_Set[12].val %10;
 
-			PutNum(Para_Set[11].row+98, Para_Set[11].col, DisULInputNum[0], Colour.Fword, Colour.black);
-			PutNum(Para_Set[11].row+110, Para_Set[11].col,  DisULInputNum[1], Colour.Fword, Colour.black); 
-      PutNum(Para_Set[11].row+122, Para_Set[11].col , DisULInputNum[2], Colour.Fword, Colour.black);
-			PutNum(Para_Set[11].row+134, Para_Set[11].col,  DisULInputNum[3], Colour.Fword, Colour.black);
-			PutChar(Para_Set[11].row+146, Para_Set[11].col,  DisULInputNum[4], Colour.Fword, Colour.black);
+			PutNum(Para_Set[12].row+98, Para_Set[12].col, DisULInputNum[0], Colour.Fword, Colour.black);
+			PutNum(Para_Set[12].row+110, Para_Set[12].col,  DisULInputNum[1], Colour.Fword, Colour.black); 
+      PutNum(Para_Set[12].row+122, Para_Set[12].col , DisULInputNum[2], Colour.Fword, Colour.black);
+			PutNum(Para_Set[12].row+134, Para_Set[12].col,  DisULInputNum[3], Colour.Fword, Colour.black);
+			PutChar(Para_Set[12].row+146, Para_Set[12].col,  DisULInputNum[4], Colour.Fword, Colour.black);
 
-		PutNum(Para_Set[11].row+158, Para_Set[11].col,  DisULInputNum[5], Colour.Fword, Colour.black);
-		PutChar(Para_Set[11].row+173, Para_Set[11].col,'W',Colour.Fword, Colour.black);
+		PutNum(Para_Set[12].row+158, Para_Set[12].col,  DisULInputNum[5], Colour.Fword, Colour.black);
+		PutChar(Para_Set[12].row+173, Para_Set[12].col,'W',Colour.Fword, Colour.black);
 		len = 6;
 			break;
 	  case ILimitPnt:
-			DisILInputNum[0] =  Para_Set[12].val /10000;
-			DisILInputNum[1] =  Para_Set[12].val %10000/1000;
+			DisILInputNum[0] =  Para_Set[13].val /10000;
+			DisILInputNum[1] =  Para_Set[13].val %10000/1000;
 		DisILInputNum[2] =  '.';
-			DisILInputNum[3] =  Para_Set[12].val %1000/100;
-			DisILInputNum[4] =  Para_Set[12].val %100/10;
-			DisILInputNum[5] =  Para_Set[12].val %10;
-			PutNum(Para_Set[12].row+98, Para_Set[12].col,DisILInputNum[0],Colour.Fword,Colour.black);
-		  PutNum(Para_Set[12].row+110, Para_Set[12].col,DisILInputNum[1],Colour.Fword,Colour.black);
-			PutChar(Para_Set[12].row+122, Para_Set[12].col,DisILInputNum[2],Colour.Fword,Colour.black); 
-			PutNum(Para_Set[12].row+134, Para_Set[12].col,DisILInputNum[3],Colour.Fword,Colour.black);
-			PutNum(Para_Set[12].row+146, Para_Set[12].col,DisILInputNum[4],Colour.Fword,Colour.black);
-			PutNum(Para_Set[12].row+158, Para_Set[12].col,DisILInputNum[5],Colour.Fword,Colour.black);
-      PutChar(Para_Set[12].row+173, Para_Set[12].col,'A',Colour.Fword,Colour.black);
+			DisILInputNum[3] =  Para_Set[13].val %1000/100;
+			DisILInputNum[4] =  Para_Set[13].val %100/10;
+			DisILInputNum[5] =  Para_Set[13].val %10;
+			PutNum(Para_Set[13].row+98, Para_Set[13].col,DisILInputNum[0],Colour.Fword,Colour.black);
+		  PutNum(Para_Set[13].row+110, Para_Set[13].col,DisILInputNum[1],Colour.Fword,Colour.black);
+			PutChar(Para_Set[13].row+122, Para_Set[13].col,DisILInputNum[2],Colour.Fword,Colour.black); 
+			PutNum(Para_Set[13].row+134, Para_Set[13].col,DisILInputNum[3],Colour.Fword,Colour.black);
+			PutNum(Para_Set[13].row+146, Para_Set[13].col,DisILInputNum[4],Colour.Fword,Colour.black);
+			PutNum(Para_Set[13].row+158, Para_Set[13].col,DisILInputNum[5],Colour.Fword,Colour.black);
+      PutChar(Para_Set[13].row+173, Para_Set[13].col,'A',Colour.Fword,Colour.black);
 			len = 6;
 			break;
 
@@ -233,25 +236,25 @@ static void SlectPara( uint8_t ip,uint8_t blank)
 			}
 			else if(blank==PLimitPnt)
 			{
-				PutNum(Para_Set[11].row+98, Para_Set[11].col, DisULInputNum[0], Colour.Fword, Colour.black );
-				PutNum(Para_Set[11].row+110, Para_Set[11].col,  DisULInputNum[1], Colour.Fword, Colour.black );
-				PutNum( Para_Set[11].row+122, Para_Set[11].col , DisULInputNum[2], Colour.Fword, Colour.black );
-				PutNum(Para_Set[11].row+134, Para_Set[11].col,  DisULInputNum[3], Colour.Fword, Colour.black );
-				PutChar(Para_Set[11].row+146, Para_Set[11].col,  DisULInputNum[4], Colour.Fword, Colour.black );
-				PutNum(Para_Set[11].row+158, Para_Set[11].col,  DisULInputNum[5], Colour.Fword, Colour.black );
+				PutNum(Para_Set[12].row+98, Para_Set[12].col, DisULInputNum[0], Colour.Fword, Colour.black );
+				PutNum(Para_Set[12].row+110, Para_Set[12].col,  DisULInputNum[1], Colour.Fword, Colour.black );
+				PutNum( Para_Set[12].row+122, Para_Set[12].col , DisULInputNum[2], Colour.Fword, Colour.black );
+				PutNum(Para_Set[12].row+134, Para_Set[12].col,  DisULInputNum[3], Colour.Fword, Colour.black );
+				PutChar(Para_Set[12].row+146, Para_Set[12].col,  DisULInputNum[4], Colour.Fword, Colour.black );
+				PutNum(Para_Set[12].row+158, Para_Set[12].col,  DisULInputNum[5], Colour.Fword, Colour.black );
 		    if(TSetInput ==SET)//反显
-					PutNum(Para_Set[11].row+98+12*(KInputF), Para_Set[11].col,DisULInputNum[KInputF],Colour.black,Colour.Fword); 
+					PutNum(Para_Set[12].row+98+12*(KInputF), Para_Set[12].col,DisULInputNum[KInputF],Colour.black,Colour.Fword); 
 			}
 			else if(blank==ILimitPnt)
 			{
-				PutNum(Para_Set[12].row+98, Para_Set[12].col, DisILInputNum[0], Colour.Fword, Colour.black );
-				PutNum(Para_Set[12].row+110, Para_Set[12].col,  DisILInputNum[1], Colour.Fword, Colour.black );
-			  PutChar(Para_Set[12].row+122, Para_Set[12].col , DisILInputNum[2], Colour.Fword, Colour.black );
-			  PutNum(Para_Set[12].row+134, Para_Set[12].col,  DisILInputNum[3], Colour.Fword, Colour.black );
-				PutNum(Para_Set[12].row+146, Para_Set[12].col,  DisILInputNum[4], Colour.Fword, Colour.black );
-				PutNum(Para_Set[12].row+158, Para_Set[12].col,  DisILInputNum[5], Colour.Fword, Colour.black );
+				PutNum(Para_Set[13].row+98, Para_Set[13].col, DisILInputNum[0], Colour.Fword, Colour.black );
+				PutNum(Para_Set[13].row+110, Para_Set[13].col,  DisILInputNum[1], Colour.Fword, Colour.black );
+			  PutChar(Para_Set[13].row+122, Para_Set[13].col , DisILInputNum[2], Colour.Fword, Colour.black );
+			  PutNum(Para_Set[13].row+134, Para_Set[13].col,  DisILInputNum[3], Colour.Fword, Colour.black );
+				PutNum(Para_Set[13].row+146, Para_Set[13].col,  DisILInputNum[4], Colour.Fword, Colour.black );
+				PutNum(Para_Set[13].row+158, Para_Set[13].col,  DisILInputNum[5], Colour.Fword, Colour.black );
 				if(TSetInput ==SET)//反显
-					PutNum(Para_Set[12].row+98+12*(KInputF),Para_Set[12].col,DisILInputNum[KInputF],Colour.black,Colour.Fword); 
+					PutNum(Para_Set[13].row+98+12*(KInputF),Para_Set[13].col,DisILInputNum[KInputF],Colour.black,Colour.Fword); 
 			}
 			else if(blank==BaudRatePnt)
 				WriteString_16(Para_Set[0].row+98,Para_Set[0].col,(char *)BaudRate[Para_Set[0].val],0);
@@ -265,10 +268,10 @@ static void SlectPara( uint8_t ip,uint8_t blank)
 			else if(blank==USBModePnt)
 			{
 				if(flag_SetLang==0)  //中文
-					WriteString_16(Para_Set[8].row+98,Para_Set[8].col,(char *)USBMode_Ch[Para_Set[8].val],1);
+					WriteString_16(Para_Set[9].row+98,Para_Set[9].col,(char *)USBMode_Ch[Para_Set[8].val],1);
 
 				else
-					WriteString_16(Para_Set[8].row+98,Para_Set[8].col,(char *)USBMode_En[Para_Set[8].val],0);
+					WriteString_16(Para_Set[9].row+98,Para_Set[9].col,(char *)USBMode_En[Para_Set[8].val],0);
 			}
 			else if(blank==LanguagePnt)
 			{
@@ -371,10 +374,10 @@ void DisBlank_set(unsigned char bank,uint8_t mode)
 				Colour.Fword=Blue;
 				Colour.black=Red;
 				if(flag_SetLang==0)  //中文
-					WriteString_16(Para_Set[8].row+98,Para_Set[8].col,(char *)USBMode_Ch[Para_Set[8].val],1);
+					WriteString_16(Para_Set[9].row+98,Para_Set[9].col,(char *)USBMode_Ch[Para_Set[8].val],1);
 
 				else
-					WriteString_16(Para_Set[8].row+98,Para_Set[8].col,(char *)USBMode_En[Para_Set[8].val],0);
+					WriteString_16(Para_Set[9].row+98,Para_Set[9].col,(char *)USBMode_En[Para_Set[8].val],0);
 			}
 			else if(bank==LanguagePnt)
 			{
@@ -409,7 +412,7 @@ void Disp_Sys_set(void)
 {
    uint32_t i;
 //	lcd_Clear(LCD_COLOR_TEST_BACK);
-  Disp_Box(3,25,478,235,3,Yellow);
+  Disp_Box(3,25,478,250,3,Yellow);
   Colour.Fword=White;
 		Colour.black=LCD_COLOR_TEST_BACK;//Black;
 	if(flag_SetLang==0)
