@@ -238,7 +238,7 @@ char  buff[15]={0};
 	HW_keyInt();
  //   debug_frmwrk_init();
 //debug_uart0_init(9600);//串口3初始化
-debug_uart0_init(19200);
+debug_uart0_init(115200);
 //  	init_timer(0, 10);//定时器初始化
 //enable_timer(0);
    SDRAM_Init();
