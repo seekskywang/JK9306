@@ -223,7 +223,7 @@ void Power_Process(void)
 	ReadSavedata();//读取保存数据
 //GPIO_5463_Configuration();
 //	Disp_PowerOn_Menu();//显示开机界面
-lcd_image((uint8_t *)gImage_open);
+//lcd_image((uint8_t *)gImage_open);
 //	Electric_currentAmp(0);
 
 	if(AddressVal==0xff)
@@ -790,13 +790,25 @@ else	alrmp=0;
 //else if(valp<10000000){valp/=10;potw=2;}
 //else if(valp<100000000){valp/=100;potw=1;}
 //else	{valp/=1000;potw=0;}
-buf[0]='0'+valp/100000;
-buf[1]='0'+valp%100000/10000;
-buf[2]='0'+valp%10000/1000;
-buf[3]='.';
-buf[4]='0'+valp%1000/100;
-buf[5]='0'+valp%100/10;
-buf[6]='0'+valp%10;
+if(valp<1000000)
+{
+	buf[0]='0'+valp/100000;
+	buf[1]='0'+valp%100000/10000;
+	buf[2]='0'+valp%10000/1000;
+	buf[3]='.';
+	buf[4]='0'+valp%1000/100;
+	buf[5]='0'+valp%100/10;
+	buf[6]='0'+valp%10;
+}else{
+	buf[0]='0'+valp/1000000;
+	buf[1]='0'+valp%1000000/100000;
+	buf[2]='0'+valp%100000/10000;
+	buf[3]='0'+valp%10000/1000;
+	buf[4]='.';
+	buf[5]='0'+valp%1000/100;
+	buf[6]='0'+valp%100/10;
+//	buf[6]='0'+valp%10;
+}
 //if(potw==2)
 //{buf[3]='.';
 //buf[4]='0'+valp%100/10;}
