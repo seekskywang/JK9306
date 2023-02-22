@@ -18,6 +18,18 @@
 #include "string.h"
 #include "stdio.h"
 #include "open.h"
+#include "modbus_slave.h"
+
+typedef struct Data{
+  uint32_t Voltage;       //电压
+  uint32_t Current;       //电流
+  uint32_t Freq;     			//频率
+  uint32_t Pf;       			//功率因数
+	uint32_t Power;       	//功率
+}Dispdata;
+
+Dispdata Disp;
+
 extern	void 	Disp_Box(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2,uint8_t bevel_edge,uint32_t color);
 void flashSetFlags(u8 blank);
 void flashMainFlags(u8 blank);
@@ -201,6 +213,9 @@ u8 y;
 	for(y=0;y<t;t++)
 	{y=y;}
 }
+
+
+
 //==========================================================
 //函数名称：Power_Process
 //函数功能：上电处理
@@ -643,6 +658,17 @@ void DisBlank_main(unsigned char bank,uint8_t mode)
 	 Colour.black=LCD_COLOR_TEST_BACK;//Black;
 }
 #define LCD_COLOR_TURQUOISE		 0x3f4828	//蓝绿色     //0x9b9907 (蓝色)0x5f6738
+
+void RecHandle(void)
+{
+	Disp.Voltage = (ComBuf.rec.buf[3]<<8) + ComBuf.rec.buf[4];
+	Disp.Current = (ComBuf.rec.buf[5]<<24) + (ComBuf.rec.buf[6]<<16) + (ComBuf.rec.buf[7]<<8) + ComBuf.rec.buf[8];
+	Disp.Freq = (ComBuf.rec.buf[9]<<8) + ComBuf.rec.buf[10];
+	Disp.Pf = (ComBuf.rec.buf[11]<<8) + ComBuf.rec.buf[12];
+//	Disp.Pf=0x03e8;
+	Disp.Power = (ComBuf.rec.buf[13]<<24) + (ComBuf.rec.buf[14]<<16) + (ComBuf.rec.buf[15]<<8) + ComBuf.rec.buf[16];
+}
+
 void Disp_R(uint8_t para)
 {
 	char  buf[8]={"0"};
@@ -681,37 +707,42 @@ Colour.Fword=Yellow;
 		LCD_ShowFontCN_40_55(215,33,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
 		LCD_ShowFontCN_40_55(453,33,24,34,(uint8_t*)nAsciiDot20X40E+102*54);//V
 
-if(ComBuf.rec.end)	ComBuf.rec.end=0;
-if(para==1)
-{	V_val.c[3]=ComBuf.rec.buf[5];//[3];
-V_val.c[2]=ComBuf.rec.buf[6];//[4];
-V_val.c[1]=ComBuf.rec.buf[4];//[5];
-V_val.c[0]=ComBuf.rec.buf[3];//=0xb9;//[6];
+//if(ComBuf.rec.end)	ComBuf.rec.end=0;
 	
-	valp=V_val.f*100.1;
-	if(V_val.f < 6)
-		valp = 0;
-//val*=200;
-	if(valp<100000)
-potv=2;
-else
-{valp/=10;potv=1;}
-	buf[0]='0'+valp/10000;
-buf[1]='0'+valp%10000/1000;
-buf[2]='0'+valp%1000/100;
-if(potv==2)
-{buf[3]='.';
-buf[4]='0'+valp%100/10;
-}
-else
-{buf[3]='0'+valp%100/10;
-buf[4]='.';
-}
-buf[5]='0'+valp%10;
+	Hex_Format(Disp.Voltage,2,5,0);
+	WriteString_Big(238,33,DispBuf);
+	
+	
+//if(para==1)
+//{	V_val.c[3]=ComBuf.rec.buf[5];//[3];
+//V_val.c[2]=ComBuf.rec.buf[6];//[4];
+//V_val.c[1]=ComBuf.rec.buf[4];//[5];
+//V_val.c[0]=ComBuf.rec.buf[3];//=0xb9;//[6];
+//	
+//	valp=V_val.f*100.1;
+//	if(V_val.f < 6)
+//		valp = 0;
+////val*=200;
+//	if(valp<100000)
+//potv=2;
+//else
+//{valp/=10;potv=1;}
+//	buf[0]='0'+valp/10000;
+//buf[1]='0'+valp%10000/1000;
+//buf[2]='0'+valp%1000/100;
+//if(potv==2)
+//{buf[3]='.';
+//buf[4]='0'+valp%100/10;
+//}
+//else
+//{buf[3]='0'+valp%100/10;
+//buf[4]='.';
+//}
+//buf[5]='0'+valp%10;
 
-buf[6]=0;
-WriteString_Big(238,33,buf);
-}//////////////////////////////////////////////end v
+//buf[6]=0;
+//WriteString_Big(238,33,buf);
+//}//////////////////////////////////////////////end v
 
  if(alrmi+alrmp)t++;
 else
@@ -726,133 +757,140 @@ Colour.Fword=Green;
 LCD_ShowFontCN_40_55(159,82,24,34,(uint8_t*)nAsciiDot20X40E+102*41);//I
 		WriteString_16(185,102,Rms[0], 0);
 		LCD_ShowFontCN_40_55(215,83,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
-	 LCD_ShowFontCN_STR_40_55(431,85,24,34,"mA",2);
-if(para==1)
-{A_val.c[3]=ComBuf.rec.buf[9];
-A_val.c[2]=ComBuf.rec.buf[10];
-A_val.c[1]=ComBuf.rec.buf[8];
-A_val.c[0]=ComBuf.rec.buf[7];
-valp=A_val.f*100000;
-//val=1234567;
-if(V_val.f < 6)
-		valp = 0;
-if(CurrentLimit != 0 && valp>CurrentLimit*100)alrmi=1;
+	 LCD_ShowFontCN_STR_40_55(431+24,85,24,34,"A",2);
+	Hex_Format(Disp.Current,4,6,0);
+	WriteString_Big(238,83,DispBuf);
+//if(para==1)
+//{A_val.c[3]=ComBuf.rec.buf[9];
+//A_val.c[2]=ComBuf.rec.buf[10];
+//A_val.c[1]=ComBuf.rec.buf[8];
+//A_val.c[0]=ComBuf.rec.buf[7];
+//valp=A_val.f*100000;
+////val=1234567;
+//if(V_val.f < 6)
+//		valp = 0;
+//if(CurrentLimit != 0 && valp>CurrentLimit*100)alrmi=1;
 
-else	alrmi=0;
-if(valp<100000)poti=2;
-else if(valp<1000000){valp/=10;poti=1;}
-else
-{valp/=100;poti=0;}
+//else	alrmi=0;
+//if(valp<100000)poti=2;
+//else if(valp<1000000){valp/=10;poti=1;}
+//else
+//{valp/=100;poti=0;}
 
-buf[0]='0'+valp/10000;
-buf[1]='0'+valp%10000/1000;
-buf[2]='0'+valp%1000/100;
-if(poti==2)
-{
-buf[3]='.';
-buf[4]='0'+valp%100/10;
-}
-else if(poti==1)
-{
-buf[3]='0'+valp%100/10;
-buf[4]='.';
-}
-else
-{
-buf[3]='0'+valp%100/10;
-buf[4]='0'+valp%10;
-}
-if(poti==0)
-	buf[5]=' ';
-	else
-buf[5]='0'+valp%10;
-if(alrmi&&t>20)
-WriteString_Big(238,83,over);
-	else
-	WriteString_Big(238,83,buf);
-}/////////////////////////////////////////end i
+//buf[0]='0'+valp/10000;
+//buf[1]='0'+valp%10000/1000;
+//buf[2]='0'+valp%1000/100;
+//if(poti==2)
+//{
+//buf[3]='.';
+//buf[4]='0'+valp%100/10;
+//}
+//else if(poti==1)
+//{
+//buf[3]='0'+valp%100/10;
+//buf[4]='.';
+//}
+//else
+//{
+//buf[3]='0'+valp%100/10;
+//buf[4]='0'+valp%10;
+//}
+//if(poti==0)
+//	buf[5]=' ';
+//	else
+//buf[5]='0'+valp%10;
+//if(alrmi&&t>20)
+//WriteString_Big(238,83,over);
+//	else
+//	WriteString_Big(238,83,buf);
+//}/////////////////////////////////////////end i
 Colour.Fword=PCOLOR;
 //P :
 LCD_ShowFontCN_40_55(159,130,24,34,(uint8_t*)nAsciiDot20X40E+102*48);//P
 LCD_ShowFontCN_40_55(183,130,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
 LCD_ShowFontCN_40_55(452,132,24,34,(uint8_t*)nAsciiDot20X40E+102*55);//W
+
+	Hex_Format(Disp.Power,2,6,0);
+	WriteString_Big(206,130,DispBuf);
 //p_val
-if(para==1)
-{P_val.c[3]=ComBuf.rec.buf[17];//[11];
-P_val.c[2]=ComBuf.rec.buf[18];//[12];
-P_val.c[1]=ComBuf.rec.buf[16];//[13];
-P_val.c[0]=ComBuf.rec.buf[15];//[14];
-pfx=valp=P_val.f*1000;
-//val=3456789;
-if(POWLimit != 0 && (valp>POWLimit*10))alrmp=1;
-else	alrmp=0;
-//	if(valp<1000000){potw=3;}
-//else if(valp<10000000){valp/=10;potw=2;}
-//else if(valp<100000000){valp/=100;potw=1;}
-//else	{valp/=1000;potw=0;}
-if(valp<1000000)
-{
-	buf[0]='0'+valp/100000;
-	buf[1]='0'+valp%100000/10000;
-	buf[2]='0'+valp%10000/1000;
-	buf[3]='.';
-	buf[4]='0'+valp%1000/100;
-	buf[5]='0'+valp%100/10;
-	buf[6]='0'+valp%10;
-}else{
-	buf[0]='0'+valp/1000000;
-	buf[1]='0'+valp%1000000/100000;
-	buf[2]='0'+valp%100000/10000;
-	buf[3]='0'+valp%10000/1000;
-	buf[4]='.';
-	buf[5]='0'+valp%1000/100;
-	buf[6]='0'+valp%100/10;
+//if(para==1)
+//{P_val.c[3]=ComBuf.rec.buf[17];//[11];
+//P_val.c[2]=ComBuf.rec.buf[18];//[12];
+//P_val.c[1]=ComBuf.rec.buf[16];//[13];
+//P_val.c[0]=ComBuf.rec.buf[15];//[14];
+//pfx=valp=P_val.f*1000;
+////val=3456789;
+//if(POWLimit != 0 && (valp>POWLimit*10))alrmp=1;
+//else	alrmp=0;
+////	if(valp<1000000){potw=3;}
+////else if(valp<10000000){valp/=10;potw=2;}
+////else if(valp<100000000){valp/=100;potw=1;}
+////else	{valp/=1000;potw=0;}
+//if(valp<1000000)
+//{
+//	buf[0]='0'+valp/100000;
+//	buf[1]='0'+valp%100000/10000;
+//	buf[2]='0'+valp%10000/1000;
+//	buf[3]='.';
+//	buf[4]='0'+valp%1000/100;
+//	buf[5]='0'+valp%100/10;
 //	buf[6]='0'+valp%10;
-}
-//if(potw==2)
-//{buf[3]='.';
-//buf[4]='0'+valp%100/10;}
-//else if(potw==1)
-//{buf[3]='0'+valp%100/10;
-//buf[4]='.';}
+//}else{
+//	buf[0]='0'+valp/1000000;
+//	buf[1]='0'+valp%1000000/100000;
+//	buf[2]='0'+valp%100000/10000;
+//	buf[3]='0'+valp%10000/1000;
+//	buf[4]='.';
+//	buf[5]='0'+valp%1000/100;
+//	buf[6]='0'+valp%100/10;
+////	buf[6]='0'+valp%10;
+//}
+////if(potw==2)
+////{buf[3]='.';
+////buf[4]='0'+valp%100/10;}
+////else if(potw==1)
+////{buf[3]='0'+valp%100/10;
+////buf[4]='.';}
+////	else
+////	{buf[3]='0'+valp%100/10;
+////	buf[4]='0'+valp%10;}
+////if(potw==0)
+////buf[5]=' ';
+////else
+////	buf[5]='0'+valp%10;
+//if(alrmp&&t>20)
+//WriteString_Big(206,130,over);
 //	else
-//	{buf[3]='0'+valp%100/10;
-//	buf[4]='0'+valp%10;}
-//if(potw==0)
-//buf[5]=' ';
-//else
-//	buf[5]='0'+valp%10;
-if(alrmp&&t>20)
-WriteString_Big(206,130,over);
-	else
-WriteString_Big(206,130,buf);
-}///////////////////////////////////////end p
+//WriteString_Big(206,130,buf);
+//}///////////////////////////////////////end p
 Colour.Fword=LCD_COLOR_MAGENTA;
 //pf
 LCD_ShowFontCN_40_55(159,180,24,34,(uint8_t*)nAsciiDot20X40E+102*48);//P
 LCD_ShowFontCN_40_55(181,180,24,34,(uint8_t*)nAsciiDot20X40E+102*70);//f
 LCD_ShowFontCN_40_55(215,180,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
 
+	Hex_Format(Disp.Pf,3,4,0);
+	WriteString_Big(270,180,DispBuf);
 //pf_val
-if(para==1)
-{PF_val.c[3]=ComBuf.rec.buf[13];
-PF_val.c[2]=ComBuf.rec.buf[14];
-PF_val.c[1]=ComBuf.rec.buf[12];
-PF_val.c[0]=ComBuf.rec.buf[11];
-valp=PF_val.f*1000;
-if(valp>1000)
-	valp=1000;
-if(V_val.f < 6)
-		valp = 0;
-//val=POWLimit;
-buf[0]='0'+valp%10000/1000;
-buf[1]='.';
-buf[2]='0'+valp%1000/100;
-buf[3]='0'+valp%100/10;
-buf[4]='0'+valp%10;
-buf[5]=0;
-WriteString_Big(270,180,buf);
-}////////////////////////////////////////end pf
+//if(para==1)
+//{PF_val.c[3]=ComBuf.rec.buf[13];
+//PF_val.c[2]=ComBuf.rec.buf[14];
+//PF_val.c[1]=ComBuf.rec.buf[12];
+//PF_val.c[0]=ComBuf.rec.buf[11];
+//valp=PF_val.f*1000;
+//if(valp>1000)
+//	valp=1000;
+//if(V_val.f < 6)
+//		valp = 0;
+////val=POWLimit;
+//buf[0]='0'+valp%10000/1000;
+//buf[1]='.';
+//buf[2]='0'+valp%1000/100;
+//buf[3]='0'+valp%100/10;
+//buf[4]='0'+valp%10;
+//buf[5]=0;
+//WriteString_Big(270,180,buf);
+//}////////////////////////////////////////end pf
 Colour.Fword=FCOLOR;//LCD_COLOR_CYAN;//
 //Freq:
 LCD_ShowFontCN_40_55(159,228,24,34,(uint8_t*)nAsciiDot20X40E+102*38);//F
@@ -860,30 +898,33 @@ LCD_ShowFontCN_40_55(159,228,24,34,(uint8_t*)nAsciiDot20X40E+102*38);//F
 //LCD_ShowFontCN_40_55(203,228,24,34,(uint8_t*)nAsciiDot20X40E+102*69);//e
 //LCD_ShowFontCN_40_55(225,228,24,34,(uint8_t*)nAsciiDot20X40E+102*81);//q
 LCD_ShowFontCN_40_55(215,228,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
-if(para==5)
-{HZ_val.c[3]=ComBuf.rec.buf[5];//[19];
-HZ_val.c[2]=ComBuf.rec.buf[6];//[20];
-HZ_val.c[1]=ComBuf.rec.buf[4];//[21];
-HZ_val.c[0]=ComBuf.rec.buf[3];//[22];
-valp=HZ_val.f*10;
-if(V_val.f < 6)
-	valp = 0;
-hz_t++;
-if(hz_t>10)hz_t=1;
-if(hz_t==1)val_hz=valp;
-else
-	val_hz+=valp;
-if(hz_t==10)
-{
-//val_hz/=2;
-buf[0]='0'+val_hz%10000/1000;
-buf[1]='0'+val_hz%1000/100;
-buf[2]='.';
-buf[3]='0'+val_hz%100/10;
-buf[4]='0'+val_hz%10;
-buf[5]=0;
-WriteString_Big(270,228,buf);}
-}//////////////////////////////////////end hz
+
+	Hex_Format(Disp.Freq,1,3,0);
+	WriteString_Big(270,228,DispBuf);
+//if(para==5)
+//{HZ_val.c[3]=ComBuf.rec.buf[5];//[19];
+//HZ_val.c[2]=ComBuf.rec.buf[6];//[20];
+//HZ_val.c[1]=ComBuf.rec.buf[4];//[21];
+//HZ_val.c[0]=ComBuf.rec.buf[3];//[22];
+//valp=HZ_val.f*10;
+//if(V_val.f < 6)
+//	valp = 0;
+//hz_t++;
+//if(hz_t>10)hz_t=1;
+//if(hz_t==1)val_hz=valp;
+//else
+//	val_hz+=valp;
+//if(hz_t==10)
+//{
+////val_hz/=2;
+//buf[0]='0'+val_hz%10000/1000;
+//buf[1]='0'+val_hz%1000/100;
+//buf[2]='.';
+//buf[3]='0'+val_hz%100/10;
+//buf[4]='0'+val_hz%10;
+//buf[5]=0;
+//WriteString_Big(270,228,buf);}
+//}//////////////////////////////////////end hz
 LCD_ShowFontCN_40_55(430,232,24,34,(uint8_t*)nAsciiDot20X40E+102*40);//H
 LCD_ShowFontCN_40_55(452,232,24,34,(uint8_t*)nAsciiDot20X40E+102*90);//z
 Colour.Fword=White;
@@ -1086,29 +1127,33 @@ WriteString_16(45,240,buf,0);
 
 void Send_Uart3(u8 x)//(uint8_t *buff)
 {
-	u8 bread_v1[9]={0x01,0x03,0x0d,0x20,0x00,0x0c,0x46,0xa9,0xa1};//v
-	u8 bread_v[9]={0x01,0x03,0x0d,0x20,0x00,0x02,0xc7,0x6d,0xa1};//v
-	u8 bread_i[9]={0x01,0x03,0x0d,0x22,0x00,0x02,0x66,0xad,0xa1};//i
-	u8 bread_pf[9]={0x01,0x03,0x0d,0x24,0x00,0x02,0x86,0xac,0xa1};//pf
-	u8 bread_pw[9]={0x01,0x03,0x0d,0x26,0x00,0x02,0x27,0x6c,0xa1};//pw
-	u8 bread_wh[9]={0x01,0x03,0x0d,0x28,0x00,0x02,0x46,0xaf,0xa1};//wh
-	u8 bread_s[9]={0x01,0x03,0x0d,0x2a,0x00,0x02,0xe7,0x6f,0xa1};//time
-	u8 bread_hz[9]={0x01,0x03,0x0d,0x12,0x00,0x02,0x66,0xa2,0xa1};//hz
-	u8 set_whon[9]={0x01,0x06,0x00,0xa6,0xff,0x00,0x28,0x19,0xa1};//wh
-	u8 set_whoff[9]={0x01,0x06,0x00,0xa6,0x00,0x00,0x69,0xe9,0xa1};//wh
-	u8 clear_wh[9]={0x01,0x06,0x0d,0x2e,0xff,0x00,0xaa,0x9f,0xa1};//wh
-	u8 reset_wh[9]={0x01,0x06,0x0d,0x2e,0x00,0x00,0xeb,0x6f,0xa1};//wh
+	u8 readbuf[8]={0xF0,0x03,0x00,0x00,0x00,0x15,0x00,0x00};//v
+//	u8 bread_v[9]={0x01,0x03,0x0d,0x20,0x00,0x02,0xc7,0x6d,0xa1};//v
+//	u8 bread_i[9]={0x01,0x03,0x0d,0x22,0x00,0x02,0x66,0xad,0xa1};//i
+//	u8 bread_pf[9]={0x01,0x03,0x0d,0x24,0x00,0x02,0x86,0xac,0xa1};//pf
+//	u8 bread_pw[9]={0x01,0x03,0x0d,0x26,0x00,0x02,0x27,0x6c,0xa1};//pw
+//	u8 bread_wh[9]={0x01,0x03,0x0d,0x28,0x00,0x02,0x46,0xaf,0xa1};//wh
+//	u8 bread_s[9]={0x01,0x03,0x0d,0x2a,0x00,0x02,0xe7,0x6f,0xa1};//time
+//	u8 bread_hz[9]={0x01,0x03,0x0d,0x12,0x00,0x02,0x66,0xa2,0xa1};//hz
+//	u8 set_whon[9]={0x01,0x06,0x00,0xa6,0xff,0x00,0x28,0x19,0xa1};//wh
+//	u8 set_whoff[9]={0x01,0x06,0x00,0xa6,0x00,0x00,0x69,0xe9,0xa1};//wh
+//	u8 clear_wh[9]={0x01,0x06,0x0d,0x2e,0xff,0x00,0xaa,0x9f,0xa1};//wh
+//	u8 reset_wh[9]={0x01,0x06,0x0d,0x2e,0x00,0x00,0xeb,0x6f,0xa1};//wh
 //jp1	u8 Send_buff[5]={0x55,0x01,0x11,0x67,0xaf};
 	//u8 Send_buff[7]={0xfb,0xfb,0x07,0x00,0xfd,0xfe,0xfe};
-	if(x==1)	UARTPuts(LPC_UART0,bread_v1);
-//	else if(x==2)		UARTPuts(LPC_UART0,bread_wh);
-//	else if(x==3)		UARTPuts(LPC_UART0,bread_pf);
-//	else if(x==4)		UARTPuts(LPC_UART0,bread_pw);
-	else if(x==5)		UARTPuts(LPC_UART0,bread_hz);
-	else if(x==6)		UARTPuts(LPC_UART0,set_whon);
-	else if(x==7)		UARTPuts(LPC_UART0,set_whoff);
-	else if(x==8)		UARTPuts(LPC_UART0,clear_wh);
-	else if(x==9)		UARTPuts(LPC_UART0,reset_wh);
+	readbuf[6] = (u8)(CRC16_Modbus(readbuf,6)>>8);
+	readbuf[7] = (u8)(CRC16_Modbus(readbuf,6));
+	uartSendChars(LPC_UART0,readbuf,8);
+	
+//	if(x==1)	UARTPuts(LPC_UART0,bread_v1);
+////	else if(x==2)		UARTPuts(LPC_UART0,bread_wh);
+////	else if(x==3)		UARTPuts(LPC_UART0,bread_pf);
+////	else if(x==4)		UARTPuts(LPC_UART0,bread_pw);
+//	else if(x==5)		UARTPuts(LPC_UART0,bread_hz);
+//	else if(x==6)		UARTPuts(LPC_UART0,set_whon);
+//	else if(x==7)		UARTPuts(LPC_UART0,set_whoff);
+//	else if(x==8)		UARTPuts(LPC_UART0,clear_wh);
+//	else if(x==9)		UARTPuts(LPC_UART0,reset_wh);
 }
 
 
@@ -1135,13 +1180,23 @@ void Use_MainProcess(void)
  	while(GetSystemStatus()==SYS_STATUS_MAIN)
 	{
 	  ci++;
-		ci%=10;
-		if(ci==1)			{Send_Uart3(1);p=ci;}
-		if(ci==3)			{Send_Uart3(2);p=2;}
-		if(ci==5)			{Send_Uart3(3);p=3;}
-		if(ci==7)		{Send_Uart3(4);p=4;}
-		if(ci==9)		{Send_Uart3(5);p=5;}
-
+//		ci%=10;
+		if(ci==10)			
+		{
+			ci=0;
+			Send_Uart3(1);
+			p=ci;
+		}
+//		if(ci==1)			{Send_Uart3(1);p=ci;}
+//		if(ci==3)			{Send_Uart3(2);p=2;}
+//		if(ci==5)			{Send_Uart3(3);p=3;}
+//		if(ci==7)		{Send_Uart3(4);p=4;}
+//		if(ci==9)		{Send_Uart3(5);p=5;}
+		if(ComBuf.rec.end==TRUE)
+		{
+			RecHandle();
+			ComBuf.rec.end = 0;
+		}
 		Disp_R(p);
 		key=HW_KeyScsn();
 		flashMainFlags(BlankP);

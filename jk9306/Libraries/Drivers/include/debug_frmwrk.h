@@ -78,7 +78,7 @@
 
 //==========================================================
 //收发帧缓冲长度
-#define REC_LEN_MAX  	40//接收帧长度
+#define REC_LEN_MAX  	64//接收帧长度
 #define SEND_LEN_MAX 	18//发送帧长度
 
 ////串口发送结构
@@ -87,7 +87,7 @@ typedef struct
 	int8_t begin;//发送开始标志
 	int8_t ptr;//当前发送指针
 	int8_t len;//发送数据长度
-	int8_t buf[SEND_LEN_MAX];//数据发送缓冲
+	u8 buf[SEND_LEN_MAX];//数据发送缓冲
 }ComSend_TypeDef;
 #define TICKS_PER_SEC 100	//系统时钟每秒节拍数，100x10mS(T0)=1S
 //接收溢出时间,3*1000/50=60mS
@@ -98,8 +98,8 @@ typedef struct
 	int8_t end;//接收结束标志
 	int8_t ptr;	//当前接收指针
 	int8_t len;//接收数据长度
-	uint8_t buf[REC_LEN_MAX];//数据接收缓冲
-	int8_t TimeOut;//接收超时(10ms周期)
+	u8 buf[REC_LEN_MAX];//数据接收缓冲
+	u8 TimeOut;//接收超时(10ms周期)
 }ComRec_TypeDef;
 
 ////串口收发结构
@@ -171,6 +171,7 @@ uint8_t UARTGetValue (LPC_UART_TypeDef *UARTx, uint8_t option,
 											uint8_t numCh, uint32_t* val);
 void UARTPutChar (LPC_UART_TypeDef *UARTx, uint8_t ch);
 extern void UARTPuts(LPC_UART_TypeDef *UARTx, const void *str);
+extern void uartSendChars(LPC_UART_TypeDef *UARTx,const void *str, uint16_t strlen);
 void UARTPuts_(LPC_UART_TypeDef *UARTx, const void *str);
 void UARTPuts(LPC_UART_TypeDef *UARTx, const void *str);
 void UARTPutDec(LPC_UART_TypeDef *UARTx, uint8_t decnum);
@@ -185,6 +186,6 @@ void debug_frmwrk_init(void);
 //void Send_Freq(Send_Ord_Typedef *ord);
 void  debug_uart3_init(uint32_t freq);
 void  debug_uart0_init(uint32_t freq);
-void uartSendChars(LPC_UART_TypeDef *UARTx,const void *str, uint16_t strlen);
+
 
 #endif /* __DEBUG_FRMWRK_H_ */

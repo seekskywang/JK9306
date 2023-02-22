@@ -3,107 +3,44 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: ¦ÌVision V5.25.3.0
-Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+IDE-Version: ¦ÌVision V5.37.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
 License Information: 1 Microsoft, Microsoft, LIC=03C6R-KIDXE-2Z1W4-FI5SL-E8BHU-R7F4D
  
 Tool Versions:
-Toolchain:       MDK-ARM Plus  Version: 5.25.2.0
+Toolchain:       MDK-ARM Plus  Version: 5.37.0.0
 Toolchain Path:  E:\Keil_v5\ARM\ARMCC\Bin
 C Compiler:      Armcc.exe V5.06 update 6 (build 750)
 Assembler:       Armasm.exe V5.06 update 6 (build 750)
 Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
 Library Manager: ArmAr.exe V5.06 update 6 (build 750)
 Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
-CPU DLL:         SARMCM3.DLL V5.25.2.0
-Dialog DLL:      DARMP1.DLL V1.27.0.0
-Target DLL:      Segger\JL2CM3.dll V2.99.29.0
-Dialog DLL:      TARMP1.DLL V1.26.0.0
+CPU DLL:         SARMCM3.DLL V5.37.0.0
+Dialog DLL:      DARMP1.DLL V1.28.1.0
+Target DLL:      Segger\JL2CM3.dll V2.99.42.0
+Dialog DLL:      TARMP1.DLL V1.27.1.0
  
 <h2>Project:</h2>
 F:\JK9306\jk9306\Project\project.uvprojx
-Project File Date:  08/18/2021
+Project File Date:  02/20/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'E:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Open1788'
-compiling main.c...
-..\User\main.c(234): warning:  #177-D: variable "buff"  was declared but never referenced
-  char  buff[15]={0};
-..\User\main.c: 1 warning, 0 errors
-compiling timer.c...
-compiling lpc177x_8x_lcd.c...
-compiling logo.c...
-compiling TouchPanel.c...
-compiling use_disp.c...
-compiling key.c...
-compiling test.c...
-..\User\Test\test.c(651): warning:  #177-D: variable "potw"  was declared but never referenced
-        uint8_t i=0,potv,potvp,poti,potw,potva;
-..\User\Test\test.c(1090): warning:  #177-D: variable "bread_v"  was declared but never referenced
-        u8 bread_v[9]={0x01,0x03,0x0d,0x20,0x00,0x02,0xc7,0x6d,0xa1};//v
-..\User\Test\test.c(1091): warning:  #177-D: variable "bread_i"  was declared but never referenced
-        u8 bread_i[9]={0x01,0x03,0x0d,0x22,0x00,0x02,0x66,0xad,0xa1};//i
-..\User\Test\test.c(1092): warning:  #177-D: variable "bread_pf"  was declared but never referenced
-        u8 bread_pf[9]={0x01,0x03,0x0d,0x24,0x00,0x02,0x86,0xac,0xa1};//pf
-..\User\Test\test.c(1093): warning:  #177-D: variable "bread_pw"  was declared but never referenced
-        u8 bread_pw[9]={0x01,0x03,0x0d,0x26,0x00,0x02,0x27,0x6c,0xa1};//pw
-..\User\Test\test.c(1094): warning:  #177-D: variable "bread_wh"  was declared but never referenced
-        u8 bread_wh[9]={0x01,0x03,0x0d,0x28,0x00,0x02,0x46,0xaf,0xa1};//wh
-..\User\Test\test.c(1095): warning:  #177-D: variable "bread_s"  was declared but never referenced
-        u8 bread_s[9]={0x01,0x03,0x0d,0x2a,0x00,0x02,0xe7,0x6f,0xa1};//time
-..\User\Test\test.c: 7 warnings, 0 errors
-compiling GlobalValue.c...
-compiling lpc177x_8x_rtc.c...
-compiling EX_SDRAM.c...
-compiling set_manu.c...
-compiling system_LPC177x_8x.c...
-compiling core_cm3.c...
-compiling lpc177x_8x_gpio.c...
-compiling lpc177x_8x_systick.c...
-..\Libraries\Drivers\source\lpc177x_8x_systick.c(161): warning:  #940-D: missing return statement at end of non-void function "SYSTICK_GetCurrentValue" 
-  }
-..\Libraries\Drivers\source\lpc177x_8x_systick.c: 1 warning, 0 errors
-compiling lpc177x_8x_clkpwr.c...
-compiling lpc177x_8x_ssp.c...
-compiling lpc177x_8x_uart.c...
-compiling debug_frmwrk.c...
-compiling lpc177x_8x_eeprom.c...
-..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(109): warning:  #1441-D: nonstandard cast on lvalue
-                        LPC_EEPROM -> WDATA = *(((uint8_t *)data)++);
-..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(119): warning:  #1441-D: nonstandard cast on lvalue
-                        LPC_EEPROM -> WDATA = *(((uint16_t *)data)++);
-..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(129): warning:  #1441-D: nonstandard cast on lvalue
-                        LPC_EEPROM -> WDATA = *(((uint32_t *)data)++);
-..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(198): warning:  #1441-D: nonstandard cast on lvalue
-                         *(((uint8_t *)data)++) = (uint8_t)(LPC_EEPROM -> RDATA);
-..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(208): warning:  #1441-D: nonstandard cast on lvalue
-                         *(((uint16_t *)data)++) = (uint16_t)(LPC_EEPROM -> RDATA);
-..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(217): warning:  #1441-D: nonstandard cast on lvalue
-                         *(((uint32_t *)data)++) = (uint32_t)(LPC_EEPROM ->RDATA);
-..\Libraries\Drivers\source\lpc177x_8x_eeprom.c: 6 warnings, 0 errors
-compiling lpc177x_8x_pinsel.c...
-compiling GUIConf.c...
-compiling LCDConf.c...
-compiling modbus_slave.c...
-linking...
-Program Size: Code=45960 RO-data=410556 RW-data=11740 ZI-data=2636  
-FromELF: creating hex file...
-".\Output\project.axf" - 0 Error(s), 15 Warning(s).
+".\Output\project.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: Keil
-                http://www.keil.com/pack/Keil.LPC1700_DFP.2.6.0.pack
-                Keil.LPC1700_DFP.2.6.0
+                http://www.keil.com/pack/Keil.LPC1700_DFP.2.7.1.pack
+                Keil.LPC1700_DFP.2.7.1
                 NXP LPC1700 Series Device Support, Drivers and Examples for MCB1700 and LPC1788-32
 
 <h2>Collection of Component include folders:</h2>
-  .\RTE\_Open1788
-  D:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.6.0\Device\Include
+  D:/Keil_v5/ARM/PACK/Keil/LPC1700_DFP/2.7.1/Device/Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:18
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>

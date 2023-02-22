@@ -806,7 +806,7 @@ void UART0_IRQHandler(void)//UART0_IRQn
 			if(ComBuf.rec.ptr==1)//帧头=aa
 			{//if(ComBuf.rec.ptr!=0) //首字节
 				#ifdef MODBAS
-				if(dat==0x01)
+				if(dat==0xF0)
 				#else
 				if(dat==0xaa)//(uint8_t)(UART_REC_BEGIN))
 				#endif
@@ -833,7 +833,7 @@ void UART0_IRQHandler(void)//UART0_IRQn
 			else if(ComBuf.rec.ptr==3)
 			{
 				#ifdef MODBAS
-				if(dat==4 || dat==16 || dat==24)
+				if(dat==4 || dat==16 || dat==0x2a)
 				#else
 				if(dat==17)
 				#endif
@@ -842,7 +842,7 @@ void UART0_IRQHandler(void)//UART0_IRQn
 			else		ComBuf.rec.ptr=0;//指针清零重新开始新的一帧接收
 				if(dat==4)r_byte=6;
 				else if(dat==16)r_byte=18;
-				else if(dat==24)r_byte=26;
+				else if(dat==0x2a)r_byte=0x2a+2;
 
 			}
 			else if(ComBuf.rec.ptr>3)
@@ -900,7 +900,9 @@ void  debug_uart0_init(uint32_t freq)
 
 //	UART_ConfigStructInit(&UARTConfigStruct);
 	//UART_InitStruct.Baud_rate =freq;
-	UARTConfigStruct.Baud_rate = freq;//9600;
+	UARTConfigStruct.Baud_rate = freq;//4800
+	UARTConfigStruct.Databits = UART_DATABIT_8;
+	UARTConfigStruct.Stopbits = UART_STOPBIT_2;
 	UART_Init(LPC_UART0, &UARTConfigStruct);//|UART_INTCFG_THRE
 	UART_IntConfig(LPC_UART0,UART_INTCFG_RBR,ENABLE);
 	//NVIC_SetPriority(UART0_IRQn, ((0x01<<3)|0x01));//??UART2?????

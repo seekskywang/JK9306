@@ -558,7 +558,7 @@ typedef struct {
 							   */
   UART_STOPBIT_Type Stopbits;   /**< Number of stop bits, should be:
 							   - UART_STOPBIT_1: UART 1 Stop Bits Select
-							   - UART_STOPBIT_2: UART 2 Stop Bits Select
+							   - UART_STOPBIT_2:   Âð UART 2 Stop Bits Select
 							   */
 } UART_CFG_Type;
 

@@ -127,7 +127,7 @@ void MODS_ReciveNew(uint8_t _byte);
 extern struct MODS_T g_tModS;
 extern struct VAR_Ta g_tVar;
 extern unsigned int  Tick_10ms;
-
+extern uint16_t CRC16_Modbus(uint8_t *_pBuf, uint16_t _usLen);
 #endif
 
 

@@ -21,3 +21,4 @@
 .\output\test.o: ..\User\set_manu.h
 .\output\test.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\output\test.o: ..\Libraries\Drivers\include\open.h
+.\output\test.o: ..\Modubus\modbus_slave.h
