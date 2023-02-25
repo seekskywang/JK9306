@@ -27,7 +27,20 @@ Project File Date:  02/20/2023
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'E:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Open1788'
-".\Output\project.axf" - 0 Error(s), 0 Warning(s).
+compiling test.c...
+..\User\Test\test.c(676): warning:  #177-D: variable "over"  was declared but never referenced
+        char  over[7]={"       "};
+..\User\Test\test.c(678): warning:  #177-D: variable "poti"  was declared but never referenced
+        uint8_t i=0,potv,potvp,poti,potw,potva;
+..\User\Test\test.c(678): warning:  #177-D: variable "potw"  was declared but never referenced
+        uint8_t i=0,potv,potvp,poti,potw,potva;
+..\User\Test\test.c(1147): warning:  #223-D: function "uartSendChars" declared implicitly
+        uartSendChars(LPC_UART0,readbuf,8);
+..\User\Test\test.c: 4 warnings, 0 errors
+linking...
+Program Size: Code=44352 RO-data=410556 RW-data=11740 ZI-data=3724  
+FromELF: creating hex file...
+".\Output\project.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -40,7 +53,7 @@ Package Vendor: Keil
   D:/Keil_v5/ARM/PACK/Keil/LPC1700_DFP/2.7.1/Device/Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

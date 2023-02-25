@@ -661,12 +661,13 @@ void DisBlank_main(unsigned char bank,uint8_t mode)
 
 void RecHandle(void)
 {
-	Disp.Voltage = (ComBuf.rec.buf[3]<<8) + ComBuf.rec.buf[4];
-	Disp.Current = (ComBuf.rec.buf[5]<<24) + (ComBuf.rec.buf[6]<<16) + (ComBuf.rec.buf[7]<<8) + ComBuf.rec.buf[8];
-	Disp.Freq = (ComBuf.rec.buf[9]<<8) + ComBuf.rec.buf[10];
-	Disp.Pf = (ComBuf.rec.buf[11]<<8) + ComBuf.rec.buf[12];
+//	Disp.Voltage = (ComBuf.rec.buf[3]<<8) + ComBuf.rec.buf[4];
+	Disp.Voltage = (ComBuf.rec.buf[3]<<24) + (ComBuf.rec.buf[4]<<16) + (ComBuf.rec.buf[5]<<8) + ComBuf.rec.buf[6];
+	Disp.Current = (ComBuf.rec.buf[7]<<24) + (ComBuf.rec.buf[8]<<16) + (ComBuf.rec.buf[9]<<8) + ComBuf.rec.buf[10];
+	Disp.Freq = (ComBuf.rec.buf[11]<<8) + ComBuf.rec.buf[12];
+	Disp.Pf = (ComBuf.rec.buf[13]<<8) + ComBuf.rec.buf[14];
 //	Disp.Pf=0x03e8;
-	Disp.Power = (ComBuf.rec.buf[13]<<24) + (ComBuf.rec.buf[14]<<16) + (ComBuf.rec.buf[15]<<8) + ComBuf.rec.buf[16];
+	Disp.Power = (ComBuf.rec.buf[15]<<24) + (ComBuf.rec.buf[16]<<16) + (ComBuf.rec.buf[17]<<8) + ComBuf.rec.buf[18];
 }
 
 void Disp_R(uint8_t para)
