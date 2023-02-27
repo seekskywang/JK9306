@@ -48,6 +48,7 @@
 #define MAX_PW  		99999//Para_Set[ULimitPnt].val 		
 #define MAX_CUR  		50000//Para_Set[ILimitPnt].val
 
+#define MENUOFFSETX  		10
 struct RDispPara	
 {
   int row;                    //???

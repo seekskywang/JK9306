@@ -681,12 +681,12 @@ void Disp_R(uint8_t para)
   Colour.black=LCD_COLOR_TEST_BACK;//0x202020;//Black;//LCD_COLOR_TURQUOISE;//
 
 	Disp_Box(3,25,478,268,3,Yellow);
-	Draw_LIN5(155,74,322,Green);
-	Draw_LIN5(155,123,322,PCOLOR);
-	Draw_LIN5(155,172,322,LCD_COLOR_MAGENTA);
-	Draw_LIN5(155,221,322,FCOLOR);
-	Draw_LIN3_Y(152,25,242,Yellow);
-	Draw_LIN5(3,123,150,Yellow);
+	Draw_LIN5(155-MENUOFFSETX,74,322+MENUOFFSETX,Green);
+	Draw_LIN5(155-MENUOFFSETX,123,322+MENUOFFSETX,PCOLOR);
+	Draw_LIN5(155-MENUOFFSETX,172,322+MENUOFFSETX,LCD_COLOR_MAGENTA);
+	Draw_LIN5(155-MENUOFFSETX,221,322+MENUOFFSETX,FCOLOR);
+	Draw_LIN3_Y(152-MENUOFFSETX,25,242,Yellow);
+	Draw_LIN5(3,123,150-MENUOFFSETX,Yellow);
 //	LCD_DrawLine(120,55,478,55,Yellow);
 	if(flag_SetLang==0)			WriteString_16(0,4,All_TopName[0],0);
 
@@ -703,15 +703,15 @@ void Disp_R(uint8_t para)
 //U rms
 Colour.Fword=Yellow;
 //Colour.black=Black;//
-	LCD_ShowFontCN_40_55(159,33,24,34,(uint8_t*)nAsciiDot20X40E+102*53);//U
-		WriteString_16(185, 52, Rms[0], 0);
-		LCD_ShowFontCN_40_55(215,33,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
+	LCD_ShowFontCN_40_55(159-MENUOFFSETX,33,24,34,(uint8_t*)nAsciiDot20X40E+102*53);//U
+		WriteString_16(185-MENUOFFSETX, 52, Rms[0], 0);
+		LCD_ShowFontCN_40_55(215-MENUOFFSETX,33,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
 		LCD_ShowFontCN_40_55(453,33,24,34,(uint8_t*)nAsciiDot20X40E+102*54);//V
 
 //if(ComBuf.rec.end)	ComBuf.rec.end=0;
 	
 	Hex_Format(Disp.Voltage,2,5,0);
-	WriteString_Big(238,33,DispBuf);
+	WriteString_Big(238-MENUOFFSETX,33,DispBuf);
 	
 	
 //if(para==1)
@@ -755,12 +755,12 @@ else
 	GPIO_ClearValue(0,1<<12);//beep off
 //I rms
 Colour.Fword=Green;
-LCD_ShowFontCN_40_55(159,82,24,34,(uint8_t*)nAsciiDot20X40E+102*41);//I
-		WriteString_16(185,102,Rms[0], 0);
-		LCD_ShowFontCN_40_55(215,83,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
-	 LCD_ShowFontCN_STR_40_55(431+24,85,24,34,"A",2);
+LCD_ShowFontCN_40_55(159-MENUOFFSETX,82,24,34,(uint8_t*)nAsciiDot20X40E+102*41);//I
+		WriteString_16(185-MENUOFFSETX,102,Rms[0], 0);
+		LCD_ShowFontCN_40_55(215-MENUOFFSETX,83,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
+	 LCD_ShowFontCN_STR_40_55(452,85,24,34,"A",2);
 	Hex_Format(Disp.Current,4,6,0);
-	WriteString_Big(238,83,DispBuf);
+	WriteString_Big(238-MENUOFFSETX,83,DispBuf);
 //if(para==1)
 //{A_val.c[3]=ComBuf.rec.buf[9];
 //A_val.c[2]=ComBuf.rec.buf[10];
@@ -807,12 +807,12 @@ LCD_ShowFontCN_40_55(159,82,24,34,(uint8_t*)nAsciiDot20X40E+102*41);//I
 //}/////////////////////////////////////////end i
 Colour.Fword=PCOLOR;
 //P :
-LCD_ShowFontCN_40_55(159,130,24,34,(uint8_t*)nAsciiDot20X40E+102*48);//P
-LCD_ShowFontCN_40_55(183,130,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
+LCD_ShowFontCN_40_55(159-MENUOFFSETX,130,24,34,(uint8_t*)nAsciiDot20X40E+102*48);//P
+LCD_ShowFontCN_40_55(183-MENUOFFSETX,130,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
 LCD_ShowFontCN_40_55(452,132,24,34,(uint8_t*)nAsciiDot20X40E+102*55);//W
 
 	Hex_Format(Disp.Power,2,6,0);
-	WriteString_Big(206,130,DispBuf);
+	WriteString_Big(206-MENUOFFSETX,130,DispBuf);
 //p_val
 //if(para==1)
 //{P_val.c[3]=ComBuf.rec.buf[17];//[11];
@@ -866,12 +866,12 @@ LCD_ShowFontCN_40_55(452,132,24,34,(uint8_t*)nAsciiDot20X40E+102*55);//W
 //}///////////////////////////////////////end p
 Colour.Fword=LCD_COLOR_MAGENTA;
 //pf
-LCD_ShowFontCN_40_55(159,180,24,34,(uint8_t*)nAsciiDot20X40E+102*48);//P
-LCD_ShowFontCN_40_55(181,180,24,34,(uint8_t*)nAsciiDot20X40E+102*70);//f
-LCD_ShowFontCN_40_55(215,180,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
+LCD_ShowFontCN_40_55(159-MENUOFFSETX,180,24,34,(uint8_t*)nAsciiDot20X40E+102*48);//P
+LCD_ShowFontCN_40_55(181-MENUOFFSETX,180,24,34,(uint8_t*)nAsciiDot20X40E+102*70);//f
+LCD_ShowFontCN_40_55(215-MENUOFFSETX,180,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
 
 	Hex_Format(Disp.Pf,3,4,0);
-	WriteString_Big(270,180,DispBuf);
+	WriteString_Big(270-MENUOFFSETX,180,DispBuf);
 //pf_val
 //if(para==1)
 //{PF_val.c[3]=ComBuf.rec.buf[13];
@@ -894,14 +894,14 @@ LCD_ShowFontCN_40_55(215,180,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
 //}////////////////////////////////////////end pf
 Colour.Fword=FCOLOR;//LCD_COLOR_CYAN;//
 //Freq:
-LCD_ShowFontCN_40_55(159,228,24,34,(uint8_t*)nAsciiDot20X40E+102*38);//F
+LCD_ShowFontCN_40_55(159-MENUOFFSETX,228,24,34,(uint8_t*)nAsciiDot20X40E+102*38);//F
 //LCD_ShowFontCN_40_55(181,228,24,34,(uint8_t*)nAsciiDot20X40E+102*82);//r
 //LCD_ShowFontCN_40_55(203,228,24,34,(uint8_t*)nAsciiDot20X40E+102*69);//e
 //LCD_ShowFontCN_40_55(225,228,24,34,(uint8_t*)nAsciiDot20X40E+102*81);//q
-LCD_ShowFontCN_40_55(215,228,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
+LCD_ShowFontCN_40_55(215-MENUOFFSETX,228,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
 
 	Hex_Format(Disp.Freq,1,3,0);
-	WriteString_Big(270,228,DispBuf);
+	WriteString_Big(270-MENUOFFSETX,228,DispBuf);
 //if(para==5)
 //{HZ_val.c[3]=ComBuf.rec.buf[5];//[19];
 //HZ_val.c[2]=ComBuf.rec.buf[6];//[20];
@@ -930,87 +930,87 @@ LCD_ShowFontCN_40_55(430,232,24,34,(uint8_t*)nAsciiDot20X40E+102*40);//H
 LCD_ShowFontCN_40_55(452,232,24,34,(uint8_t*)nAsciiDot20X40E+102*90);//z
 Colour.Fword=White;
 
-//Vpp
-if(para==1)
-{
-	
-	valp=V_val.f*141.4;
-	if(V_val.f < 6)
-	{
-		valp = 0;
-	}
-if(valp<100000)
-{potvp=2;}
-else if(valp<1000000)
-{valp/=10;potvp=1;}
-else
-	{valp/=100;potvp=0;}
-buf[0]='0'+valp/10000;
-buf[1]='0'+valp%10000/1000;
-buf[2]='0'+valp%1000/100;
-if(potvp==2)
-{buf[3]='.';
-buf[4]='0'+valp%100/10;
-}
-else if(potvp==1)
-	{
-buf[3]='0'+valp%100/10;
-buf[4]='.';
-}
-else
-{buf[3]='0'+valp%100/10;
-buf[4]='0'+valp%10;
-}
-if(potvp==0)
-	buf[5]=' ';
-else
-buf[5]='0'+valp%10;
-buf[6]=0;
-WriteString_16(45,140,buf,0);
-}
-WriteString_16(8,140,"Vp:",0);
-WriteString_16(130,140,"V",0);
-//////////////////////////////////end vpp
+////Vpp
+//if(para==1)
+//{
+//	
+//	valp=V_val.f*141.4;
+//	if(V_val.f < 6)
+//	{
+//		valp = 0;
+//	}
+//if(valp<100000)
+//{potvp=2;}
+//else if(valp<1000000)
+//{valp/=10;potvp=1;}
+//else
+//	{valp/=100;potvp=0;}
+//buf[0]='0'+valp/10000;
+//buf[1]='0'+valp%10000/1000;
+//buf[2]='0'+valp%1000/100;
+//if(potvp==2)
+//{buf[3]='.';
+//buf[4]='0'+valp%100/10;
+//}
+//else if(potvp==1)
+//	{
+//buf[3]='0'+valp%100/10;
+//buf[4]='.';
+//}
+//else
+//{buf[3]='0'+valp%100/10;
+//buf[4]='0'+valp%10;
+//}
+//if(potvp==0)
+//	buf[5]=' ';
+//else
+//buf[5]='0'+valp%10;
+//buf[6]=0;
+//WriteString_16(45,140,buf,0);
+//}
+//WriteString_16(8,140,"Vp:",0);
+//WriteString_16(130,140,"V",0);
+////////////////////////////////////end vpp
 
-//S:
-WriteString_16(8,170,"S:",0);
-if(para==1)
-{if(pfx)
-VA_val.f=P_val.f/PF_val.f;
-else
-	VA_val.f=0;
-valp=VA_val.f*100;
+////S:
+//WriteString_16(8,170,"S:",0);
+//if(para==1)
+//{if(pfx)
+//VA_val.f=P_val.f/PF_val.f;
+//else
+//	VA_val.f=0;
+//valp=VA_val.f*100;
 
-if(valp<100000)
-{potva=2;}
-else if(valp<1000000)
-	{valp/=10;potva=1;}
-else
-{valp/=100;potva=0;}
-buf[0]='0'+valp/10000;
-buf[1]='0'+valp%10000/1000;
-buf[2]='0'+valp%1000/100;
-if(potva==2)
-{buf[3]='.';
-	buf[4]='0'+valp%100/10;
-}
-else if(potva==1)
-	{
-	buf[3]='0'+valp%100/10;
-	buf[4]='.';
-}
-else
-{
-buf[3]='0'+valp%100/10;
-buf[4]='0'+valp%10;}
-if(potva==0)
-buf[5]=' ';
-else
-buf[5]='0'+valp%10;
-buf[6]=0;
-WriteString_16(45, 170, buf, 0);
-}
-WriteString_16(130, 170, "VA", 0);
+//if(valp<100000)
+//{potva=2;}
+//else if(valp<1000000)
+//	{valp/=10;potva=1;}
+//else
+//{valp/=100;potva=0;}
+//buf[0]='0'+valp/10000;
+//buf[1]='0'+valp%10000/1000;
+//buf[2]='0'+valp%1000/100;
+//if(potva==2)
+//{buf[3]='.';
+//	buf[4]='0'+valp%100/10;
+//}
+//else if(potva==1)
+//	{
+//	buf[3]='0'+valp%100/10;
+//	buf[4]='.';
+//}
+//else
+//{
+//buf[3]='0'+valp%100/10;
+//buf[4]='0'+valp%10;}
+//if(potva==0)
+//buf[5]=' ';
+//else
+//buf[5]='0'+valp%10;
+//buf[6]=0;
+//WriteString_16(45, 170, buf, 0);
+//}
+//WriteString_16(130, 170, "VA", 0);
 ////////////////////////////////////////////end va
 /*for(i=VAPnt;i<=IHzPnt;i++)
 	{
@@ -1023,8 +1023,8 @@ WriteString_16(130, 170, "VA", 0);
 	//	  WriteString_16(Para_main[i].row, Para_main[i].col, (uint8_t *)Para_main[i].En,  0);		
 		}
 	}*/
-if(para==1)
-{
+//if(para==1)
+//{
 	Colour.Fword=White;
 //VAR:
 WriteString_16(8,205,"T:",0);
@@ -1074,9 +1074,9 @@ WriteString_16(8,205,"T:",0);
 	sprintf(buf,"%d",valp);
 WriteString_16(45,205,buf,0);
 WriteString_16(118,205,PIA[5],0);//var
-}
-if(para==1)
-{
+//}
+//if(para==1)
+//{
 	WH_val.c[3]=ComBuf.rec.buf[21];//[3];
 WH_val.c[2]=ComBuf.rec.buf[22];//[4];
 WH_val.c[1]=ComBuf.rec.buf[20];//[5];
@@ -1110,7 +1110,7 @@ WriteString_16(8,240,"W:",0);//pf:PFHZ[0]
 WriteString_16(110,240,"W.h",0);
 		//pf_val
 WriteString_16(45,240,buf,0);
-}
+//}
 //strncpy(DisFInputNum,buf,6);
 
 //strncpy(DisVHzInputNum,buf,6);
