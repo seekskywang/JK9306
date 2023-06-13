@@ -11,3 +11,4 @@
 .\output\debug_frmwrk.o: ..\Libraries\Drivers\include\lpc177x_8x_pinsel.h
 .\output\debug_frmwrk.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 .\output\debug_frmwrk.o: ..\Modubus\modbus_slave.h
+.\output\debug_frmwrk.o: ..\User\set_manu.h

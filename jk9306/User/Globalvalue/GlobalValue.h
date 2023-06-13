@@ -105,6 +105,9 @@
 //标题长度
 #define TITLE_LEN_MAX		(8)
 
+//量程
+#define VRANGE		250		//电压量程250V
+#define CRANGE		10		//电流量程10A
 typedef struct
 {
 	float first_value;

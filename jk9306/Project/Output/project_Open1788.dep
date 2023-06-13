@@ -1,10 +1,10 @@
 Dependencies for Project 'project', Target 'Open1788': (DO NOT MODIFY !)
 CompilerVersion: 5060750::V5.06 update 6 (build 750)::.\ARMCC
-F (..\User\main.c)(0x63F2D1CB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\User\LCD -I ..\User\UseDisp -I ..\Libraries\Drivers\include -I ..\User\Test -I ..\Libraries\Drivers\include -I ..\User\Globalvalue -I ..\User\EX_SDRAM -I ..\User -I ..\User\CH421 -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x -I ..\User\ZiKu -I ..\Modubus -I ..\User\Key -I ..\Libraries\Core\CM3\CoreSupport-ID:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.7.1\Device\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="537" -DLPC177x_8x-o .\output\main.o --omf_browse .\output\main.crf --depend .\output\main.d)
+F (..\User\main.c)(0x63FFE7C4)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\User\LCD -I ..\User\UseDisp -I ..\Libraries\Drivers\include -I ..\User\Test -I ..\Libraries\Drivers\include -I ..\User\Globalvalue -I ..\User\EX_SDRAM -I ..\User -I ..\User\CH421 -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x -I ..\User\ZiKu -I ..\Modubus -I ..\User\Key -I ..\Libraries\Core\CM3\CoreSupport-ID:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.7.1\Device\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="537" -DLPC177x_8x-o .\output\main.o --omf_browse .\output\main.crf --depend .\output\main.d)
 I (..\User\..\Libraries\Drivers\include\lpc177x_8x_gpio.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h)(0x5CD4DC9C)
 I (..\User\..\Libraries\Drivers\include\lpc_types.h)(0x5CD4DC9C)
@@ -19,7 +19,7 @@ I (..\Libraries\Drivers\include\lpc177x_8x_ssp.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc177x_8x_clkpwr.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc177x_8x_pinsel.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\debug_frmwrk.h)(0x63F31EBE)
-I (..\User\Globalvalue\GlobalValue.h)(0x611CB9CD)
+I (..\User\Globalvalue\GlobalValue.h)(0x63FC6AB9)
 I (..\Libraries\Drivers\include\lpc177x_8x_uart.h)(0x63F321F2)
 I (..\User\Key/key.h)(0x5CD4DC95)
 I (..\User\Globalvalue\TypeDefine.h)(0x5CD4DC95)
@@ -35,7 +35,7 @@ I (..\User\set_manu.h)(0x63F9A68F)
 F (..\User\timer.c)(0x5CD4DC91)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\User\LCD -I ..\User\UseDisp -I ..\Libraries\Drivers\include -I ..\User\Test -I ..\Libraries\Drivers\include -I ..\User\Globalvalue -I ..\User\EX_SDRAM -I ..\User -I ..\User\CH421 -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x -I ..\User\ZiKu -I ..\Modubus -I ..\User\Key -I ..\Libraries\Core\CM3\CoreSupport-ID:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.7.1\Device\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="537" -DLPC177x_8x-o .\output\timer.o --omf_browse .\output\timer.crf --depend .\output\timer.d)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc_types.h)(0x5CD4DC9C)
@@ -46,7 +46,7 @@ F (..\User\LCD\lpc177x_8x_lcd.c)(0x5D0DEC05)(--c99 -c --cpu Cortex-M3 -D__MICROL
 I (..\User\LCD\lpc177x_8x_lcd.h)(0x611CC5B3)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc_types.h)(0x5CD4DC9C)
@@ -54,14 +54,14 @@ I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\system_LPC177x_8x.h)(0x5CD
 I (..\User\EX_SDRAM\EX_SDRAM.H)(0x611CC6A3)
 I (..\User\LCD\AsciiLib.h)(0x5CD4DC93)
 I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
-I (..\User\Globalvalue\globalvalue.h)(0x611CB9CD)
+I (..\User\Globalvalue\globalvalue.h)(0x63FC6AB9)
 I (..\User\hzk.h)(0x611CB9CD)
 F (..\User\LCD\logo.c)(0x5CD4DC93)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\User\LCD -I ..\User\UseDisp -I ..\Libraries\Drivers\include -I ..\User\Test -I ..\Libraries\Drivers\include -I ..\User\Globalvalue -I ..\User\EX_SDRAM -I ..\User -I ..\User\CH421 -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x -I ..\User\ZiKu -I ..\Modubus -I ..\User\Key -I ..\Libraries\Core\CM3\CoreSupport-ID:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.7.1\Device\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="537" -DLPC177x_8x-o .\output\logo.o --omf_browse .\output\logo.crf --depend .\output\logo.d)
 I (..\User\LCD\logo.h)(0x5CD4DC93)
 I (..\User\LCD\lpc177x_8x_lcd.h)(0x611CC5B3)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc_types.h)(0x5CD4DC9C)
@@ -74,7 +74,7 @@ I (..\User\TouchPanel/TouchPanel.h)(0x5CD4DC91)
 I (..\Libraries\Drivers\include\lpc177x_8x_ssp.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc_types.h)(0x5CD4DC9C)
@@ -83,7 +83,7 @@ I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\system_LPC177x_8x.h)(0x5CD
 I (..\Libraries\Drivers\include\lpc177x_8x_pinsel.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc177x_8x_gpio.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\debug_frmwrk.h)(0x63F31EBE)
-I (..\User\Globalvalue\GlobalValue.h)(0x611CB9CD)
+I (..\User\Globalvalue\GlobalValue.h)(0x63FC6AB9)
 I (..\Libraries\Drivers\include\lpc177x_8x_uart.h)(0x63F321F2)
 I (..\User\main.h)(0x5CD4DC91)
 I (..\User\LCD/lpc177x_8x_lcd.h)(0x611CC5B3)
@@ -92,7 +92,7 @@ F (..\User\UseDisp\use_disp.c)(0x611CB9CD)(--c99 -c --cpu Cortex-M3 -D__MICROLIB
 I (..\User\LCD/lpc177x_8x_lcd.h)(0x611CC5B3)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc_types.h)(0x5CD4DC9C)
@@ -101,7 +101,7 @@ I (..\User\EX_SDRAM/EX_SDRAM.H)(0x611CC6A3)
 I (..\User\LCD/AsciiLib.h)(0x5CD4DC93)
 I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
 I (..\User\UseDisp\use_disp.h)(0x5CD4DC91)
-I (..\User\Globalvalue/globalvalue.h)(0x611CB9CD)
+I (..\User\Globalvalue/globalvalue.h)(0x63FC6AB9)
 I (E:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
 I (..\User\Key/key.h)(0x5CD4DC95)
 I (..\User\test/Test.h)(0x5CD53AD3)
@@ -116,7 +116,7 @@ I (..\User\Key/key.h)(0x5CD4DC95)
 I (..\Libraries\Drivers\include\lpc177x_8x_gpio.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc_types.h)(0x5CD4DC9C)
@@ -124,11 +124,11 @@ I (..\User\LCD/lpc177x_8x_lcd.h)(0x611CC5B3)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\system_LPC177x_8x.h)(0x5CD4DC9C)
 I (..\User\EX_SDRAM/EX_SDRAM.H)(0x611CC6A3)
 I (..\User\UseDisp\use_disp.h)(0x5CD4DC91)
-I (..\User\Globalvalue/globalvalue.h)(0x611CB9CD)
-F (..\User\Test\test.c)(0x63F9A84E)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\User\LCD -I ..\User\UseDisp -I ..\Libraries\Drivers\include -I ..\User\Test -I ..\Libraries\Drivers\include -I ..\User\Globalvalue -I ..\User\EX_SDRAM -I ..\User -I ..\User\CH421 -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x -I ..\User\ZiKu -I ..\Modubus -I ..\User\Key -I ..\Libraries\Core\CM3\CoreSupport-ID:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.7.1\Device\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="537" -DLPC177x_8x-o .\output\test.o --omf_browse .\output\test.crf --depend .\output\test.d)
+I (..\User\Globalvalue/globalvalue.h)(0x63FC6AB9)
+F (..\User\Test\test.c)(0x63FFE963)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\User\LCD -I ..\User\UseDisp -I ..\Libraries\Drivers\include -I ..\User\Test -I ..\Libraries\Drivers\include -I ..\User\Globalvalue -I ..\User\EX_SDRAM -I ..\User -I ..\User\CH421 -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x -I ..\User\ZiKu -I ..\Modubus -I ..\User\Key -I ..\Libraries\Core\CM3\CoreSupport-ID:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.7.1\Device\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="537" -DLPC177x_8x-o .\output\test.o --omf_browse .\output\test.crf --depend .\output\test.d)
 I (..\User\Test/test.h)(0x5CD53AD3)
-I (..\User\Globalvalue/globalvalue.h)(0x611CB9CD)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (..\User\Globalvalue/globalvalue.h)(0x63FC6AB9)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\User\LCD/lpc177x_8x_lcd.h)(0x611CC5B3)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
@@ -151,13 +151,13 @@ I (..\Libraries\Drivers\include\open.h)(0x5CD4DCA1)
 I (..\Modubus\modbus_slave.h)(0x63F2D4FC)
 F (..\User\Globalvalue\GlobalValue.c)(0x63F2E374)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\User\LCD -I ..\User\UseDisp -I ..\Libraries\Drivers\include -I ..\User\Test -I ..\Libraries\Drivers\include -I ..\User\Globalvalue -I ..\User\EX_SDRAM -I ..\User -I ..\User\CH421 -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x -I ..\User\ZiKu -I ..\Modubus -I ..\User\Key -I ..\Libraries\Core\CM3\CoreSupport-ID:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.7.1\Device\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="537" -DLPC177x_8x-o .\output\globalvalue.o --omf_browse .\output\globalvalue.crf --depend .\output\globalvalue.d)
 I (..\User\Globalvalue\TypeDefine.h)(0x5CD4DC95)
-I (..\User\Globalvalue/GlobalValue.h)(0x611CB9CD)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (..\User\Globalvalue/GlobalValue.h)(0x63FC6AB9)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 F (..\Libraries\Drivers\source\lpc177x_8x_rtc.c)(0x5CD4DC9C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\User\LCD -I ..\User\UseDisp -I ..\Libraries\Drivers\include -I ..\User\Test -I ..\Libraries\Drivers\include -I ..\User\Globalvalue -I ..\User\EX_SDRAM -I ..\User -I ..\User\CH421 -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x -I ..\User\ZiKu -I ..\Modubus -I ..\User\Key -I ..\Libraries\Core\CM3\CoreSupport-ID:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.7.1\Device\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="537" -DLPC177x_8x-o .\output\lpc177x_8x_rtc.o --omf_browse .\output\lpc177x_8x_rtc.crf --depend .\output\lpc177x_8x_rtc.d)
 I (..\Libraries\Drivers\include\lpc177x_8x_rtc.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc_types.h)(0x5CD4DC9C)
@@ -167,7 +167,7 @@ F (..\User\EX_SDRAM\EX_SDRAM.c)(0x5CD4DC95)(--c99 -c --cpu Cortex-M3 -D__MICROLI
 I (..\User\EX_SDRAM/EX_SDRAM.H)(0x611CC6A3)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc_types.h)(0x5CD4DC9C)
@@ -181,33 +181,33 @@ I (..\User\set_manu.h)(0x63F9A68F)
 I (..\Libraries\Drivers\include\lpc177x_8x_gpio.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc_types.h)(0x5CD4DC9C)
 I (..\User\LCD/lpc177x_8x_lcd.h)(0x611CC5B3)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\system_LPC177x_8x.h)(0x5CD4DC9C)
 I (..\User\UseDisp\use_disp.h)(0x5CD4DC91)
-I (..\User\Globalvalue/globalvalue.h)(0x611CB9CD)
+I (..\User\Globalvalue/globalvalue.h)(0x63FC6AB9)
 I (..\User\EX_SDRAM/EX_SDRAM.H)(0x611CC6A3)
 I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
 I (..\User\Key\key.h)(0x5CD4DC95)
 I (..\User\Test/test.h)(0x5CD53AD3)
 F (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\startup\arm\startup_LPC177x_8x.s)(0x63F2FDBC)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-ID:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.7.1\Device\Include-IE:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 537" --pd "LPC177x_8x SETA 1"--list .\listings\startup_lpc177x_8x.lst --xref -o .\output\startup_lpc177x_8x.o --depend .\output\startup_lpc177x_8x.d)
 F (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\system_LPC177x_8x.c)(0x5CD4DC9C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\User\LCD -I ..\User\UseDisp -I ..\Libraries\Drivers\include -I ..\User\Test -I ..\Libraries\Drivers\include -I ..\User\Globalvalue -I ..\User\EX_SDRAM -I ..\User -I ..\User\CH421 -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x -I ..\User\ZiKu -I ..\Modubus -I ..\User\Key -I ..\Libraries\Core\CM3\CoreSupport-ID:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.7.1\Device\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="537" -DLPC177x_8x-o .\output\system_lpc177x_8x.o --omf_browse .\output\system_lpc177x_8x.crf --depend .\output\system_lpc177x_8x.d)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\system_LPC177x_8x.h)(0x5CD4DC9C)
 F (..\Libraries\Core\CM3\CoreSupport\core_cm3.c)(0x5CD4DC9C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\User\LCD -I ..\User\UseDisp -I ..\Libraries\Drivers\include -I ..\User\Test -I ..\Libraries\Drivers\include -I ..\User\Globalvalue -I ..\User\EX_SDRAM -I ..\User -I ..\User\CH421 -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x -I ..\User\ZiKu -I ..\Modubus -I ..\User\Key -I ..\Libraries\Core\CM3\CoreSupport-ID:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.7.1\Device\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="537" -DLPC177x_8x-o .\output\core_cm3.o --omf_browse .\output\core_cm3.crf --depend .\output\core_cm3.d)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 F (..\Libraries\Drivers\source\lpc177x_8x_gpio.c)(0x5CD4DC9C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\User\LCD -I ..\User\UseDisp -I ..\Libraries\Drivers\include -I ..\User\Test -I ..\Libraries\Drivers\include -I ..\User\Globalvalue -I ..\User\EX_SDRAM -I ..\User -I ..\User\CH421 -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x -I ..\User\ZiKu -I ..\Modubus -I ..\User\Key -I ..\Libraries\Core\CM3\CoreSupport-ID:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.7.1\Device\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="537" -DLPC177x_8x-o .\output\lpc177x_8x_gpio.o --omf_browse .\output\lpc177x_8x_gpio.crf --depend .\output\lpc177x_8x_gpio.d)
 I (..\Libraries\Drivers\include\lpc177x_8x_gpio.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc_types.h)(0x5CD4DC9C)
@@ -215,7 +215,7 @@ F (..\Libraries\Drivers\source\lpc177x_8x_systick.c)(0x5CD4DC9C)(--c99 -c --cpu 
 I (..\Libraries\Drivers\include\lpc177x_8x_systick.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc_types.h)(0x5CD4DC9C)
@@ -225,7 +225,7 @@ F (..\Libraries\Drivers\source\lpc177x_8x_clkpwr.c)(0x5CD4DC9C)(--c99 -c --cpu C
 I (..\Libraries\Drivers\include\lpc177x_8x_clkpwr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc_types.h)(0x5CD4DC9C)
@@ -234,7 +234,7 @@ F (..\Libraries\Drivers\source\lpc177x_8x_ssp.c)(0x5CD4DC9C)(--c99 -c --cpu Cort
 I (..\Libraries\Drivers\include\lpc177x_8x_ssp.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc_types.h)(0x5CD4DC9C)
@@ -244,17 +244,17 @@ F (..\Libraries\Drivers\source\lpc177x_8x_uart.c)(0x5CD4DC9C)(--c99 -c --cpu Cor
 I (..\Libraries\Drivers\include\lpc177x_8x_uart.h)(0x63F321F2)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc_types.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc177x_8x_clkpwr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\system_LPC177x_8x.h)(0x5CD4DC9C)
 I (..\User\Key/key.h)(0x5CD4DC95)
-F (..\Libraries\Drivers\source\debug_frmwrk.c)(0x63F32BB8)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\User\LCD -I ..\User\UseDisp -I ..\Libraries\Drivers\include -I ..\User\Test -I ..\Libraries\Drivers\include -I ..\User\Globalvalue -I ..\User\EX_SDRAM -I ..\User -I ..\User\CH421 -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x -I ..\User\ZiKu -I ..\Modubus -I ..\User\Key -I ..\Libraries\Core\CM3\CoreSupport-ID:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.7.1\Device\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="537" -DLPC177x_8x-o .\output\debug_frmwrk.o --omf_browse .\output\debug_frmwrk.crf --depend .\output\debug_frmwrk.d)
+F (..\Libraries\Drivers\source\debug_frmwrk.c)(0x63FF12E1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\User\LCD -I ..\User\UseDisp -I ..\Libraries\Drivers\include -I ..\User\Test -I ..\Libraries\Drivers\include -I ..\User\Globalvalue -I ..\User\EX_SDRAM -I ..\User -I ..\User\CH421 -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x -I ..\User\ZiKu -I ..\Modubus -I ..\User\Key -I ..\Libraries\Core\CM3\CoreSupport-ID:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.7.1\Device\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="537" -DLPC177x_8x-o .\output\debug_frmwrk.o --omf_browse .\output\debug_frmwrk.crf --depend .\output\debug_frmwrk.d)
 I (..\Libraries\Drivers\include\debug_frmwrk.h)(0x63F31EBE)
-I (..\User\Globalvalue\GlobalValue.h)(0x611CB9CD)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (..\User\Globalvalue\GlobalValue.h)(0x63FC6AB9)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\Libraries\Drivers\include\lpc177x_8x_uart.h)(0x63F321F2)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
@@ -264,11 +264,12 @@ I (..\Libraries\Drivers\include\lpc_types.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc177x_8x_pinsel.h)(0x5CD4DC9C)
 I (E:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599ECD2A)
 I (..\Modubus\modbus_slave.h)(0x63F2D4FC)
+I (..\User\set_manu.h)(0x63F9A68F)
 F (..\Libraries\Drivers\source\lpc177x_8x_eeprom.c)(0x5CD4DC9C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\User\LCD -I ..\User\UseDisp -I ..\Libraries\Drivers\include -I ..\User\Test -I ..\Libraries\Drivers\include -I ..\User\Globalvalue -I ..\User\EX_SDRAM -I ..\User -I ..\User\CH421 -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x -I ..\User\ZiKu -I ..\Modubus -I ..\User\Key -I ..\Libraries\Core\CM3\CoreSupport-ID:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.7.1\Device\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="537" -DLPC177x_8x-o .\output\lpc177x_8x_eeprom.o --omf_browse .\output\lpc177x_8x_eeprom.crf --depend .\output\lpc177x_8x_eeprom.d)
 I (..\Libraries\Drivers\include\lpc177x_8x_eeprom.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc_types.h)(0x5CD4DC9C)
@@ -278,7 +279,7 @@ F (..\Libraries\Drivers\source\lpc177x_8x_pinsel.c)(0x5CD4DC9C)(--c99 -c --cpu C
 I (..\Libraries\Drivers\include\lpc177x_8x_pinsel.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc_types.h)(0x5CD4DC9C)
@@ -301,7 +302,7 @@ I (..\User\..\emWin\Header\GUI_Version.h)(0x5CD4DC9D)
 I (..\User\LCD/lpc177x_8x_lcd.h)(0x611CC5B3)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc_types.h)(0x5CD4DC9C)
@@ -320,7 +321,7 @@ I (..\User\..\emWin\Header\GUIDRV_Lin.h)(0x5CD4DC9D)
 I (..\User\..\User\LCD\lpc177x_8x_lcd.h)(0x611CC5B3)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h)(0x5CD4DC9C)
 I (..\Libraries\Drivers\include\lpc_types.h)(0x5CD4DC9C)
@@ -395,10 +396,10 @@ F (..\emWin\Header\WM_GUI.h)(0x5CD4DC9D)()
 F (..\emWin\Header\WM_Intern.h)(0x5CD4DC9D)()
 F (..\Modubus\modbus_slave.c)(0x5CD4DC9C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\User\LCD -I ..\User\UseDisp -I ..\Libraries\Drivers\include -I ..\User\Test -I ..\Libraries\Drivers\include -I ..\User\Globalvalue -I ..\User\EX_SDRAM -I ..\User -I ..\User\CH421 -I ..\emWin\Config -I ..\emWin\Header -I ..\emWin\Library -I ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x -I ..\User\ZiKu -I ..\Modubus -I ..\User\Key -I ..\Libraries\Core\CM3\CoreSupport-ID:\Keil_v5\ARM\PACK\Keil\LPC1700_DFP\2.7.1\Device\Include-IE:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="537" -DLPC177x_8x-o .\output\modbus_slave.o --omf_browse .\output\modbus_slave.crf --depend .\output\modbus_slave.d)
 I (..\Modubus\modbus_slave.h)(0x63F2D4FC)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63AD5533)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x63FC1CD9)
 I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
 I (..\Libraries\Drivers\include\debug_frmwrk.h)(0x63F31EBE)
-I (..\User\Globalvalue\GlobalValue.h)(0x611CB9CD)
+I (..\User\Globalvalue\GlobalValue.h)(0x63FC6AB9)
 I (..\Libraries\Drivers\include\lpc177x_8x_uart.h)(0x63F321F2)
 I (..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h)(0x5CD4DC9C)
 I (..\Libraries\Core\CM3\CoreSupport\core_cm3.h)(0x5CD4DC9C)

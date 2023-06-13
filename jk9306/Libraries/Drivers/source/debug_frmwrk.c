@@ -28,6 +28,7 @@
 #include "stdarg.h"
 //#include "ch421.h"
 #include "modbus_slave.h"
+#include "set_manu.h"
 /* Debug framework */
 //const uint8_t READDATA[7]={0xAB,0x01,0x06,0x03,0x08,0xbf,'\0'};
 void (*_db_msg)(LPC_UART_TypeDef *UARTx, const void *s);
@@ -806,7 +807,7 @@ void UART0_IRQHandler(void)//UART0_IRQn
 			if(ComBuf.rec.ptr==1)//帧头=aa
 			{//if(ComBuf.rec.ptr!=0) //首字节
 				#ifdef MODBAS
-				if(dat==0xF0)
+				if(dat==0x01)
 				#else
 				if(dat==0xaa)//(uint8_t)(UART_REC_BEGIN))
 				#endif
@@ -824,33 +825,35 @@ void UART0_IRQHandler(void)//UART0_IRQn
 					ComBuf.rec.buf[1]=dat;
 				else
 				{
-				ComBuf.rec.end=0;//TRUE;//接收结束
-				//ComBuf.rec.len=ComBuf.rec.ptr;//存接收数据长度
-				ComBuf.rec.ptr=0;//指针清零重新开始新的一帧接收
-			//	ComBuf.rec.TimeOut=0;//接收超时清零
-			}	
+					ComBuf.rec.end=0;//TRUE;//接收结束
+					//ComBuf.rec.len=ComBuf.rec.ptr;//存接收数据长度
+					ComBuf.rec.ptr=0;//指针清零重新开始新的一帧接收
+				//	ComBuf.rec.TimeOut=0;//接收超时清零
+				}	
 			}
 			else if(ComBuf.rec.ptr==3)
 			{
-				#ifdef MODBAS
-				if(dat==4 || dat==16 || dat==0x2a)
-				#else
-				if(dat==17)
-				#endif
-				ComBuf.rec.buf[2]=dat;
-				
-			else		ComBuf.rec.ptr=0;//指针清零重新开始新的一帧接收
-				if(dat==4)r_byte=6;
-				else if(dat==16)r_byte=18;
-				else if(dat==0x2a)r_byte=0x2a+2;
-
+//				#ifdef MODBAS
+//				if(dat==4 || dat==16 || dat==0x2a)
+//				#else
+//				if(dat==17)
+//				#endif
+//				ComBuf.rec.buf[2]=dat;
+//				
+//			else		ComBuf.rec.ptr=0;//指针清零重新开始新的一帧接收
+//				if(dat==4)r_byte=6;
+//				else if(dat==16)r_byte=18;
+//				else if(dat==0x2a)r_byte=0x2a+2;
+				r_byte = dat + 2;
 			}
 			else if(ComBuf.rec.ptr>3)
 			{
 				#ifdef MODBAS
 				r_byte--;
-ComBuf.rec.buf[ComBuf.rec.ptr-1]=dat;
-			if(r_byte==0){ComBuf.rec.ptr=0;//重新接收
+				ComBuf.rec.buf[ComBuf.rec.ptr-1]=dat;
+				if(r_byte==0)
+				{
+					ComBuf.rec.ptr=0;//重新接收
 					ComBuf.rec.end=TRUE;//接收结束
 				}
 				#else
@@ -900,9 +903,9 @@ void  debug_uart0_init(uint32_t freq)
 
 //	UART_ConfigStructInit(&UARTConfigStruct);
 	//UART_InitStruct.Baud_rate =freq;
-	UARTConfigStruct.Baud_rate = freq;//4800
+	UARTConfigStruct.Baud_rate = freq;//9600
 	UARTConfigStruct.Databits = UART_DATABIT_8;
-	UARTConfigStruct.Stopbits = UART_STOPBIT_2;
+	UARTConfigStruct.Stopbits = UART_STOPBIT_1;
 	UART_Init(LPC_UART0, &UARTConfigStruct);//|UART_INTCFG_THRE
 	UART_IntConfig(LPC_UART0,UART_INTCFG_RBR,ENABLE);
 	//NVIC_SetPriority(UART0_IRQn, ((0x01<<3)|0x01));//??UART2?????
@@ -911,44 +914,80 @@ void  debug_uart0_init(uint32_t freq)
 	UART_TxCmd(LPC_UART0, ENABLE);
 }
 
+void debug_uart3_init(uint32_t freq)
+{
+	UART_CFG_Type UARTConfigStruct;
+	uint32_t data;
+
+	/*
+	 * Initialize UART3 pin connect
+	 * P0.0: TXD
+	 * P0.1: RXD
+	 */
+	PINSEL_ConfigPin(0, 0, 2);
+	PINSEL_ConfigPin(0, 1, 2);
+
+
+
+	/* Initialize UART Configuration parameter structure to default state:
+	 * Baudrate = 9600bps
+	 * 8 data bit
+	 * 1 Stop bit
+	 * None parity
+	 */
+	UART_ConfigStructInit(&UARTConfigStruct);
+	// Re-configure baudrate to 115200bps
+	switch(freq)
+	{
+		case 0:
+			data=2400;
+		break;
+		case 1:
+			data=4800;
+		break;
+		case 2:
+			data=9600;
+		break;
+		case 3:
+			data=14400;
+		break;
+		case 4:
+			data=19200;
+		break ;
+		default:
+			data=9600;
+		break ;
+	
+	
+	}
+	UARTConfigStruct.Baud_rate = data;
+
+	// Initialize DEBUG_UART_PORT peripheral with given to corresponding parameter
+	UART_Init(LPC_UART3, &UARTConfigStruct);//|UART_INTCFG_THRE
+	UART_IntConfig(LPC_UART3,UART_INTCFG_RBR,ENABLE);
+//	NVIC_SetPriority(UART3_IRQn, ((0x01<<3)|0x02));//??UART2?????
+	 NVIC_EnableIRQ(UART3_IRQn);
+	// Enable UART Transmit
+	UART_TxCmd(LPC_UART3, ENABLE);
+
+	
+}
+
 void UART3_IRQHandler(void)
 {
-    uint8_t Statu,dat;
+  uint8_t Statu,dat;
 //    uint8_t *rxbuf;
-    Statu=UART_GetLineStatus(LPC_UART3);//
-    Statu=UART_ReceiveByte(LPC_UART3);
-    if (!ComBuf3.rec.end)//接收没结束
-    {// SetRecTimeOut2(REC_TIME_OUT);//设置接收超时周期
-        dat=Statu;
-				MODS_ReciveNew(dat);              // ModBus Recive function
-
-			/*
-        if (dat==UART_REC_BEGIN)//帧头
-        {
-            if(ComBuf3.rec.ptr!=0) //首字节
-                ComBuf3.rec.ptr=0;//重新接收 
-            
-            else
-                ComBuf3.rec.buf[ComBuf3.rec.ptr++]=dat;
-        }
-        else if (dat==UART_REC_END)//帧尾
-        {
-            ComBuf3.rec.buf[ComBuf3.rec.ptr++]=dat;
-            ComBuf3.rec.end=TRUE;//接收结束
-            ComBuf3.rec.len=ComBuf3.rec.ptr;//存接收数据长度
-            ComBuf3.rec.ptr=0;//指针清零重新开始新的一帧接收
-            ComBuf3.rec.TimeOut=0;//接收超时清零
-        }
-        else
-        {
-            if (ComBuf3.rec.ptr>=REC_LEN_MAX)//最大接收帧长度
-                ComBuf3.rec.ptr=0;//重新接收
-            
-            else
-                ComBuf3.rec.buf[ComBuf3.rec.ptr++]=dat;
-        }
-				*/
-    }
+  dat=UART_GetLineStatus(LPC_UART3);//DEBUG_UART_PORT
+	dat=UART_ReceiveByte(LPC_UART3);
+	if (!ComBuf3.rec.end)//接收没结束
+	{
+		ComBuf.rec.ptr++;
+		if(ComBuf.rec.ptr == AddressVal)
+		{
+//			dat=Statu;
+//			MODS_ReciveNew(dat);              // ModBus Recive function
+		}
+	}
 }
 //==========================================================
 //函数名称：SendDataToCom

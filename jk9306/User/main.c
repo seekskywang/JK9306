@@ -238,12 +238,13 @@ char  buff[15]={0};
 	HW_keyInt();
  //   debug_frmwrk_init();
 //debug_uart0_init(9600);//串口3初始化
-debug_uart0_init(4800);
+	debug_uart0_init(9600);
+//	debug_uart3_init(9600);
 //  	init_timer(0, 10);//定时器初始化
 //enable_timer(0);
-   SDRAM_Init();
+  SDRAM_Init();
 //	CH421_Init_CWRA();
-BUZZER();
+	BUZZER();
 //usb init
 //USB_Init(FlashDisk1_MS_Interface.Config.PortNumber, USB_MODE_Host);
 //SetupHardware();
@@ -258,12 +259,12 @@ BUZZER();
 	HW_Sendvalueto164(0);
 //LCD_DrawRect(0,0,480,272,Colour.black);
 //1 wr 42h=11h
-Delay(100);
+	Delay(100);
 
-Colour.black=LCD_COLOR_TURQUOISE;
-LCD_DrawRect(0,0,480,272,Colour.black);
+	Colour.black=LCD_COLOR_TURQUOISE;
+	LCD_DrawRect(0,0,480,272,Colour.black);
 
-Power_Process();
+	Power_Process();
 //Colour.black=LCD_COLOR_TURQUOISE;
 //LCD_DrawRect(0,0,480,272,Colour.black);
 ////2.2

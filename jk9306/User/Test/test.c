@@ -20,12 +20,15 @@
 #include "open.h"
 #include "modbus_slave.h"
 
+
 typedef struct Data{
   uint32_t Voltage;       //电压
   uint32_t Current;       //电流
   uint32_t Freq;     			//频率
-  uint32_t Pf;       			//功率因数
+  int16_t Pf;       			//功率因数
 	uint32_t Power;       	//功率
+	int16_t Pa;       		  //有功功率
+	int8_t polarity;       	//功率因数正负值
 }Dispdata;
 
 Dispdata Disp;
@@ -662,12 +665,25 @@ void DisBlank_main(unsigned char bank,uint8_t mode)
 void RecHandle(void)
 {
 //	Disp.Voltage = (ComBuf.rec.buf[3]<<8) + ComBuf.rec.buf[4];
-	Disp.Voltage = (ComBuf.rec.buf[3]<<24) + (ComBuf.rec.buf[4]<<16) + (ComBuf.rec.buf[5]<<8) + ComBuf.rec.buf[6];
-	Disp.Current = (ComBuf.rec.buf[7]<<24) + (ComBuf.rec.buf[8]<<16) + (ComBuf.rec.buf[9]<<8) + ComBuf.rec.buf[10];
-	Disp.Freq = (ComBuf.rec.buf[11]<<8) + ComBuf.rec.buf[12];
-	Disp.Pf = (ComBuf.rec.buf[13]<<8) + ComBuf.rec.buf[14];
+	Disp.Voltage = (uint32_t)((double)((ComBuf.rec.buf[3]<<8) + ComBuf.rec.buf[4]) * 2.5);
+//	Disp.Current = (ComBuf.rec.buf[5]<<8) + ComBuf.rec.buf[6];//10A
+//	Disp.Pa = ((ComBuf.rec.buf[7]<<8) + ComBuf.rec.buf[8])*25;//10A
+//	Disp.Power =((ComBuf.rec.buf[31]<<8) + ComBuf.rec.buf[32])*25;//10A
+	Disp.Current = ((ComBuf.rec.buf[5]<<8) + ComBuf.rec.buf[6])*2;//20A
+	Disp.Pa = ((ComBuf.rec.buf[7]<<8) + ComBuf.rec.buf[8])*50;//20A
+	Disp.Power =((ComBuf.rec.buf[31]<<8) + ComBuf.rec.buf[32])*50;//20A
+	Disp.Pf = ((ComBuf.rec.buf[11])<<8) + (ComBuf.rec.buf[12]);
+	Disp.Freq = (ComBuf.rec.buf[13]<<8) + ComBuf.rec.buf[14];
+	
+	if(Disp.Pf < 0)
+	{
+		Disp.Pf = -Disp.Pf;
+		Disp.polarity=1;//
+	}else{
+		Disp.polarity=0;
+	}
 //	Disp.Pf=0x03e8;
-	Disp.Power = (ComBuf.rec.buf[15]<<24) + (ComBuf.rec.buf[16]<<16) + (ComBuf.rec.buf[17]<<8) + ComBuf.rec.buf[18];
+	
 }
 
 void Disp_R(uint8_t para)
@@ -759,7 +775,7 @@ LCD_ShowFontCN_40_55(159-MENUOFFSETX,82,24,34,(uint8_t*)nAsciiDot20X40E+102*41);
 		WriteString_16(185-MENUOFFSETX,102,Rms[0], 0);
 		LCD_ShowFontCN_40_55(215-MENUOFFSETX,83,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
 	 LCD_ShowFontCN_STR_40_55(452,85,24,34,"A",2);
-	Hex_Format(Disp.Current,4,6,0);
+	Hex_Format(Disp.Current,3,5,0);
 	WriteString_Big(238-MENUOFFSETX,83,DispBuf);
 //if(para==1)
 //{A_val.c[3]=ComBuf.rec.buf[9];
@@ -870,7 +886,7 @@ LCD_ShowFontCN_40_55(159-MENUOFFSETX,180,24,34,(uint8_t*)nAsciiDot20X40E+102*48)
 LCD_ShowFontCN_40_55(181-MENUOFFSETX,180,24,34,(uint8_t*)nAsciiDot20X40E+102*70);//f
 LCD_ShowFontCN_40_55(215-MENUOFFSETX,180,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
 
-	Hex_Format(Disp.Pf,3,4,0);
+	Hex_Format(Disp.Pf,4,5,0);
 	WriteString_Big(270-MENUOFFSETX,180,DispBuf);
 //pf_val
 //if(para==1)
@@ -900,7 +916,7 @@ LCD_ShowFontCN_40_55(159-MENUOFFSETX,228,24,34,(uint8_t*)nAsciiDot20X40E+102*38)
 //LCD_ShowFontCN_40_55(225,228,24,34,(uint8_t*)nAsciiDot20X40E+102*81);//q
 LCD_ShowFontCN_40_55(215-MENUOFFSETX,228,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
 
-	Hex_Format(Disp.Freq,1,3,0);
+	Hex_Format(Disp.Freq,2,4,0);
 	WriteString_Big(270-MENUOFFSETX,228,DispBuf);
 //if(para==5)
 //{HZ_val.c[3]=ComBuf.rec.buf[5];//[19];
@@ -1027,14 +1043,14 @@ Colour.Fword=White;
 //{
 	Colour.Fword=White;
 //VAR:
-WriteString_16(8,205,"T:",0);
-	
-	T_val.c[3]=ComBuf.rec.buf[25];//[3];
-	T_val.c[2]=ComBuf.rec.buf[26];//[4];
-	T_val.c[1]=ComBuf.rec.buf[23];//[5];
-	T_val.c[0]=ComBuf.rec.buf[24];//=0xb9;//[6];
-	
-		valp=(uint16_t)T_val.f;
+//WriteString_16(8,205,"T:",0);
+//	
+//	T_val.c[3]=ComBuf.rec.buf[25];//[3];
+//	T_val.c[2]=ComBuf.rec.buf[26];//[4];
+//	T_val.c[1]=ComBuf.rec.buf[23];//[5];
+//	T_val.c[0]=ComBuf.rec.buf[24];//=0xb9;//[6];
+//	
+//		valp=(uint16_t)T_val.f;
 //	if(V_val.f < 6)
 //		valp = 0;
 //val*=200;
@@ -1071,45 +1087,45 @@ WriteString_16(8,205,"T:",0);
 //		buf[6]=0;
 //		strncpy(DisVARInputNum,buf,6);
 //VAR:_val
-	sprintf(buf,"%d",valp);
-WriteString_16(45,205,buf,0);
-WriteString_16(118,205,PIA[5],0);//var
+//	sprintf(buf,"%d",valp);
+//WriteString_16(45,205,buf,0);
+//WriteString_16(118,205,PIA[5],0);//var
+////}
+////if(para==1)
+////{
+//	WH_val.c[3]=ComBuf.rec.buf[21];//[3];
+//WH_val.c[2]=ComBuf.rec.buf[22];//[4];
+//WH_val.c[1]=ComBuf.rec.buf[20];//[5];
+//WH_val.c[0]=ComBuf.rec.buf[19];//=0xb9;//[6];
+//	
+//	valp=WH_val.f*100.1;
+//	if(V_val.f < 6)
+//		valp = 0;
+////val*=200;
+//	if(valp<100000)
+//potv=2;
+//else
+//{valp/=10;potv=1;}
+//	buf[0]='0'+valp/10000;
+//buf[1]='0'+valp%10000/1000;
+//buf[2]='0'+valp%1000/100;
+//if(potv==2)
+//{buf[3]='.';
+//buf[4]='0'+valp%100/10;
 //}
-//if(para==1)
-//{
-	WH_val.c[3]=ComBuf.rec.buf[21];//[3];
-WH_val.c[2]=ComBuf.rec.buf[22];//[4];
-WH_val.c[1]=ComBuf.rec.buf[20];//[5];
-WH_val.c[0]=ComBuf.rec.buf[19];//=0xb9;//[6];
-	
-	valp=WH_val.f*100.1;
-	if(V_val.f < 6)
-		valp = 0;
-//val*=200;
-	if(valp<100000)
-potv=2;
-else
-{valp/=10;potv=1;}
-	buf[0]='0'+valp/10000;
-buf[1]='0'+valp%10000/1000;
-buf[2]='0'+valp%1000/100;
-if(potv==2)
-{buf[3]='.';
-buf[4]='0'+valp%100/10;
-}
-else
-{buf[3]='0'+valp%100/10;
-buf[4]='.';
-}
-buf[5]='0'+valp%10;
+//else
+//{buf[3]='0'+valp%100/10;
+//buf[4]='.';
+//}
+//buf[5]='0'+valp%10;
 
-buf[6]=0;
+//buf[6]=0;
 //WriteString_Big(238,33,buf);
 
-WriteString_16(8,240,"W:",0);//pf:PFHZ[0]
-WriteString_16(110,240,"W.h",0);
-		//pf_val
-WriteString_16(45,240,buf,0);
+//WriteString_16(8,240,"W:",0);//pf:PFHZ[0]
+//WriteString_16(110,240,"W.h",0);
+//		//pf_val
+//WriteString_16(45,240,buf,0);
 //}
 //strncpy(DisFInputNum,buf,6);
 
@@ -1128,33 +1144,11 @@ WriteString_16(45,240,buf,0);
 
 void Send_Uart3(u8 x)//(uint8_t *buff)
 {
-	u8 readbuf[8]={0xF0,0x03,0x00,0x00,0x00,0x15,0x00,0x00};//v
-//	u8 bread_v[9]={0x01,0x03,0x0d,0x20,0x00,0x02,0xc7,0x6d,0xa1};//v
-//	u8 bread_i[9]={0x01,0x03,0x0d,0x22,0x00,0x02,0x66,0xad,0xa1};//i
-//	u8 bread_pf[9]={0x01,0x03,0x0d,0x24,0x00,0x02,0x86,0xac,0xa1};//pf
-//	u8 bread_pw[9]={0x01,0x03,0x0d,0x26,0x00,0x02,0x27,0x6c,0xa1};//pw
-//	u8 bread_wh[9]={0x01,0x03,0x0d,0x28,0x00,0x02,0x46,0xaf,0xa1};//wh
-//	u8 bread_s[9]={0x01,0x03,0x0d,0x2a,0x00,0x02,0xe7,0x6f,0xa1};//time
-//	u8 bread_hz[9]={0x01,0x03,0x0d,0x12,0x00,0x02,0x66,0xa2,0xa1};//hz
-//	u8 set_whon[9]={0x01,0x06,0x00,0xa6,0xff,0x00,0x28,0x19,0xa1};//wh
-//	u8 set_whoff[9]={0x01,0x06,0x00,0xa6,0x00,0x00,0x69,0xe9,0xa1};//wh
-//	u8 clear_wh[9]={0x01,0x06,0x0d,0x2e,0xff,0x00,0xaa,0x9f,0xa1};//wh
-//	u8 reset_wh[9]={0x01,0x06,0x0d,0x2e,0x00,0x00,0xeb,0x6f,0xa1};//wh
-//jp1	u8 Send_buff[5]={0x55,0x01,0x11,0x67,0xaf};
-	//u8 Send_buff[7]={0xfb,0xfb,0x07,0x00,0xfd,0xfe,0xfe};
+	u8 readbuf[8]={0x01,0x03,0x00,0x00,0x00,0x13,0x00,0x00};//v
 	readbuf[6] = (u8)(CRC16_Modbus(readbuf,6)>>8);
 	readbuf[7] = (u8)(CRC16_Modbus(readbuf,6));
 	uartSendChars(LPC_UART0,readbuf,8);
 	
-//	if(x==1)	UARTPuts(LPC_UART0,bread_v1);
-////	else if(x==2)		UARTPuts(LPC_UART0,bread_wh);
-////	else if(x==3)		UARTPuts(LPC_UART0,bread_pf);
-////	else if(x==4)		UARTPuts(LPC_UART0,bread_pw);
-//	else if(x==5)		UARTPuts(LPC_UART0,bread_hz);
-//	else if(x==6)		UARTPuts(LPC_UART0,set_whon);
-//	else if(x==7)		UARTPuts(LPC_UART0,set_whoff);
-//	else if(x==8)		UARTPuts(LPC_UART0,clear_wh);
-//	else if(x==9)		UARTPuts(LPC_UART0,reset_wh);
 }
 
 
