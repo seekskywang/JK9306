@@ -665,13 +665,13 @@ void DisBlank_main(unsigned char bank,uint8_t mode)
 void RecHandle(void)
 {
 //	Disp.Voltage = (ComBuf.rec.buf[3]<<8) + ComBuf.rec.buf[4];
-	Disp.Voltage = (uint32_t)((double)((ComBuf.rec.buf[3]<<8) + ComBuf.rec.buf[4]) * 2.5);
+	Disp.Voltage = (uint32_t)((double)((ComBuf.rec.buf[3]<<8) + ComBuf.rec.buf[4]) * 3);
 //	Disp.Current = (ComBuf.rec.buf[5]<<8) + ComBuf.rec.buf[6];//10A
 //	Disp.Pa = ((ComBuf.rec.buf[7]<<8) + ComBuf.rec.buf[8])*25;//10A
 //	Disp.Power =((ComBuf.rec.buf[31]<<8) + ComBuf.rec.buf[32])*25;//10A
 	Disp.Current = ((ComBuf.rec.buf[5]<<8) + ComBuf.rec.buf[6])*2;//20A
-	Disp.Pa = ((ComBuf.rec.buf[7]<<8) + ComBuf.rec.buf[8])*50;//20A
-	Disp.Power =((ComBuf.rec.buf[31]<<8) + ComBuf.rec.buf[32])*50;//20A
+	Disp.Pa = ((ComBuf.rec.buf[7]<<8) + ComBuf.rec.buf[8])*60;//20A
+	Disp.Power =((ComBuf.rec.buf[31]<<8) + ComBuf.rec.buf[32])*60;//20A
 	Disp.Pf = ((ComBuf.rec.buf[11])<<8) + (ComBuf.rec.buf[12]);
 	Disp.Freq = (ComBuf.rec.buf[13]<<8) + ComBuf.rec.buf[14];
 	
@@ -775,7 +775,7 @@ LCD_ShowFontCN_40_55(159-MENUOFFSETX,82,24,34,(uint8_t*)nAsciiDot20X40E+102*41);
 		WriteString_16(185-MENUOFFSETX,102,Rms[0], 0);
 		LCD_ShowFontCN_40_55(215-MENUOFFSETX,83,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
 	 LCD_ShowFontCN_STR_40_55(452,85,24,34,"A",2);
-	Hex_Format(Disp.Current,3,5,0);
+	Hex_Format(Disp.Current,2,4,0);
 	WriteString_Big(238-MENUOFFSETX,83,DispBuf);
 //if(para==1)
 //{A_val.c[3]=ComBuf.rec.buf[9];
@@ -827,7 +827,7 @@ LCD_ShowFontCN_40_55(159-MENUOFFSETX,130,24,34,(uint8_t*)nAsciiDot20X40E+102*48)
 LCD_ShowFontCN_40_55(183-MENUOFFSETX,130,24,34,(uint8_t*)nAsciiDot20X40E+102*26);//:
 LCD_ShowFontCN_40_55(452,132,24,34,(uint8_t*)nAsciiDot20X40E+102*55);//W
 
-	Hex_Format(Disp.Power,2,6,0);
+	Hex_Format(Disp.Power,2,5,0);
 	WriteString_Big(206-MENUOFFSETX,130,DispBuf);
 //p_val
 //if(para==1)

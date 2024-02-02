@@ -2,7 +2,7 @@
 .\output\main.o: ..\User\..\Libraries\Drivers\include\lpc177x_8x_gpio.h
 .\output\main.o: ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h
 .\output\main.o: ..\Libraries\Core\CM3\CoreSupport\core_cm3.h
-.\output\main.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\output\main.o: ..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h
 .\output\main.o: ..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h
 .\output\main.o: ..\User\..\Libraries\Drivers\include\lpc_types.h
@@ -11,7 +11,7 @@
 .\output\main.o: ..\User\LCD/lpc177x_8x_lcd.h
 .\output\main.o: ..\User\LCD/logo.h
 .\output\main.o: ..\User\LCD/AsciiLib.h
-.\output\main.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\output\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\output\main.o: ..\User\TouchPanel/TouchPanel.h
 .\output\main.o: ..\Libraries\Drivers\include\lpc177x_8x_ssp.h
 .\output\main.o: ..\Libraries\Drivers\include\lpc177x_8x_clkpwr.h
