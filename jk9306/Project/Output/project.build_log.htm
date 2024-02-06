@@ -30,31 +30,34 @@ Build target 'Open1788'
 compiling test.c...
 ..\User\set_manu.h(81): warning:  #47-D: incompatible redefinition of macro "VRANGE"  (declared at line 109 of "..\User\Globalvalue/globalvalue.h")
   #define  	VRANGE	        (Para_main[1].val)	//V·¶Î§
-..\User\Test\test.c(691): warning:  #177-D: variable "buf"  was declared but never referenced
+..\User\Test\test.c(744): error:  #167: argument of type "uint32_t *" is incompatible with parameter of type "uint32_t"
+  	Hex_Format(Disp.Voltage,2,5,0);
+..\User\Test\test.c(793): error:  #167: argument of type "uint32_t *" is incompatible with parameter of type "uint32_t"
+  	Hex_Format(Disp.Current,2,4,0);
+..\User\Test\test.c(904): error:  #167: argument of type "int16_t *" is incompatible with parameter of type "uint32_t"
+  	Hex_Format(Disp.Pf,4,5,0);
+..\User\Test\test.c(706): warning:  #177-D: variable "buf"  was declared but never referenced
   	char  buf[8]={"0"};
-..\User\Test\test.c(692): warning:  #177-D: variable "over"  was declared but never referenced
+..\User\Test\test.c(707): warning:  #177-D: variable "over"  was declared but never referenced
   	char  over[7]={"       "};
-..\User\Test\test.c(694): warning:  #177-D: variable "potv"  was declared but never referenced
+..\User\Test\test.c(709): warning:  #177-D: variable "potv"  was declared but never referenced
   	uint8_t i=0,potv,potvp,poti,potw,potva;
-..\User\Test\test.c(694): warning:  #177-D: variable "potvp"  was declared but never referenced
+..\User\Test\test.c(709): warning:  #177-D: variable "potvp"  was declared but never referenced
   	uint8_t i=0,potv,potvp,poti,potw,potva;
-..\User\Test\test.c(694): warning:  #177-D: variable "poti"  was declared but never referenced
+..\User\Test\test.c(709): warning:  #177-D: variable "poti"  was declared but never referenced
   	uint8_t i=0,potv,potvp,poti,potw,potva;
-..\User\Test\test.c(694): warning:  #177-D: variable "potw"  was declared but never referenced
+..\User\Test\test.c(709): warning:  #177-D: variable "potw"  was declared but never referenced
   	uint8_t i=0,potv,potvp,poti,potw,potva;
-..\User\Test\test.c(694): warning:  #177-D: variable "potva"  was declared but never referenced
+..\User\Test\test.c(709): warning:  #177-D: variable "potva"  was declared but never referenced
   	uint8_t i=0,potv,potvp,poti,potw,potva;
-..\User\Test\test.c(695): warning:  #177-D: variable "valp"  was declared but never referenced
+..\User\Test\test.c(710): warning:  #177-D: variable "valp"  was declared but never referenced
   	uint32_t valp,pfx;
-..\User\Test\test.c(695): warning:  #177-D: variable "pfx"  was declared but never referenced
+..\User\Test\test.c(710): warning:  #177-D: variable "pfx"  was declared but never referenced
   	uint32_t valp,pfx;
-..\User\Test\test.c(1150): warning:  #223-D: function "uartSendChars" declared implicitly
+..\User\Test\test.c(1165): warning:  #223-D: function "uartSendChars" declared implicitly
   	uartSendChars(LPC_UART0,readbuf,8);
-..\User\Test\test.c: 11 warnings, 0 errors
-linking...
-Program Size: Code=42412 RO-data=410560 RW-data=11740 ZI-data=3732  
-FromELF: creating hex file...
-".\Output\project.axf" - 0 Error(s), 11 Warning(s).
+..\User\Test\test.c: 11 warnings, 3 errors
+".\Output\project.axf" - 3 Error(s), 11 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -67,7 +70,8 @@ Package Vendor: Keil
   C:/Keil_v5/ARM/PACK/Keil/LPC1700_DFP/2.7.1/Device/Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:01
+Target not created.
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

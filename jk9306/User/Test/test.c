@@ -22,12 +22,12 @@
 
 
 typedef struct Data{
-  uint32_t Voltage;       //电压
-  uint32_t Current;       //电流
+  uint32_t Voltage[3];       //电压
+  uint32_t Current[3];       //电流
   uint32_t Freq;     			//频率
-  int16_t Pf;       			//功率因数
+  int16_t Pf[3];       			//功率因数
 	uint32_t Power;       	//功率
-	int16_t Pa;       		  //有功功率
+	int16_t Pa[3];       		  //有功功率
 	int8_t polarity;       	//功率因数正负值
 }Dispdata;
 
@@ -665,22 +665,37 @@ void DisBlank_main(unsigned char bank,uint8_t mode)
 void RecHandle(void)
 {
 //	Disp.Voltage = (ComBuf.rec.buf[3]<<8) + ComBuf.rec.buf[4];
-	Disp.Voltage = (uint32_t)((double)((ComBuf.rec.buf[3]<<8) + ComBuf.rec.buf[4]) * 3);
+	Disp.Voltage[0] = (uint32_t)((double)((ComBuf.rec.buf[3]<<8) + ComBuf.rec.buf[4]) * 4);//电压A
+	Disp.Voltage[1] = (uint32_t)((double)((ComBuf.rec.buf[5]<<8) + ComBuf.rec.buf[6]) * 4);//电压B
+	Disp.Voltage[2] = (uint32_t)((double)((ComBuf.rec.buf[7]<<8) + ComBuf.rec.buf[8]) * 4);//电压C
 //	Disp.Current = (ComBuf.rec.buf[5]<<8) + ComBuf.rec.buf[6];//10A
 //	Disp.Pa = ((ComBuf.rec.buf[7]<<8) + ComBuf.rec.buf[8])*25;//10A
 //	Disp.Power =((ComBuf.rec.buf[31]<<8) + ComBuf.rec.buf[32])*25;//10A
-	Disp.Current = ((ComBuf.rec.buf[5]<<8) + ComBuf.rec.buf[6])*2;//20A
-	Disp.Pa = ((ComBuf.rec.buf[7]<<8) + ComBuf.rec.buf[8])*60;//20A
-	Disp.Power =((ComBuf.rec.buf[31]<<8) + ComBuf.rec.buf[32])*60;//20A
-	Disp.Pf = ((ComBuf.rec.buf[11])<<8) + (ComBuf.rec.buf[12]);
+	Disp.Current[0] = ((ComBuf.rec.buf[9]<<8) + ComBuf.rec.buf[10])*2;//电流A
+	Disp.Current[1] = ((ComBuf.rec.buf[11]<<8) + ComBuf.rec.buf[12])*2;//电流B
+	Disp.Current[2] = ((ComBuf.rec.buf[13]<<8) + ComBuf.rec.buf[14])*2;//电流C
+	
+	Disp.Pa[0] = ((ComBuf.rec.buf[15]<<8) + ComBuf.rec.buf[16])*80;//有功功率A
+	Disp.Pa[1] = ((ComBuf.rec.buf[17]<<8) + ComBuf.rec.buf[18])*80;//有功功率B
+	Disp.Pa[2] = ((ComBuf.rec.buf[19]<<8) + ComBuf.rec.buf[20])*80;//有功功率C
+	
+	Disp.Pf[0] = ((ComBuf.rec.buf[21])<<8) + (ComBuf.rec.buf[22]);//功率因数A
+	Disp.Pf[1] = ((ComBuf.rec.buf[23])<<8) + (ComBuf.rec.buf[24]);//功率因数B
+	Disp.Pf[2] = ((ComBuf.rec.buf[25])<<8) + (ComBuf.rec.buf[26]);//功率因数C
+	
+	Disp.Power =((ComBuf.rec.buf[31]<<8) + ComBuf.rec.buf[32])*80;//20A
+	
 	Disp.Freq = (ComBuf.rec.buf[13]<<8) + ComBuf.rec.buf[14];
 	
-	if(Disp.Pf < 0)
+	for(u8 i = 0;i < 3;i ++)
 	{
-		Disp.Pf = -Disp.Pf;
-		Disp.polarity=1;//
-	}else{
-		Disp.polarity=0;
+		if(Disp.Pf < 0)
+		{
+			Disp.Pf[i] = -Disp.Pf[i];
+			Disp.polarity=1;//
+		}else{
+			Disp.polarity=0;
+		}
 	}
 //	Disp.Pf=0x03e8;
 	
@@ -1144,7 +1159,7 @@ Colour.Fword=White;
 
 void Send_Uart3(u8 x)//(uint8_t *buff)
 {
-	u8 readbuf[8]={0x01,0x03,0x00,0x00,0x00,0x13,0x00,0x00};//v
+	u8 readbuf[8]={0x01,0x03,0x00,0x00,0x00,0x3E,0x00,0x00};//v
 	readbuf[6] = (u8)(CRC16_Modbus(readbuf,6)>>8);
 	readbuf[7] = (u8)(CRC16_Modbus(readbuf,6));
 	uartSendChars(LPC_UART0,readbuf,8);

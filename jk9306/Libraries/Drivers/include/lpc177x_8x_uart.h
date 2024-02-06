@@ -546,7 +546,8 @@ typedef struct {
   UART_PARITY_Type Parity;    	/**< Parity selection, should be:
 							   - UART_PARITY_NONE: No parity
 							   - UART_PARITY_ODD: Odd parity
-							   - UART_PARITY_EVEN: Even parity
+							   - UART_PARITY_EVEN:
+	Even parity
 							   - UART_PARITY_SP_1: Forced "1" stick parity
 							   - UART_PARITY_SP_0: Forced "0" stick parity
 							   */
